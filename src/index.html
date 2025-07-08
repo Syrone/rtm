@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html', {title: 'Каталог'})
+
+<body class="page-body">
+  @include('partials/h1.html', {title: 'Каталог'})
+
+  <div class="site-container">
+    @include('partials/header.html')
+
+    <main class="main">
+      <section class="section min-h-lg-570px min-h-sm-308px min-h-288px">
+        <span class="section-background d-md-inline d-none" style="background-image: url(./img/bg/hero.webp);"></span>
+        <span class="section-background bg-position-center-end d-md-none" style="background-image: url(./img/bg/hero--mobile.webp);"></span>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 col-9">
+              <div class="pt-lg-24px pt-4px">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                      <span class="icon">
+                        <svg>
+                          <use xlink:href="img/icons/angle-right.svg#svg-angle-right"></use>
+                        </svg>
+                      </span>
+                      <a href="#" class="btn">Главная </a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                      <span class="icon">
+                        <svg>
+                          <use xlink:href="img/icons/angle-right.svg#svg-angle-right"></use>
+                        </svg>
+                      </span>
+                      Каталог ASIC-майнеров
+                    </li>
+                  </ol>
+                </nav>
+
+                <div class="d-flex flex-column align-items-start gap-lg-40px gap-20px">
+                  <h2 class="fs-lg-50px fs-20px m-0px">
+                    Каталог <br> ASIC-майнеров
+                  </h2>
+
+                  <button type="button" class="btn btn-40px btn-warm btn-bg-gradient btn-border-gradient">
+                    Оставить заявку
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          catalog
+        </div>
+      </section>
+    </main>
+
+    @include('partials/footer.html')
+  </div>
+</body>
+
+</html>

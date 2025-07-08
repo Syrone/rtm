@@ -1,0 +1,25 @@
+.header {
+  width: 100%;
+  padding-block: 1.25rem;
+  transition-property: background-color;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: #{$zindex-fixed};
+
+  @include media-breakpoint-up(lg) {
+    padding-block: 1.875rem;
+  }
+
+  &--fixed {
+    background-color: var(--#{$prefix}body-bg);
+  }
+
+  &-end {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

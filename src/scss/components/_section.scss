@@ -1,0 +1,33 @@
+.section {
+  position: relative;
+  z-index: 1;
+
+  &:first-child {
+    margin-bottom: -1rem;
+    padding-top: var(--header-height);
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: -2.5rem;
+    }
+  }
+
+  &:nth-child(2) {
+    border-radius: .75rem .75rem 0 0;
+    padding-top: 1.5rem;
+    background-color: var(--#{$prefix}body-bg);
+
+    @include media-breakpoint-up(lg) {
+      border-radius: 3.75rem 3.75rem 0 0;
+      padding-top: 1.25rem;
+    }
+  }
+
+  &-background {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+  }
+}

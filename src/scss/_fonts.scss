@@ -1,0 +1,11 @@
+@use "mixins" as mixins;
+
+@include mixins.font-face("GolosText", "GolosText-Regular", 400, normal);
+@include mixins.font-face("GolosText", "GolosText-Medium", 500, normal);
+@include mixins.font-face("GolosText", "GolosText-SemiBold", 600, normal);
+@include mixins.font-face("GolosText", "GolosText-Bold", 700, normal);
+@include mixins.font-face("Manrope", "Manrope-Regular", 400, normal);
+@include mixins.font-face("Manrope", "Manrope-Medium", 500, normal);
+@include mixins.font-face("Manrope", "Manrope-Bold", 700, normal);
+@include mixins.font-face("Roboto", "Roboto-Regular", 400, normal);
+@include mixins.font-face("Roboto", "Roboto-Bold", 700, normal);
