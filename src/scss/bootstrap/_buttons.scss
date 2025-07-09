@@ -200,6 +200,16 @@
   --#{$prefix}btn-border-color: transparent;
 }
 
+.btn-plaintext {
+  --#{$prefix}btn-border-width: 0;
+  --#{$prefix}btn-border-radius: 0;
+  --#{$prefix}btn-padding-x: 0;
+  --#{$prefix}btn-padding-y: 0;
+
+  --#{$prefix}btn-bg: transparent;
+  --#{$prefix}btn-border-color: transparent;
+}
+
 .btn-lg-transparent {
 
   @include media-breakpoint-up(lg) {
@@ -270,6 +280,19 @@
     &::after {
       background: var(--#{$prefix}btn-active-border-color);
     }
+  }
+}
+
+.btn-filter {
+  --#{$prefix}btn-padding-x: .25rem;
+  --#{$prefix}btn-padding-y: .25rem;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  .icon {
+    --_size: 1.5rem;
   }
 }
 

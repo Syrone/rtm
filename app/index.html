@@ -187,7 +187,7 @@
       </section>
       <section class="section">
         <div class="container">
-          <div class="row gx-lg-28px">
+          <div class="row gy-16px gx-lg-28px">
             <div class="col-xl-3 col-lg-4">
               <div class="d-lg-none d-flex flex-column">
                 <button class="btn navbar-toggler navbar-toggler--filter" type="button"
@@ -535,7 +535,113 @@
             </div>
 
             <div class="col-xl-9 col-lg-8">
-              Content
+              <div class="d-flex justify-content-between gap-12px navbar navbar-filter">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <button type="button" class="btn btn-bg-gradient btn-border-gradient nav-link active">
+                      <span>Все типы охлаждения</span>
+                    </button>
+                  </li>
+                  <li class="nav-item">
+                    <button type="button" class="btn btn-bg-gradient btn-border-gradient nav-link">
+                      <span>Воздушное</span>
+                      <span class="icon">
+                        <svg>
+                          <use xlink:href="img/icons/air.svg#svg-air"></use>
+                        </svg>
+                      </span>
+                    </button>
+                  </li>
+                  <li class="nav-item">
+                    <button type="button" class="btn btn-bg-gradient btn-border-gradient nav-link">
+                      <span>Водяное</span>
+                      <span class="icon">
+                        <svg>
+                          <use xlink:href="img/icons/water.svg#svg-water"></use>
+                        </svg>
+                      </span>
+                    </button>
+                  </li>
+                  <li class="nav-item">
+                    <button type="button" class="btn btn-bg-gradient btn-border-gradient nav-link">
+                      <span>Иммерсионое</span>
+                      <span class="icon">
+                        <svg>
+                          <use xlink:href="img/icons/immersive.svg#svg-immersive"></use>
+                        </svg>
+                      </span>
+                    </button>
+                  </li>
+                </ul>
+
+                <div class="navbar-nav d-none d-xxl-flex align-items-center gap-24px">
+                  <div class="d-flex">
+                    <div class="dropdown">
+                      <button type="button" class="btn btn-bg-gradient btn-border-gradient dropdown-toggle"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <span>
+                          По популярности
+                        </span>
+                        <span class="icon">
+                          <svg>
+                            <use xlink:href="img/icons/angle-down.svg#svg-angle-down"></use>
+                          </svg>
+                        </span>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li>
+                          <a class="dropdown-item active" href="#">
+                            Популярные
+                          </a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">
+                            Новинки
+                          </a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">
+                            Дешевле
+                          </a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">
+                            Дороже
+                          </a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">
+                            В наличии
+                          </a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">
+                            Под заказ
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="d-flex pe-4px">
+                    <button type="button" class="btn btn-plaintext btn-filter">
+                      <span class="icon">
+                        <svg>
+                          <use xlink:href="img/icons/grid.svg#svg-grid"></use>
+                        </svg>
+                      </span>
+                    </button>
+                    <button type="button" class="btn btn-plaintext btn-filter">
+                      <span class="icon">
+                        <svg>
+                          <use xlink:href="img/icons/rows.svg#svg-rows"></use>
+                        </svg>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

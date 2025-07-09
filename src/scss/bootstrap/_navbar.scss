@@ -132,10 +132,19 @@
     --#{$prefix}btn-border-radius: 1.25rem;
 
     --#{$prefix}btn-active-color: var(--#{$prefix}navbar-active-color);
-  }
 
-  .dropdown-menu {
-    position: static;
+    align-items: center;
+    gap: .5rem;
+
+    .icon {
+      --_size: 1.125rem;
+
+      margin-block: -.25rem;
+
+      @include media-breakpoint-up(lg) {
+        --_size: 1.25rem;
+      }
+    }
   }
 }
 
@@ -440,6 +449,97 @@
 
     .icon {
       --_size: 2.5rem;
+    }
+  }
+}
+
+.navbar-filter {
+
+  .navbar-nav {
+    --#{$prefix}nav-link-font-size: .75rem;
+    --#{$prefix}nav-link-font-weight: 600;
+    --#{$prefix}nav-link-padding-y: .4375rem;
+
+    --#{$prefix}nav-link-color: inherit;
+    --#{$prefix}nav-link-hover-color: var(--#{$prefix}teal);
+    --#{$prefix}navbar-active-color: var(--#{$prefix}teal);
+
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: transparent;
+    padding: 0;
+
+    @include media-breakpoint-up(md) {
+      background-color: rgba($gray-200, .50);
+      padding: .25rem;
+    }
+
+    .dropdown-toggle,
+    .nav-link {
+      --#{$prefix}btn-border-radius: 2rem;
+      --#{$prefix}btn-border-color: linear-gradient(90deg, rgba(188, 188, 188, 1) 0%, rgba(255, 255, 255, 0.80) 15%, rgba(255, 255, 255, 0.30) 50%, rgba(188, 188, 188, 1) 90%, rgba(255, 255, 255, 0.50) 100%);
+      --#{$prefix}btn-hover-border-color: linear-gradient(90deg, rgba(188, 188, 188, 1) 0%, rgba(255, 255, 255, 0.80) 15%, rgba(255, 255, 255, 0.30) 50%, rgba(188, 188, 188, 1) 90%, rgba(255, 255, 255, 0.50) 100%);
+      --#{$prefix}btn-active-border-color: linear-gradient(90deg, rgba(188, 188, 188, 1) 0%, rgba(255, 255, 255, 0.80) 15%, rgba(255, 255, 255, 0.30) 50%, rgba(188, 188, 188, 1) 90%, rgba(255, 255, 255, 0.50) 100%);
+
+      --#{$prefix}btn-bg: linear-gradient(15deg, rgba(178, 178, 178, 0.2) 0%, rgba(255, 255, 255, 0.2) 45%, rgba(255, 255, 255, 0.2) 55%, rgba(178, 178, 178, 0.2) 100%);
+      --#{$prefix}btn-hover-bg: linear-gradient(15deg, rgba(178, 178, 178, 0.2) 0%, rgba(255, 255, 255, 0.2) 45%, rgba(255, 255, 255, 0.2) 55%, rgba(178, 178, 178, 0.2) 100%);
+      --#{$prefix}btn-active-bg: linear-gradient(15deg, rgba(178, 178, 178, 0.2) 0%, rgba(255, 255, 255, 0.2) 45%, rgba(255, 255, 255, 0.2) 55%, rgba(178, 178, 178, 0.2) 100%);
+    }
+
+    .nav-link {
+
+      @include media-breakpoint-up(md) {
+        --#{$prefix}btn-bg: rgba(255, 255, 255, .40);
+        --#{$prefix}btn-hover-bg: linear-gradient(4deg, rgba(0, 193, 173, 0.1) 0%, rgba(255, 255, 255, 0.1) 30%, rgba(255, 255, 255, 0.1) 60%, rgba(0, 193, 173, 0.1) 100%);
+        --#{$prefix}btn-active-bg: linear-gradient(4deg, rgba(0, 193, 173, 0.1) 0%, rgba(255, 255, 255, 0.1) 30%, rgba(255, 255, 255, 0.1) 60%, rgba(0, 193, 173, 0.1) 100%);
+      }
+
+      &::before {
+
+        @include media-breakpoint-up(md) {
+          content: '';
+          display: block;
+          border-radius: inherit;
+          filter: blur(.75rem);
+          pointer-events: none;
+          user-select: none;
+          position: absolute;
+          inset: 0;
+        }
+      }
+
+       @media (hover: hover) {
+
+        &:is(:hover, :focus-visible) {
+
+          &::before {
+
+            @include media-breakpoint-up(md) {
+              background-color: rgba(0, 193, 173, 0.375);
+            }
+          }
+        }
+      }
+
+      &:is(:active, .active, .show) {
+
+        &::before {
+
+          @include media-breakpoint-up(md) {
+            background-color: rgba(0, 193, 173, 0.375);
+          }
+        }
+      }
+    }
+
+    .dropdown-toggle {
+      --#{$prefix}btn-font-size: var(--#{$prefix}nav-link-font-size);
+      --#{$prefix}btn-font-weight: var(--#{$prefix}nav-link-font-weight);
+      --#{$prefix}btn-padding-y: var(--#{$prefix}nav-link-padding-y);
+
+      --#{$prefix}btn-color: var(--#{$prefix}nav-link-color);
+      --#{$prefix}btn-hover-color: var(--#{$prefix}btn-color);
+      --#{$prefix}btn-active-color: var(--#{$prefix}btn-color);
     }
   }
 }
