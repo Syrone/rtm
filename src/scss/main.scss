@@ -24,9 +24,9 @@
 @import "./bootstrap/dropdown";
 @import "./bootstrap/nav";
 @import "./bootstrap/navbar";
-@import "../../node_modules/bootstrap/scss/card";
+@import "./bootstrap/card";
 @import "./bootstrap/accordion";
-@import "../../node_modules/bootstrap/scss/badge";
+@import "./bootstrap/badge";
 @import "../../node_modules/bootstrap/scss/alert";
 @import "../../node_modules/bootstrap/scss/list-group";
 @import "./bootstrap/close";
@@ -41,3 +41,4 @@
 @import "./components/icons";
 @import "./components/header";
 @import "./components/separator";
+@import "./components/card-content";

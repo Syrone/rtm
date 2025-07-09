@@ -1,0 +1,70 @@
+// Base class
+//
+// Requires one of the contextual, color modifier classes for `color` and
+// `background-color`.
+
+.badge {
+  // scss-docs-start badge-css-vars
+  --#{$prefix}badge-padding-x: #{$badge-padding-x};
+  --#{$prefix}badge-padding-y: #{$badge-padding-y};
+  @include rfs($badge-font-size, --#{$prefix}badge-font-size);
+  --#{$prefix}badge-font-weight: #{$badge-font-weight};
+  --#{$prefix}badge-color: #{$badge-color};
+  --#{$prefix}badge-bg: rgba(var(--#{$prefix}gray-700-rgb), .10);
+  --#{$prefix}badge-border-color: var(--#{$prefix}badge-color);
+  --#{$prefix}badge-border-radius: #{$badge-border-radius};
+  // scss-docs-end badge-css-vars
+
+  height: 1.625rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--#{$prefix}badge-padding-y) var(--#{$prefix}badge-padding-x);
+  @include font-size(var(--#{$prefix}badge-font-size));
+  font-weight: var(--#{$prefix}badge-font-weight);
+  line-height: 1;
+  color: var(--#{$prefix}badge-color);
+  background-color: var(--#{$prefix}badge-bg);
+  border: var(--#{$prefix}border-width) solid var(--#{$prefix}badge-border-color);
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  @include border-radius(var(--#{$prefix}badge-border-radius));
+  @include gradient-bg();
+
+  // Empty badges collapse automatically
+  &:empty {
+    display: none;
+  }
+}
+
+.badge--instock {
+  --#{$prefix}badge-color: var(--#{$prefix}instock);
+  --#{$prefix}badge-bg: rgba(var(--#{$prefix}instock-rgb), .10);
+}
+
+.badge--new {
+  --#{$prefix}badge-color: var(--#{$prefix}new);
+  --#{$prefix}badge-bg: rgba(var(--#{$prefix}new-rgb), .10);
+}
+
+.badge--popular {
+  --#{$prefix}badge-color: var(--#{$prefix}popular);
+  --#{$prefix}badge-bg: rgba(var(--#{$prefix}popular-rgb), .10);
+}
+
+.badge--dearer {
+  --#{$prefix}badge-color: var(--#{$prefix}dearer);
+  --#{$prefix}badge-bg: rgba(var(--#{$prefix}dearer-rgb), .10);
+}
+
+.badge--cheaper {
+  --#{$prefix}badge-color: var(--#{$prefix}cheaper);
+  --#{$prefix}badge-bg: rgba(var(--#{$prefix}cheaper-rgb), .10);
+}
+
+// Quick fix for badges in buttons
+.btn .badge {
+  position: relative;
+  top: -1px;
+}

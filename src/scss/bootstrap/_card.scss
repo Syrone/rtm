@@ -1,0 +1,404 @@
+//
+// Base styles
+//
+
+.card {
+  // scss-docs-start card-css-vars
+  --#{$prefix}card-spacer-y: .625rem;
+  --#{$prefix}card-spacer-x: var(--#{$prefix}card-spacer-y);
+  --#{$prefix}card-title-spacer-y: #{$card-title-spacer-y};
+  --#{$prefix}card-title-color: #{$card-title-color};
+  --#{$prefix}card-subtitle-color: #{$card-subtitle-color};
+  --#{$prefix}card-border-width: #{$card-border-width};
+  --#{$prefix}card-border-color: #{$card-border-color};
+  --#{$prefix}card-border-radius: #{$card-border-radius};
+  --#{$prefix}card-box-shadow: #{$card-box-shadow};
+  --#{$prefix}card-inner-border-radius: #{$card-inner-border-radius};
+  --#{$prefix}card-cap-padding-y: #{$card-cap-padding-y};
+  --#{$prefix}card-cap-padding-x: #{$card-cap-padding-x};
+  --#{$prefix}card-cap-bg: #{$card-cap-bg};
+  --#{$prefix}card-cap-color: #{$card-cap-color};
+  --#{$prefix}card-height: #{$card-height};
+  --#{$prefix}card-color: #{$card-color};
+  --#{$prefix}card-bg: #{$card-bg};
+  --#{$prefix}card-img-overlay-padding: #{$card-img-overlay-padding};
+  --#{$prefix}card-group-margin: #{$card-group-margin};
+  // scss-docs-end card-css-vars
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0; // See https://github.com/twbs/bootstrap/pull/22740#issuecomment-305868106
+  height: var(--#{$prefix}card-height);
+  color: var(--#{$prefix}body-color);
+  word-wrap: break-word;
+  background-color: var(--#{$prefix}card-bg);
+  background-clip: border-box;
+  border: var(--#{$prefix}card-border-width) solid var(--#{$prefix}card-border-color);
+  padding: var(--#{$prefix}card-spacer-y) var(--#{$prefix}card-spacer-x);
+  @include border-radius(var(--#{$prefix}card-border-radius));
+  @include box-shadow(var(--#{$prefix}card-box-shadow));
+
+  @include media-breakpoint-up(md) {
+    padding-top: 3rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    --#{$prefix}card-spacer-y: #{$card-spacer-y};
+    --#{$prefix}card-spacer-x: #{$card-spacer-x};
+  }
+
+  > hr {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  > .list-group {
+    border-top: inherit;
+    border-bottom: inherit;
+
+    &:first-child {
+      border-top-width: 0;
+      @include border-top-radius(var(--#{$prefix}card-inner-border-radius));
+    }
+
+    &:last-child  {
+      border-bottom-width: 0;
+      @include border-bottom-radius(var(--#{$prefix}card-inner-border-radius));
+    }
+  }
+
+  // Due to specificity of the above selector (`.card > .list-group`), we must
+  // use a child selector here to prevent double borders.
+  > .card-header + .list-group,
+  > .list-group + .card-footer {
+    border-top: 0;
+  }
+}
+
+.card-picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 1.75rem;
+  }
+
+  img {
+    width: 100%;
+    max-width: 9.25rem;
+    display: block;
+
+    @include media-breakpoint-up(lg) {
+      max-width: 12.875rem;
+    }
+  }
+}
+
+.card-body,
+.card-footer {
+
+  @include media-breakpoint-up(lg) {
+    margin-right: calc(-1 * (var(--#{$prefix}card-spacer-x) * .625));
+  }
+}
+
+.card-body {
+  // Enable `flex-grow: 1` for decks and groups so that card blocks take up
+  // as much space as possible, ensuring footers are aligned to the bottom.
+  flex: 1 1 auto;
+  color: var(--#{$prefix}card-color);
+}
+
+.card-title {
+  font-size: #{$font-size-base};
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--#{$prefix}card-title-color);
+  margin-bottom: .75rem;
+
+  @include media-breakpoint-up(lg) {
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.3;
+    margin-bottom: var(--#{$prefix}card-title-spacer-y);
+  }
+}
+
+.card-subtitle {
+  margin-top: calc(-.5 * var(--#{$prefix}card-title-spacer-y)); // stylelint-disable-line function-disallowed-list
+  margin-bottom: 0;
+  color: var(--#{$prefix}card-subtitle-color);
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem;
+  pointer-events: none;
+  position: absolute;
+  top: var(--#{$prefix}card-spacer-y);
+  left: 1.25rem;
+}
+
+.card-list {
+  flex-direction: column;
+  font-size: .75rem;
+  font-weight: 600;
+  line-height: 1.8;
+  list-style: none;
+
+  &,
+  dl {
+    padding: 0;
+    margin: 0;
+  }
+
+  &,
+  dl,
+  dt {
+    display: flex;
+  }
+
+  dl,
+  dt {
+    gap: .25em;
+
+    @include media-breakpoint-up(lg) {
+      gap: .5em;
+    }
+  }
+
+  dl {
+    align-items: baseline;
+  }
+
+  dt {
+    display: flex;
+    align-items: baseline;
+    font-weight: inherit;
+    color: rgba(var(--#{$prefix}primary-rgb), .50);
+
+    &,
+    &::after {
+      flex: 1 1 auto;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      height: .0625rem;
+      background-color: currentColor;
+    }
+  }
+
+  dd {
+    margin: 0;
+  }
+}
+
+.card-text:last-child {
+  margin-bottom: 0;
+}
+
+.card-link {
+
+  @media (hover: hover) {
+
+    &:hover {
+      text-decoration: if($link-hover-decoration == underline, none, null);
+    }
+  }
+
+  + .card-link {
+    margin-left: var(--#{$prefix}card-spacer-x);
+  }
+}
+
+.card-price {
+  display: flex;
+  flex-direction: column;
+
+  &-name {
+    font-size: .625rem;
+    font-weight: 600;
+    line-height: 1.8;
+
+    @include media-breakpoint-up(lg) {
+      display: none;
+      font-size: .75rem;
+    }
+  }
+
+  &-value {
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.3;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 2rem;
+      line-height: 1;
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+//
+// Optional textual caps
+//
+
+.card-header {
+  padding: var(--#{$prefix}card-cap-padding-y) var(--#{$prefix}card-cap-padding-x);
+  margin-bottom: 0; // Removes the default margin-bottom of <hN>
+  color: var(--#{$prefix}card-cap-color);
+  background-color: var(--#{$prefix}card-cap-bg);
+  border-bottom: var(--#{$prefix}card-border-width) solid var(--#{$prefix}card-border-color);
+
+  &:first-child {
+    @include border-radius(var(--#{$prefix}card-inner-border-radius) var(--#{$prefix}card-inner-border-radius) 0 0);
+  }
+}
+
+.card-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: .75rem;
+  color: var(--#{$prefix}card-cap-color);
+  background-color: var(--#{$prefix}card-cap-bg);
+  border-top: var(--#{$prefix}card-border-width) solid var(--#{$prefix}card-border-color);
+}
+
+.card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+
+  @include media-breakpoint-up(md) {
+    flex-direction: row;
+  }
+
+  .btn {
+    --#{$prefix}btn-font-size: .625rem;
+
+    @include media-breakpoint-up(md) {
+      --#{$prefix}btn-padding-x: 1rem;
+    }
+  }
+}
+
+
+//
+// Header navs
+//
+
+.card-header-tabs {
+  margin-right: calc(-.5 * var(--#{$prefix}card-cap-padding-x)); // stylelint-disable-line function-disallowed-list
+  margin-bottom: calc(-1 * var(--#{$prefix}card-cap-padding-y)); // stylelint-disable-line function-disallowed-list
+  margin-left: calc(-.5 * var(--#{$prefix}card-cap-padding-x)); // stylelint-disable-line function-disallowed-list
+  border-bottom: 0;
+
+  .nav-link.active {
+    background-color: var(--#{$prefix}card-bg);
+    border-bottom-color: var(--#{$prefix}card-bg);
+  }
+}
+
+.card-header-pills {
+  margin-right: calc(-.5 * var(--#{$prefix}card-cap-padding-x)); // stylelint-disable-line function-disallowed-list
+  margin-left: calc(-.5 * var(--#{$prefix}card-cap-padding-x)); // stylelint-disable-line function-disallowed-list
+}
+
+// Card image
+.card-img-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: var(--#{$prefix}card-img-overlay-padding);
+  @include border-radius(var(--#{$prefix}card-inner-border-radius));
+}
+
+.card-img,
+.card-img-top,
+.card-img-bottom {
+  width: 100%; // Required because we use flexbox and this inherently applies align-self: stretch
+}
+
+.card-img,
+.card-img-top {
+  @include border-top-radius(var(--#{$prefix}card-inner-border-radius));
+}
+
+.card-img,
+.card-img-bottom {
+  @include border-bottom-radius(var(--#{$prefix}card-inner-border-radius));
+}
+
+
+//
+// Card groups
+//
+
+.card-group {
+  // The child selector allows nested `.card` within `.card-group`
+  // to display properly.
+  > .card {
+    margin-bottom: var(--#{$prefix}card-group-margin);
+  }
+
+  @include media-breakpoint-up(sm) {
+    display: flex;
+    flex-flow: row wrap;
+    // The child selector allows nested `.card` within `.card-group`
+    // to display properly.
+    > .card {
+      flex: 1 0 0;
+      margin-bottom: 0;
+
+      + .card {
+        margin-left: 0;
+        border-left: 0;
+      }
+
+      // Handle rounded corners
+      @if $enable-rounded {
+        &:not(:last-child) {
+          @include border-end-radius(0);
+
+          > .card-img-top,
+          > .card-header {
+            // stylelint-disable-next-line property-disallowed-list
+            border-top-right-radius: 0;
+          }
+          > .card-img-bottom,
+          > .card-footer {
+            // stylelint-disable-next-line property-disallowed-list
+            border-bottom-right-radius: 0;
+          }
+        }
+
+        &:not(:first-child) {
+          @include border-start-radius(0);
+
+          > .card-img-top,
+          > .card-header {
+            // stylelint-disable-next-line property-disallowed-list
+            border-top-left-radius: 0;
+          }
+          > .card-img-bottom,
+          > .card-footer {
+            // stylelint-disable-next-line property-disallowed-list
+            border-bottom-left-radius: 0;
+          }
+        }
+      }
+    }
+  }
+}
