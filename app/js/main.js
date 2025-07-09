@@ -16833,13 +16833,17 @@ __webpack_require__.r(__webpack_exports__);
 
 (0,_functions_header_height_js__WEBPACK_IMPORTED_MODULE_1__.getHeaderHeight)();
 jquery__WEBPACK_IMPORTED_MODULE_0__(window).on('resize', (0,_functions_throttle_js__WEBPACK_IMPORTED_MODULE_2__.throttle)(_functions_header_height_js__WEBPACK_IMPORTED_MODULE_1__.getHeaderHeight));
-jquery__WEBPACK_IMPORTED_MODULE_0__(window).on('scroll', function () {
+function updateHeaderFixedClass() {
   if (jquery__WEBPACK_IMPORTED_MODULE_0__(window).scrollTop() > 0) {
     jquery__WEBPACK_IMPORTED_MODULE_0__('.header').addClass('header--fixed');
   } else {
     jquery__WEBPACK_IMPORTED_MODULE_0__('.header').removeClass('header--fixed');
   }
-});
+}
+jquery__WEBPACK_IMPORTED_MODULE_0__(window).on('scroll', updateHeaderFixedClass);
+
+// Вызов сразу при загрузке
+updateHeaderFixedClass();
 
 /***/ }),
 

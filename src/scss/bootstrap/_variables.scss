@@ -8,14 +8,14 @@
 // scss-docs-start gray-color-variables
 $white:    #fff !default;
 $gray-100: #f1f8f6 !default;
-$gray-200: #e9ecef !default;
+$gray-200: #e0e0e0 !default;
 $gray-300: #dee2e6 !default;
 $gray-400: #ced4da !default;
 $gray-500: #adb5bd !default;
 $gray-600: #6c757d !default;
 $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
-$gray-900: #212529 !default;
+$gray-900: #121212 !default;
 $black:    #000 !default;
 // scss-docs-end gray-color-variables
 
@@ -40,11 +40,12 @@ $blue:    #0d6efd !default;
 $indigo:  #6610f2 !default;
 $purple:  #6f42c1 !default;
 $pink:    #d63384 !default;
-$red:     #dc3545 !default;
+$red:     #ff0000 !default;
 $orange:  #fd7e14 !default;
 $yellow:  #ffc107 !default;
 $green:   #004438 !default;
 $teal:    #00c1ad !default;
+$teal-400:#1fd5bf !default;
 $cyan:    #0dcaf0 !default;
 // scss-docs-end color-variables
 
@@ -58,12 +59,14 @@ $colors: (
   "orange":     $orange,
   "yellow":     $yellow,
   "green":      $green,
-  "green-600":      #06352A,
+  "green-600":  #06352A,
   "teal":       $teal,
+  "teal-400":   $teal-400,
   "cyan":       $cyan,
   "black":      $black,
   "white":      $white,
   "gray":       $gray-600,
+  "green-200":  $gray-200,
   "gray-dark":  $gray-800
 ) !default;
 // scss-docs-end colors-map
@@ -318,7 +321,9 @@ $theme-colors: (
   "warning":    $warning,
   "danger":     $danger,
   "light":      $light,
-  "dark":       $dark
+  "dark":       $dark,
+  "teal-400":   $teal-400,
+  "gray-200":   $gray-200,
 ) !default;
 // scss-docs-end theme-colors-map
 
@@ -412,12 +417,16 @@ $spacer: 1rem !default;
 $spacers: (
   '0px': 0,
   '4px': $spacer * .25,
+  '6px': $spacer * .375,
   '8px': $spacer * .5,
+  '10px': $spacer * .625,
   '12px': $spacer * .75,
   '16px': $spacer,
   '18px': $spacer * 1.125,
   '20px': $spacer * 1.25,
   '24px': $spacer * 1.5,
+  '28px': $spacer * 1.75,
+  '32px': $spacer * 2,
   '40px': $spacer * 2.5,
   '48px': $spacer * 3,
   '56px': $spacer * 3.5,
@@ -552,7 +561,7 @@ $border-color-translucent:    rgba($black, .175) !default;
 // scss-docs-start border-radius-variables
 $border-radius:               .375rem !default;
 $border-radius-sm:            .25rem !default;
-$border-radius-lg:            .5rem !default;
+$border-radius-lg:            .625rem !default;
 $border-radius-xl:            1rem !default;
 $border-radius-xxl:           2rem !default;
 $border-radius-pill:          50rem !default;
@@ -562,7 +571,7 @@ $border-radius-2xl:           $border-radius-xxl !default; // Deprecated in v5.3
 // fusv-enable
 
 // scss-docs-start box-shadow-variables
-$box-shadow:                  0 .5rem 1rem rgba($black, .15) !default;
+$box-shadow:                  0 .375rem 1.5rem 0 rgba($black, .02) !default;
 $box-shadow-sm:               0 .125rem .25rem rgba($black, .075) !default;
 $box-shadow-lg:               0 1rem 3rem rgba($black, .175) !default;
 $box-shadow-inset:            inset 0 1px 2px rgba($black, .075) !default;
@@ -653,6 +662,9 @@ $font-sizes: (
   5: $h5-font-size,
   6: $h6-font-size,
 
+  '14px': $font-size-base * .875,
+  '16px': $font-size-base,
+  '18px': $font-size-base * 1.125,
   '20px': $font-size-base * 1.25,
   '24px': $font-size-base * 1.5,
   '32px': $font-size-base * 2,
@@ -810,7 +822,7 @@ $input-btn-focus-color:         $focus-ring-color !default;
 $input-btn-focus-blur:          $focus-ring-blur !default;
 $input-btn-focus-box-shadow:    $focus-ring-box-shadow !default;
 
-$input-btn-padding-y-sm:      .25rem !default;
+$input-btn-padding-y-sm:      .28125rem !default;
 $input-btn-padding-x-sm:      .5rem !default;
 $input-btn-font-size-sm:      $font-size-sm !default;
 
@@ -859,7 +871,7 @@ $btn-link-focus-shadow-rgb:   to-rgb(mix(color-contrast($link-color), $link-colo
 
 // Allows for customizing button radius independently from global border radius
 $btn-border-radius:           var(--#{$prefix}border-radius) !default;
-$btn-border-radius-sm:        var(--#{$prefix}border-radius-sm) !default;
+$btn-border-radius-sm:        5rem !default;
 $btn-border-radius-lg:        var(--#{$prefix}border-radius-lg) !default;
 
 $btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
@@ -948,27 +960,27 @@ $form-color-width:                      3rem !default;
 // scss-docs-end form-input-variables
 
 // scss-docs-start form-check-variables
-$form-check-input-width:                  1em !default;
+$form-check-input-width:                  1.25em !default;
 $form-check-min-height:                   $font-size-base * $line-height-base !default;
 $form-check-padding-start:                $form-check-input-width + .5em !default;
 $form-check-margin-bottom:                .125rem !default;
-$form-check-label-color:                  null !default;
+$form-check-label-color:                  inherit !default;
 $form-check-label-cursor:                 null !default;
 $form-check-transition:                   null !default;
 
 $form-check-input-active-filter:          brightness(90%) !default;
 
-$form-check-input-bg:                     $input-bg !default;
-$form-check-input-border:                 var(--#{$prefix}border-width) solid var(--#{$prefix}border-color) !default;
-$form-check-input-border-radius:          .25em !default;
+$form-check-input-bg:                     transparent !default;
+$form-check-input-border:                 var(--#{$prefix}border-width) solid var(--#{$prefix}primary) !default;
+$form-check-input-border-radius:          .375rem !default;
 $form-check-radio-border-radius:          50% !default;
-$form-check-input-focus-border:           $input-focus-border-color !default;
-$form-check-input-focus-box-shadow:       $focus-ring-box-shadow !default;
+$form-check-input-focus-border:           var(--#{$prefix}primary) !default;
+$form-check-input-focus-box-shadow:       null !default;
 
 $form-check-input-checked-color:          $component-active-color !default;
-$form-check-input-checked-bg-color:       $component-active-bg !default;
+$form-check-input-checked-bg-color:       var(--#{$prefix}teal-400) !default;
 $form-check-input-checked-border-color:   $form-check-input-checked-bg-color !default;
-$form-check-input-checked-bg-image:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$form-check-input-checked-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/></svg>") !default;
+$form-check-input-checked-bg-image:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' d='M4.5 8.73077L8.83732 14.2743C9.28599 14.8478 10.1775 14.7648 10.5127 14.1184L15.5 4.5' stroke='#{$form-check-input-checked-color}' stroke-width='2' stroke-linecap='round'/></svg>") !default;
 $form-check-radio-checked-bg-image:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='2' fill='#{$form-check-input-checked-color}'/></svg>") !default;
 
 $form-check-input-indeterminate-color:          $component-active-color !default;
@@ -1097,7 +1109,7 @@ $form-floating-transition:              opacity .1s ease-in-out, transform .1s e
 
 // scss-docs-start form-feedback-variables
 $form-feedback-margin-top:          $form-text-margin-top !default;
-$form-feedback-font-size:           $form-text-font-size !default;
+$form-feedback-font-size:           .625rem !default;
 $form-feedback-font-style:          $form-text-font-style !default;
 $form-feedback-valid-color:         $success !default;
 $form-feedback-invalid-color:       $danger !default;
@@ -1398,9 +1410,9 @@ $accordion-button-active-color:           var(--#{$prefix}primary-text-emphasis)
 // fusv-disable
 $accordion-button-focus-border-color:     $input-focus-border-color !default; // Deprecated in v5.3.3
 // fusv-enable
-$accordion-button-focus-box-shadow:       $btn-focus-box-shadow !default;
+$accordion-button-focus-box-shadow:       null !default;
 
-$accordion-icon-width:                    1.25rem !default;
+$accordion-icon-width:                    .875rem !default;
 $accordion-icon-color:                    $body-color !default;
 $accordion-icon-active-color:             $primary-text-emphasis !default;
 $accordion-icon-transition:               transform .2s ease-in-out !default;

@@ -193,6 +193,48 @@
   }
 }
 
+.navbar-toggler--filter {
+  --#{$prefix}btn-font-size: .875rem;
+  --#{$prefix}btn-line-height: 2;
+  --#{$prefix}btn-padding-x: 0;
+  --#{$prefix}btn-padding-y: 1rem;
+
+  --#{$prefix}btn-color: var(--#{$prefix}dark);
+
+  --#{$prefix}btn-bg: transparent;
+  --#{$prefix}btn-hover-bg: transparent;
+  --#{$prefix}btn-active-bg: transparent;
+  --#{$prefix}btn-disabled-bg: transparent;
+
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+
+  &::after,
+  &::before {
+    content: '';
+    height: .0625rem;
+    display: block;
+    background-image: linear-gradient(90deg, rgba(0, 68, 56, 0.00) 0%, rgba(0, 68, 56, 0.50) 50.34%, rgba(0, 68, 56, 0.00) 100%);
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  .icon {
+    --_size: 1.5rem;
+  }
+
+}
+
 // Keep as a separate element so folks can easily override it with another icon
 // or image file as needed.
 .navbar-nav-scroll {
