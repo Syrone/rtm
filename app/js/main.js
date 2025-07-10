@@ -16813,7 +16813,29 @@ return jQuery;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_header_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/header.js */ "./src/js/components/header.js");
+/* harmony import */ var _components_current_view_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/current-view.js */ "./src/js/components/current-view.js");
 
+
+
+/***/ }),
+
+/***/ "./src/js/components/current-view.js":
+/*!*******************************************!*\
+  !*** ./src/js/components/current-view.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+
+jquery__WEBPACK_IMPORTED_MODULE_0__(document).on('click', '[data-button-view]', function () {
+  const view = jquery__WEBPACK_IMPORTED_MODULE_0__(this).data('button-view');
+  const $container = jquery__WEBPACK_IMPORTED_MODULE_0__(this).closest('.section').find('[data-current-view]').first();
+  if ($container.length) {
+    $container.attr('data-current-view', view);
+  }
+});
 
 /***/ }),
 

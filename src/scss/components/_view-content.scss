@@ -1,0 +1,153 @@
+.view-content {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .375rem .625rem;
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  &[data-current-view="grid"] {
+
+    @include media-breakpoint-up(lg) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    @include media-breakpoint-up(xl) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem 1.5rem;
+    }
+  }
+
+  &[data-current-view="row"] {
+
+    @include media-breakpoint-up(lg) {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1.25rem;
+    }
+
+    @include media-breakpoint-up(xl) {
+      gap: 1.5rem;
+    }
+
+    .card {
+
+      @include media-breakpoint-up(lg) {
+        flex-direction: row;
+      }
+
+      &-tags {
+
+        @include media-breakpoint-up(lg) {
+          display: none;
+        }
+      }
+
+      &-picture,
+      &-body,
+      &-footer {
+
+        @include media-breakpoint-up(lg) {
+          margin: 0;
+        }
+      }
+
+      &-body,
+      &-footer {
+
+        @include media-breakpoint-up(lg) {
+          margin-block: .625rem;
+        }
+      }
+
+      &-picture {
+
+        img {
+
+          @include media-breakpoint-up(lg) {
+            max-width: 14.5rem;
+          }
+        }
+      }
+
+      &-body {
+
+        @include media-breakpoint-up(lg) {
+          margin-left: 1rem;
+        }
+
+        @include media-breakpoint-up(xl) {
+          margin-left: 1.5rem;
+        }
+
+        @include media-breakpoint-up(xxl) {
+          margin-left: 3rem;
+        }
+      }
+
+      &-content {
+
+        .card-tags {
+
+          @include media-breakpoint-up(lg) {
+            display: flex;
+          }
+        }
+      }
+
+      &-title {
+
+        @include media-breakpoint-up(lg) {
+          font-weight: 600;
+        }
+      }
+
+      &-list {
+
+        @include media-breakpoint-up(lg) {
+          gap: .25rem;
+        }
+      }
+
+      &-footer {
+
+        @include media-breakpoint-up(lg) {
+          justify-content: space-between;
+          margin-left: 1.25rem;
+          padding-left: 1.25rem;
+          position: relative;
+        }
+
+        @include media-breakpoint-up(xl) {
+          margin-left: 1.75rem;
+          padding-left: 1.75rem;
+        }
+
+        &::before {
+
+          @include media-breakpoint-up(lg) {
+            content: '';
+            display: block;
+            width: .0625rem;
+            background-image: linear-gradient(180deg, rgba(0, 68, 56, 0) 0%, rgba(0, 68, 56, 0.5) 50.34%, rgba(0, 68, 56, 0) 100%);
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+          }
+        }
+      }
+
+      &-price {
+
+        &-name {
+
+          @include media-breakpoint-up(lg) {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}

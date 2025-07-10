@@ -829,7 +829,7 @@ $input-btn-focus-color:         $focus-ring-color !default;
 $input-btn-focus-blur:          $focus-ring-blur !default;
 $input-btn-focus-box-shadow:    $focus-ring-box-shadow !default;
 
-$input-btn-padding-y-sm:      .28125rem !default;
+$input-btn-padding-y-sm:      .34375rem !default;
 $input-btn-padding-x-sm:      .5rem !default;
 $input-btn-font-size-sm:      $font-size-sm !default;
 
@@ -933,9 +933,9 @@ $input-disabled-color:                  null !default;
 $input-disabled-bg:                     var(--#{$prefix}secondary-bg) !default;
 $input-disabled-border-color:           null !default;
 
-$input-color:                           var(--#{$prefix}body-color) !default;
+$input-color:                           var(--#{$prefix}black) !default;
 $input-border-color:                    var(--#{$prefix}border-color) !default;
-$input-border-width:                    $input-btn-border-width !default;
+$input-border-width:                    0 !default;
 $input-box-shadow:                      var(--#{$prefix}box-shadow-inset) !default;
 
 $input-border-radius:                   var(--#{$prefix}border-radius) !default;
@@ -948,7 +948,7 @@ $input-focus-color:                     $input-color !default;
 $input-focus-width:                     $input-btn-focus-width !default;
 $input-focus-box-shadow:                $input-btn-focus-box-shadow !default;
 
-$input-placeholder-color:               var(--#{$prefix}secondary-color) !default;
+$input-placeholder-color:               rgba(var(--#{$prefix}black-rgb), .20) !default;
 $input-plaintext-color:                 var(--#{$prefix}body-color) !default;
 
 $input-height-border:                   calc(#{$input-border-width} * 2) !default; // stylelint-disable-line function-disallowed-list

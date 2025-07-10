@@ -89,7 +89,7 @@
                     </h3>
                     <form class="bg-gray-200 rounded-3 p-lg-12px py-28px px-20px shadow" style="--bs-bg-opacity: .50">
                       <div class="separator">
-                        <div class="accordion accordion--separator accordion--plaintext" id="accordion-filter">
+                        <div class="accordion accordion--separator accordion--plaintext">
                           <div class="accordion-item">
                             <div class="accordion-header">
                               <button class="accordion-button" type="button"
@@ -107,7 +107,7 @@
                                 </span>
                               </button>
                             </div>
-                            <div id="accordion-filter-0" class="accordion-collapse collapse show" data-bs-parent="#accordion-filter">
+                            <div id="accordion-filter-0" class="accordion-collapse collapse show">
                               <div class="accordion-body">
                                 <div class="d-flex flex-column gap-10px">
                                   <label class="form-check">
@@ -161,7 +161,7 @@
                                 </span>
                               </button>
                             </div>
-                            <div id="accordion-filter-1" class="accordion-collapse collapse" data-bs-parent="#accordion-filter">
+                            <div id="accordion-filter-1" class="accordion-collapse collapse">
                               <div class="accordion-body">
                                 <div class="d-flex flex-column gap-10px">
                                   <label class="form-check">
@@ -227,7 +227,7 @@
                                 </span>
                               </button>
                             </div>
-                            <div id="accordion-filter-2" class="accordion-collapse collapse" data-bs-parent="#accordion-filter">
+                            <div id="accordion-filter-2" class="accordion-collapse collapse">
                               <div class="accordion-body">
                                 <div class="d-flex flex-column gap-10px">
                                   <label class="form-check">
@@ -285,7 +285,7 @@
                                       <span>
                                         до
                                       </span>
-                                      <input type="text" class="form-control form-control-sm flex-fill" placeholder="9000" aria-label="до">
+                                      <input type="text" class="form-control form-control-sm flex-fill" placeholder="9000" value="9500" aria-label="до">
                                     </div>
                                   </div>
                                 </div>
@@ -320,7 +320,7 @@
                                       <span>
                                         до
                                       </span>
-                                      <input type="text" class="form-control form-control-sm flex-fill" placeholder="9000" aria-label="до">
+                                      <input type="text" class="form-control form-control-sm flex-fill" placeholder="9000" value="3900" aria-label="до">
                                     </div>
                                   </div>
                                 </div>
@@ -372,7 +372,7 @@
                                       <span>
                                         до
                                       </span>
-                                      <input type="text" class="form-control form-control-sm flex-fill" placeholder="9000" aria-label="до">
+                                      <input type="text" class="form-control form-control-sm flex-fill" placeholder="9000" value="9500" aria-label="до">
                                     </div>
                                   </div>
                                 </div>
@@ -443,7 +443,7 @@
                   </ul>
 
                   <div class="navbar-nav d-none d-xxl-flex align-items-center gap-24px">
-                    <div class="d-flex">
+                    <div class="d-inline-flex">
                       <div class="dropdown">
                         <button type="button" class="btn btn-bg-gradient btn-border-gradient dropdown-toggle"
                           data-bs-toggle="dropdown"
@@ -493,14 +493,16 @@
                     </div>
 
                     <div class="d-flex pe-4px">
-                      <button type="button" class="btn btn-plaintext btn-filter">
+                      <button type="button" class="btn btn-plaintext btn-filter"
+                        data-button-view="grid">
                         <span class="icon">
                           <svg>
                             <use xlink:href="img/icons/grid.svg#svg-grid"></use>
                           </svg>
                         </span>
                       </button>
-                      <button type="button" class="btn btn-plaintext btn-filter">
+                      <button type="button" class="btn btn-plaintext btn-filter"
+                        data-button-view="row">
                         <span class="icon">
                           <svg>
                             <use xlink:href="img/icons/rows.svg#svg-rows"></use>
@@ -511,7 +513,8 @@
                   </div>
                 </div>
 
-                <div class="grid-content">
+                <div class="view-content"
+                  data-current-view="grid">
                   @include('partials/card.html')
                   @include('partials/card.html')
                   @include('partials/card.html')
