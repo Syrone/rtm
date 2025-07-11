@@ -1,0 +1,43 @@
+.banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--#{$prefix}white);
+  background-color: #1f1f1f;
+  border-radius: 1rem;
+  position: relative;
+
+  @include media-breakpoint-up(md) {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  img {
+    mix-blend-mode: plus-lighter;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    text-align: center;
+    padding: 1.25rem calc(var(--#{$prefix}gutter-x) * .5);
+
+    h4 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: normal;
+      margin-bottom: 1.25rem;
+
+      @include media-breakpoint-up(md) {
+      }
+
+      @include media-breakpoint-up(lg) {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}

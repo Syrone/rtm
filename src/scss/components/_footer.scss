@@ -1,0 +1,62 @@
+.footer {
+
+  &-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .btn-phone {
+      --#{$prefix}btn-font-size: #{map-get($font-sizes, '32px')};
+
+      justify-content: start;
+      text-align: start;
+    }
+
+    &-callback {
+      --#{$prefix}btn-font-size: #{map-get($font-sizes, '10px')};
+      --#{$prefix}btn-border-radius: 5rem;
+      --#{$prefix}btn-padding-y: #{map-get($spacers, '6px')};
+      --#{$prefix}btn-padding-x: #{map-get($spacers, '14px')};
+
+      --#{$prefix}btn-color: var(--#{$prefix}black);
+
+      --#{$prefix}btn-border-color: rgba(var(--#{$prefix}gray-850-rgb), .50);
+      --#{$prefix}btn-hover-border-color: currentColor;
+      --#{$prefix}btn-active-border-color: currentColor;
+
+      display: inline-flex;
+      align-items: center;
+      gap: .25rem;
+      padding-right: #{map-get($spacers, '6px')};
+
+      .icon {
+        --_size: 1.75rem;
+      }
+    }
+  }
+
+  .navbar-brand {
+
+    &-link {
+      --#{$prefix}btn-color: rgba(var(--#{$prefix}primary-rgb), .70);
+      --#{$prefix}btn-hover-color: rgba(var(--#{$prefix}primary-rgb), 1);
+      --#{$prefix}btn-active-color: rgba(var(--#{$prefix}primary-rgb), 1);
+    }
+  }
+
+  .navbar-socials {
+    gap: 1rem;
+
+    .nav-link {
+      --#{$prefix}btn-color: rgba(var(--#{$prefix}primary-rgb), .50);
+      --#{$prefix}btn-hover-color: rgba(var(--#{$prefix}primary-rgb), 1);
+      --#{$prefix}btn-active-color: rgba(var(--#{$prefix}primary-rgb), 1);
+
+      box-shadow: unset;
+
+      .icon {
+        --_size: 2rem;
+      }
+    }
+  }
+}

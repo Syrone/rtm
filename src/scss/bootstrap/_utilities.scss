@@ -69,7 +69,7 @@ $utilities: map-merge(
       print: true,
       property: display,
       class: d,
-      values: inline inline-block block grid inline-grid table table-row table-cell flex inline-flex none
+      values: inline inline-block block grid inline-grid table table-row table-cell flex inline-flex contents none
     ),
     // scss-docs-end utils-display
     // scss-docs-start utils-shadow
@@ -96,6 +96,10 @@ $utilities: map-merge(
     "position": (
       property: position,
       values: static relative absolute fixed sticky
+    ),
+    "inset": (
+      property: inset,
+      values: $position-values
     ),
     "top": (
       property: top,
@@ -208,8 +212,13 @@ $utilities: map-merge(
     ),
     "max-width": (
       property: max-width,
+      responsive: true,
       class: mw,
-      values: (100: 100%)
+      values: (
+        100: 100%,
+        '520px': 32.5rem,
+        '360px': 22.5rem,
+      )
     ),
     "viewport-width": (
       property: width,
@@ -253,8 +262,7 @@ $utilities: map-merge(
       class: min-h,
       values: (
         '570px': 35.625rem,
-        '308px': 19.25rem,
-        '288px': 18rem
+        '308px': 19.25rem
       )
     ),
     // scss-docs-end utils-sizing
@@ -512,7 +520,13 @@ $utilities: map-merge(
     "font-family": (
       property: font-family,
       class: font,
-      values: (monospace: var(--#{$prefix}font-monospace))
+      values: map-merge(
+        $font-families,
+        (
+          monospace: var(--#{$prefix}font-monospace),
+          default: (system-ui, -apple-system),
+        )
+      ),
     ),
     "font-size": (
       responsive: true,
@@ -543,9 +557,22 @@ $utilities: map-merge(
       class: lh,
       values: (
         1: 1,
+        normal: normal,
         sm: $line-height-sm,
         base: $line-height-base,
         lg: $line-height-lg,
+      )
+    ),
+    "letter-spacing": (
+      property: letter-spacing,
+      responsive: true,
+      class: ls,
+      values: map-merge(
+        $letter-spacing,
+        (
+          normal: normal,
+          inherit: inherit,
+        )
       )
     ),
     "text-align": (
@@ -692,6 +719,28 @@ $utilities: map-merge(
         "center": center,
         "center-end": center right,
         "center-start": center left,
+        "top": top,
+        "bottom": bottom,
+        "60-bottom": 60% bottom,
+      )
+    ),
+    "background-repeat": (
+      property: background-repeat,
+      responsive: true,
+      class: bg-repeat,
+      values: (
+        "norepeat": no-repeat,
+        "repeat": repeat,
+      )
+    ),
+    "background-size": (
+      property: background-size,
+      responsive: true,
+      class: bg-size,
+      values: (
+        "cover": cover,
+        "contain": contain,
+        "auto": auto,
       )
     ),
     "bg-opacity": (
@@ -730,78 +779,73 @@ $utilities: map-merge(
     // scss-docs-start utils-border-radius
     "rounded": (
       property: border-radius,
+      responsive: true,
       class: rounded,
-      values: (
-        null: var(--#{$prefix}border-radius),
-        0: 0,
-        1: var(--#{$prefix}border-radius-sm),
-        2: var(--#{$prefix}border-radius),
-        3: var(--#{$prefix}border-radius-lg),
-        4: var(--#{$prefix}border-radius-xl),
-        5: var(--#{$prefix}border-radius-xxl),
-        circle: 50%,
-        pill: var(--#{$prefix}border-radius-pill)
-      )
+      values: map-merge(
+        $border-radiuses,
+        (
+          null: var(--#{$prefix}border-radius),
+          0: 0,
+          inherit: inherit,
+          circle: 50%,
+        )
+      ),
     ),
     "rounded-top": (
       property: border-top-left-radius border-top-right-radius,
+      responsive: true,
       class: rounded-top,
-      values: (
-        null: var(--#{$prefix}border-radius),
-        0: 0,
-        1: var(--#{$prefix}border-radius-sm),
-        2: var(--#{$prefix}border-radius),
-        3: var(--#{$prefix}border-radius-lg),
-        4: var(--#{$prefix}border-radius-xl),
-        5: var(--#{$prefix}border-radius-xxl),
-        circle: 50%,
-        pill: var(--#{$prefix}border-radius-pill)
-      )
+      values: map-merge(
+        $border-radiuses,
+        (
+          null: var(--#{$prefix}border-radius),
+          0: 0,
+          inherit: inherit,
+          circle: 50%,
+        )
+      ),
     ),
     "rounded-end": (
       property: border-top-right-radius border-bottom-right-radius,
+      responsive: true,
       class: rounded-end,
-      values: (
-        null: var(--#{$prefix}border-radius),
-        0: 0,
-        1: var(--#{$prefix}border-radius-sm),
-        2: var(--#{$prefix}border-radius),
-        3: var(--#{$prefix}border-radius-lg),
-        4: var(--#{$prefix}border-radius-xl),
-        5: var(--#{$prefix}border-radius-xxl),
-        circle: 50%,
-        pill: var(--#{$prefix}border-radius-pill)
-      )
+      values: map-merge(
+        $border-radiuses,
+        (
+          null: var(--#{$prefix}border-radius),
+          0: 0,
+          inherit: inherit,
+          circle: 50%,
+        )
+      ),
     ),
     "rounded-bottom": (
       property: border-bottom-right-radius border-bottom-left-radius,
+      responsive: true,
       class: rounded-bottom,
-      values: (
-        null: var(--#{$prefix}border-radius),
-        0: 0,
-        1: var(--#{$prefix}border-radius-sm),
-        2: var(--#{$prefix}border-radius),
-        3: var(--#{$prefix}border-radius-lg),
-        4: var(--#{$prefix}border-radius-xl),
-        5: var(--#{$prefix}border-radius-xxl),
-        circle: 50%,
-        pill: var(--#{$prefix}border-radius-pill)
-      )
+      values: map-merge(
+        $border-radiuses,
+        (
+          null: var(--#{$prefix}border-radius),
+          0: 0,
+          inherit: inherit,
+          circle: 50%,
+        )
+      ),
     ),
     "rounded-start": (
       property: border-bottom-left-radius border-top-left-radius,
+      responsive: true,
       class: rounded-start,
-      values: (
-        null: var(--#{$prefix}border-radius),
-        0: 0,
-        1: var(--#{$prefix}border-radius-sm),
-        2: var(--#{$prefix}border-radius),
-        3: var(--#{$prefix}border-radius-lg),
-        4: var(--#{$prefix}border-radius-xl),
-        5: var(--#{$prefix}border-radius-xxl),
-        circle: 50%,
-        pill: var(--#{$prefix}border-radius-pill)
-      )
+      values: map-merge(
+        $border-radiuses,
+        (
+          null: var(--#{$prefix}border-radius),
+          0: 0,
+          inherit: inherit,
+          circle: 50%,
+        )
+      ),
     ),
     // scss-docs-end utils-border-radius
     // scss-docs-start utils-visibility

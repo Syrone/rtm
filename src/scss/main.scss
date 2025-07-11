@@ -27,7 +27,7 @@
 @import "./bootstrap/card";
 @import "./bootstrap/accordion";
 @import "./bootstrap/badge";
-@import "../../node_modules/bootstrap/scss/alert";
+@import "./bootstrap/alert";
 @import "../../node_modules/bootstrap/scss/list-group";
 @import "./bootstrap/close";
 @import "./bootstrap/offcanvas";
@@ -41,4 +41,8 @@
 @import "./components/icons";
 @import "./components/header";
 @import "./components/separator";
+@import "./components/br";
 @import "./components/view-content";
+@import "./components/banner";
+@import "./components/choices";
+@import "./components/footer";

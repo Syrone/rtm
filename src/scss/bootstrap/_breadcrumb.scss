@@ -41,6 +41,8 @@
     --#{$prefix}btn-padding-y: 0;
 
     --#{$prefix}btn-color: inherit;
+    --#{$prefix}btn-hover-color: var(--#{$prefix}teal);
+    --#{$prefix}btn-active-color: var(--#{$prefix}teal);
   }
 
   .icon {

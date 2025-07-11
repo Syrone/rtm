@@ -1,0 +1,22 @@
+.br-top,
+.br-bottom {
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    height: .0625rem;
+    background-image: linear-gradient(90deg, rgba(var(--#{$prefix}primary-rgb), 0.00) 0%, rgba(var(--#{$prefix}primary-rgb), 0.50) 50.34%, rgba(var(--#{$prefix}primary-rgb), 0.00) 100%);
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+}
+
+.br-top::after {
+  top: 0;
+}
+
+.br-bottom::after {
+  bottom: 0;
+}

@@ -1,0 +1,137 @@
+//
+// Base styles
+//
+
+.alert {
+  // scss-docs-start alert-css-vars
+  --#{$prefix}alert-bg: transparent;
+  --#{$prefix}alert-padding-x: 1rem;
+  --#{$prefix}alert-padding-y: .625rem;
+  --#{$prefix}alert-margin-bottom: #{$alert-margin-bottom};
+  --#{$prefix}alert-color: inherit;
+  --#{$prefix}alert-border-color: transparent;
+  --#{$prefix}alert-border: #{$alert-border-width} solid var(--#{$prefix}alert-border-color);
+  --#{$prefix}alert-border-radius: #{$alert-border-radius};
+  --#{$prefix}alert-link-color: inherit;
+  // scss-docs-end alert-css-vars
+
+  grid-column: -1 / 1;
+  color: var(--#{$prefix}alert-color);
+  background-color: var(--#{$prefix}alert-bg);
+  margin-bottom: var(--#{$prefix}alert-margin-bottom);
+  border: var(--#{$prefix}alert-border);
+  @include border-radius(var(--#{$prefix}alert-border-radius));
+  padding: var(--#{$prefix}alert-padding-y) var(--#{$prefix}alert-padding-x);
+  position: relative;
+  z-index: 1;
+
+  @include media-breakpoint-up(lg) {
+    --#{$prefix}alert-padding-x: #{$alert-padding-x};
+    --#{$prefix}alert-padding-y: #{$alert-padding-y};
+    padding-left: 1.25rem;
+  }
+}
+
+// Headings for larger alerts
+.alert-heading {
+  // Specified to prevent conflicts of changing $headings-color
+  font-size: .75rem;
+  font-weight: 600;
+  color: inherit;
+  margin: 0;
+}
+
+// Provide class for links that match alerts
+.alert-link {
+  font-weight: $alert-link-font-weight;
+  color: var(--#{$prefix}alert-link-color);
+}
+
+.alert-background {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.alert-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .375rem;
+  font-size: .625rem;
+  color: var(--#{$prefix}white);
+
+  @include media-breakpoint-up(lg) {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.alert-btn {
+  --#{$prefix}btn-font-size: .625rem;
+  --#{$prefix}btn-font-weight: 600;
+  --#{$prefix}btn-border-radius: 1.25rem;
+
+  --#{$prefix}btn-color: var(--#{$prefix}white);
+  --#{$prefix}btn-hover-color: var(--#{$prefix}white);
+  --#{$prefix}btn-active-color: var(--#{$prefix}white);
+
+  --#{$prefix}btn-bg: rgba(var(--#{$prefix}gray-200-rgb), .25);
+  --#{$prefix}btn-hover-bg: rgba(var(--#{$prefix}gray-200-rgb), .375);
+  --#{$prefix}btn-active-bg: rgba(var(--#{$prefix}gray-200-rgb), .375);
+
+  --#{$prefix}btn-border-color: linear-gradient(-5deg, rgba(var(--#{$prefix}white-rgb), 1) 0%, rgba(var(--#{$prefix}white-rgb), .60) 30%, rgba(var(--#{$prefix}white-rgb), 0) 40%, rgba(var(--#{$prefix}white-rgb), 0) 60%, rgba(var(--#{$prefix}white-rgb), .60) 70%, rgba(var(--#{$prefix}white-rgb), .80) 100%);
+  --#{$prefix}btn-hover-border-color: linear-gradient(-5deg, rgba(var(--#{$prefix}white-rgb), 1) 0%, rgba(var(--#{$prefix}white-rgb), .60) 30%, rgba(var(--#{$prefix}white-rgb), 0) 40%, rgba(var(--#{$prefix}white-rgb), 0) 60%, rgba(var(--#{$prefix}white-rgb), .60) 70%, rgba(var(--#{$prefix}white-rgb), .80) 100%);
+  --#{$prefix}btn-active-border-color: linear-gradient(-5deg, rgba(var(--#{$prefix}white-rgb), 1) 0%, rgba(var(--#{$prefix}white-rgb), .60) 30%, rgba(var(--#{$prefix}white-rgb), 0) 40%, rgba(var(--#{$prefix}white-rgb), 0) 60%, rgba(var(--#{$prefix}white-rgb), .60) 70%, rgba(var(--#{$prefix}white-rgb), .80) 100%);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .375rem;
+  white-space: nowrap;
+  padding-right: .375rem;
+  backdrop-filter: blur(.125rem);
+}
+
+
+// Dismissible alerts
+//
+// Expand the right padding and account for the close button's positioning.
+
+.alert-dismissible {
+  padding-right: $alert-dismissible-padding-r;
+
+  // Adjust close link position
+  .btn-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: $stretched-link-z-index + 1;
+    padding: $alert-padding-y * 1.25 $alert-padding-x;
+  }
+}
+
+
+// scss-docs-start alert-modifiers
+// Generate contextual modifier classes for colorizing the alert
+@each $state in map-keys($theme-colors) {
+  .alert-#{$state} {
+    --#{$prefix}alert-color: var(--#{$prefix}#{$state}-text-emphasis);
+    --#{$prefix}alert-bg: var(--#{$prefix}#{$state}-bg-subtle);
+    --#{$prefix}alert-border-color: var(--#{$prefix}#{$state}-border-subtle);
+    --#{$prefix}alert-link-color: var(--#{$prefix}#{$state}-text-emphasis);
+  }
+}
+// scss-docs-end alert-modifiers

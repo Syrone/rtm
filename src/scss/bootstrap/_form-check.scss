@@ -54,6 +54,7 @@
     border-color: $form-check-input-checked-border-color;
 
     &[type="checkbox"] {
+
       @if $enable-gradients {
         --#{$prefix}form-check-bg-image: #{escape-svg($form-check-input-checked-bg-image)}, var(--#{$prefix}gradient);
       } @else {
@@ -62,6 +63,7 @@
     }
 
     &[type="radio"] {
+
       @if $enable-gradients {
         --#{$prefix}form-check-bg-image: #{escape-svg($form-check-radio-checked-bg-image)}, var(--#{$prefix}gradient);
       } @else {
@@ -172,6 +174,58 @@
   @include color-mode(dark) {
     .form-switch .form-check-input:not(:checked):not(:focus) {
       --#{$prefix}form-switch-bg: #{escape-svg($form-switch-bg-image-dark)};
+    }
+  }
+}
+
+
+
+.form-check-md {
+
+  .form-check-input {
+    width: 1em;
+    height: 1em;
+  }
+
+  .form-check-label {
+    font-size: .625rem;
+    line-height: normal;
+  }
+}
+
+
+
+.form-check--light {
+
+  .form-check-input {
+    --#{$prefix}form-check-bg: rgba(var(--#{$prefix}white-rgb), .50);
+
+    border: none;
+
+    &[type="checkbox"] {
+      @include border-radius(.25rem);
+    }
+
+    &:checked {
+      background-color: var(--#{$prefix}form-check-bg);
+
+      &[type="checkbox"] {
+
+        @if $enable-gradients {
+          --#{$prefix}form-check-bg-image: #{escape-svg($form-check-input-checked-bg-image--light)}, var(--#{$prefix}gradient);
+        } @else {
+          --#{$prefix}form-check-bg-image: #{escape-svg($form-check-input-checked-bg-image--light)};
+        }
+      }
+
+      &[type="radio"] {
+
+        @if $enable-gradients {
+          --#{$prefix}form-check-bg-image: #{escape-svg($form-check-radio-checked-bg-image)}, var(--#{$prefix}gradient);
+        } @else {
+          --#{$prefix}form-check-bg-image: #{escape-svg($form-check-radio-checked-bg-image)};
+        }
+      }
     }
   }
 }
