@@ -194,10 +194,34 @@
   --#{$prefix}btn-active-border-color: var(--#{$prefix}teal-400);
 }
 
+.btn-outline-teal-400 {
+  --#{$prefix}btn-color: var(--#{$prefix}black);
+  --#{$prefix}btn-hover-color: var(--#{$prefix}black);
+  --#{$prefix}btn-active-color: var(--#{$prefix}black);
+
+  --#{$prefix}btn-bg: transparent;
+  --#{$prefix}btn-hover-bg: transparent;
+  --#{$prefix}btn-active-bg: transparent;
+
+  --#{$prefix}btn-border-color: var(--#{$prefix}gray-450);
+  --#{$prefix}btn-hover-border-color: var(--#{$prefix}teal-400);
+  --#{$prefix}btn-active-border-color: var(--#{$prefix}teal-400);
+  --#{$prefix}btn-disabled-color: var(--#{$prefix}gray-450);
+}
+
 .btn-transparent-teal-400 {
   --#{$prefix}btn-color: var(--#{$prefix}black);
+  --#{$prefix}btn-hover-color: var(--#{$prefix}white);
+  --#{$prefix}btn-active-color: var(--#{$prefix}white);
+
   --#{$prefix}btn-bg: transparent;
+  --#{$prefix}btn-hover-bg: var(--#{$prefix}teal-400);
+  --#{$prefix}btn-active-bg: var(--#{$prefix}teal-400);
+
   --#{$prefix}btn-border-color: transparent;
+  --#{$prefix}btn-hover-border-color: var(--#{$prefix}teal-400);
+  --#{$prefix}btn-active-border-color: var(--#{$prefix}teal-400);
+  --#{$prefix}btn-disabled-color: var(--#{$prefix}white);
 }
 
 .btn-plaintext {
@@ -294,6 +318,19 @@
   .icon {
     --_size: 1.5rem;
   }
+}
+
+.btn-leasing {
+  --#{$prefix}btn-font-size: 1rem;
+  --#{$prefix}btn-font-weight: 600;
+
+  --#{$prefix}btn-hover-color: var(--#{$prefix}teal-400);
+  --#{$prefix}btn-active-color: var(--#{$prefix}teal-400);
+
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  text-align: start;
 }
 
 

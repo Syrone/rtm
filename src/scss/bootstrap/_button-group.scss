@@ -153,7 +153,18 @@
 }
 
 
+
+.btn-group--gap {
+  gap: .5rem;
+
+  > .btn:not(:last-child):not(.dropdown-toggle),
+  :not(.btn-check:first-child) + .btn {
+    border-radius: var(--#{$prefix}btn-border-radius);
+  }
+}
+
 .btn-group--bordered {
+  gap: unset;
   border: var(--#{$prefix}border-width) solid #DDDFDF;
   border-radius: .5rem;
   padding: .125rem;

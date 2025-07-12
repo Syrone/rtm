@@ -10,7 +10,8 @@ $white:    #fff !default;
 $gray-100: #f1f8f6 !default;
 $gray-200: #e0e0e0 !default;
 $gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
+$gray-400: #d5d9df !default;
+$gray-450: #dddfdf !default;
 $gray-500: #adb5bd !default;
 $gray-600: #6c757d !default;
 $gray-700: #455A64 !default;
@@ -322,7 +323,10 @@ $theme-colors: (
   "dark":       $dark,
   "teal":       $teal,
   "teal-400":   $teal-400,
+  "orange-600": $orange-600,
   "gray-200":   $gray-200,
+  "gray-400":   $gray-400,
+  "gray-450":   $gray-450,
   "gray-700":   $gray-700,
   "gray-850":   $gray-850,
   "instock":  #4caf50,
@@ -423,6 +427,7 @@ $gradient-hero: linear-gradient(to bottom, #e9edf0 0%, #f3f5f7 60%, #c4d3dc 100%
 $spacer: 1rem !default;
 $spacers: (
   '0px': 0,
+  '2px': $spacer * .125,
   '4px': $spacer * .25,
   '6px': $spacer * .375,
   '7px': $spacer * .4375,
@@ -436,6 +441,7 @@ $spacers: (
   '24px': $spacer * 1.5,
   '28px': $spacer * 1.75,
   '32px': $spacer * 2,
+  '36px': $spacer * 2.25,
   '40px': $spacer * 2.5,
   '48px': $spacer * 3,
   '56px': $spacer * 3.5,
@@ -707,8 +713,10 @@ $font-sizes: (
   '18px': $font-size-base * 1.125,
   '20px': $font-size-base * 1.25,
   '24px': $font-size-base * 1.5,
+  '28px': $font-size-base * 1.75,
   '32px': $font-size-base * 2,
   '36px': $font-size-base * 2.25,
+  '38px': $font-size-base * 2.375,
   '50px': $font-size-base * 3.125,
 ) !default;
 // scss-docs-end font-sizes

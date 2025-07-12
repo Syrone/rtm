@@ -1,4 +1,6 @@
 import './components/header.js'
 import './components/choices.js'
 import './components/current-view.js'
+import './components/counter.js'
 import './components/transfer.js'
+import './components/swipers.js'
