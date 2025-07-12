@@ -423,6 +423,7 @@ $prefix:                      $variable-prefix !default;
 // scss-docs-start variable-gradient
 $gradient: linear-gradient(180deg, rgba($white, .15), rgba($white, 0)) !default;
 $gradient-hero: linear-gradient(to bottom, #e9edf0 0%, #f3f5f7 60%, #c4d3dc 100%) !default;
+$gradient-warm: linear-gradient(90deg, #{$orange-600} 0%, #{$orange-300} 50%, #{$orange-600} 100%) !default;
 $gradient-border: linear-gradient(90deg, rgba(var(--#{$prefix}primary-rgb), 0) 0%, rgba(var(--#{$prefix}primary-rgb), 0.50) 50%, rgba(var(--#{$prefix}primary-rgb), 0) 100%) !default;
 // scss-docs-end variable-gradient
 
@@ -906,8 +907,8 @@ $input-btn-padding-x-sm:      .5rem !default;
 $input-btn-font-size-sm:      $font-size-sm !default;
 
 $input-btn-padding-y-lg:      .5rem !default;
-$input-btn-padding-x-lg:      1rem !default;
-$input-btn-font-size-lg:      $font-size-lg !default;
+$input-btn-padding-x-lg:      1.25rem !default;
+$input-btn-font-size-lg:      map-get($font-sizes, '16px') !default;
 
 $input-btn-border-width:      var(--#{$prefix}border-width) !default;
 // scss-docs-end input-btn-variables
@@ -1031,7 +1032,7 @@ $input-height-inner-quarter:            add($input-line-height * .25em, $input-p
 
 $input-height:                          add($input-line-height * 1em, add($input-padding-y * 2, $input-height-border, false)) !default;
 $input-height-sm:                       add($input-line-height * 1em, add($input-padding-y-sm * 2, $input-height-border, false)) !default;
-$input-height-lg:                       add($input-line-height * 1em, add($input-padding-y-lg * 2, $input-height-border, false)) !default;
+$input-height-lg:                       3.5rem !default;
 
 $input-transition:                      border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
 
@@ -1188,7 +1189,7 @@ $form-floating-transition:              opacity .1s ease-in-out, transform .1s e
 // Form validation
 
 // scss-docs-start form-feedback-variables
-$form-feedback-margin-top:          $form-text-margin-top !default;
+$form-feedback-margin-top:          0rem !default;
 $form-feedback-font-size:           .625rem !default;
 $form-feedback-font-style:          $form-text-font-style !default;
 $form-feedback-valid-color:         $success !default;
@@ -1606,16 +1607,16 @@ $modal-inner-padding:               $spacer !default;
 
 $modal-footer-margin-between:       .5rem !default;
 
-$modal-dialog-margin:               .5rem !default;
+$modal-dialog-margin:               $grid-gutter-width * .5 !default;
 $modal-dialog-margin-y-sm-up:       1.75rem !default;
 
 $modal-title-line-height:           $line-height-base !default;
 
 $modal-content-color:               var(--#{$prefix}body-color) !default;
-$modal-content-bg:                  var(--#{$prefix}body-bg) !default;
+$modal-content-bg:                  var(--#{$prefix}gray-150) !default;
 $modal-content-border-color:        var(--#{$prefix}border-color-translucent) !default;
-$modal-content-border-width:        var(--#{$prefix}border-width) !default;
-$modal-content-border-radius:       var(--#{$prefix}border-radius-lg) !default;
+$modal-content-border-width:        0rem !default;
+$modal-content-border-radius:       map-get($border-radiuses, '12px') !default;
 $modal-content-inner-border-radius: subtract($modal-content-border-radius, $modal-content-border-width) !default;
 $modal-content-box-shadow-xs:       var(--#{$prefix}box-shadow-sm) !default;
 $modal-content-box-shadow-sm-up:    var(--#{$prefix}box-shadow) !default;
@@ -1625,8 +1626,8 @@ $modal-backdrop-opacity:            .5 !default;
 
 $modal-header-border-color:         var(--#{$prefix}border-color) !default;
 $modal-header-border-width:         $modal-content-border-width !default;
-$modal-header-padding-y:            $modal-inner-padding !default;
-$modal-header-padding-x:            $modal-inner-padding !default;
+$modal-header-padding-y:            2.5rem !default;
+$modal-header-padding-x:            1.25rem !default;
 $modal-header-padding:              $modal-header-padding-y $modal-header-padding-x !default; // Keep this for backwards compatibility
 
 $modal-footer-bg:                   null !default;

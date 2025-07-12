@@ -309,7 +309,9 @@
                                 -
                               </button>
                             </div>
-                            <button type="button" class="btn btn-40px btn-primary flex-fill">
+                            <button type="button" class="btn btn-40px btn-primary flex-fill"
+                              data-bs-toggle="modal"
+                              data-bs-target="#modal-order">
                               Заказать
                             </button>
                           </div>
@@ -365,7 +367,7 @@
                         <div class="col-lg-6">
                           <div class="h-100 d-flex">
                             <div class="input-group flex-fill">
-                              <input type="text" class="form-control" placeholder="Тариф электроэнергии" aria-label="Тариф электроэнергии">
+                              <input type="text" class="form-control form-control-lg" placeholder="Тариф электроэнергии" aria-label="Тариф электроэнергии">
                               <span class="input-group-text">
                                 руб./ кВт*ч
                               </span>
@@ -497,27 +499,7 @@
                   </div>
                 </div>
 
-                <div class="alert" role="alert">
-                  <span class="alert-background d-none d-lg-block" style="background-image: url(./img/bg/banner.webp);"></span>
-                  <span class="alert-background d-lg-none" style="background-image: url(./img/bg/banner--mobile.webp);"></span>
-                  <div class="alert-content">
-                    <h4 class="alert-heading">Нужна помошь в выборе устройства?</h4>
-                    <p class="d-none d-lg-block">
-                      Закажите бесплатный обратный звонок и наши специалисты свяжутся с вами
-                    </p>
-                    <div class="d-flex flex-lg-row flex-column align-self-lg-center align-self-stretch">
-                      <button type="button" class="btn btn-bg-gradient btn-border-gradient alert-btn">
-                        <span>Заказать обратный звонок</span>
-
-                        <span class="icon">
-                          <svg>
-                            <use xlink:href="img/icons/phone-bordered.svg#svg-phone-bordered"></use>
-                          </svg>
-                        </span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
+                @include('partials/alert.html')
               </div>
             </div>
 
@@ -831,7 +813,7 @@
           <div class="d-flex flex-column gap-32px">
             <div class="d-flex">
               <h2 class="d-flex mb-0px fs-24px fs-lg-36px fw-medium lh-1">
-                <a href="#" class="btn btn-plaintext btn-title">
+                <a href="./" class="btn btn-plaintext btn-title">
                   <span>Другие предложения</span>
 
                   <span class="icon">
@@ -1114,7 +1096,7 @@
                   </div>
                 </label>
 
-                <button type="submit" class="btn btn-40px btn-warm btn-bg-gradient btn-border-gradient">
+                <button type="submit" class="btn btn-40px btn-gradient-warm btn-bg-gradient btn-border-gradient">
                   Оставить заявку
                 </button>
               </div>
@@ -1126,6 +1108,8 @@
 
     @include('partials/footer.html')
   </div>
+
+  @include('partials/modals.html')
 </body>
 
 </html>

@@ -164,7 +164,7 @@
 }
 // scss-docs-end btn-variant-loops
 
-.btn-warm {
+.btn-gradient-warm {
   --#{$prefix}btn-font-size: .75rem;
   --#{$prefix}btn-font-weight: 500;
   --#{$prefix}btn-border-width: .0625rem;
@@ -512,6 +512,8 @@
 }
 
 .btn-lg {
+  height: #{$input-height-lg};
+
   @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-border-radius-lg);
 }
 

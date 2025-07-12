@@ -193,6 +193,19 @@
   }
 }
 
+.form-check-lg {
+
+  .form-check-input {
+    width: 1.5em;
+    height: 1.5em;
+  }
+
+  .form-check-label {
+    font-size: .75rem;
+    line-height: normal;
+  }
+}
+
 
 
 .form-check--light {
@@ -227,5 +240,38 @@
         }
       }
     }
+  }
+}
+
+.form-check--gradient-warm {
+
+  .form-check-input {
+    --#{$prefix}form-check-bg: rgba(var(--#{$prefix}white-rgb), 1);
+
+    border: none;
+
+    &[type="checkbox"] {
+      @include border-radius(.25rem);
+    }
+
+    &:checked {
+      background-color: var(--#{$prefix}form-check-bg);
+
+      &[type="checkbox"] {
+        --#{$prefix}form-check-bg-image: #{escape-svg($form-check-input-checked-bg-image)}, #{$gradient-warm};
+
+        box-shadow: inset 0 0 .75rem 0 rgba(var(--#{$prefix}white-rgb), .75);
+      }
+
+      &[type="radio"] {
+        --#{$prefix}form-check-bg-image: #{escape-svg($form-check-radio-checked-bg-image)}, #{$gradient-warm};
+
+        box-shadow: inset 0 0 .75rem 0 rgba(var(--#{$prefix}white-rgb), .75);
+      }
+    }
+  }
+
+  .form-check-label {
+    color: var(--#{$prefix}gray-600);
   }
 }

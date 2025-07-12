@@ -1,14 +1,18 @@
 .counter {
+  --_bg: transparent;
+  --_border-radius: 1.25rem;
+
   display: flex;
   color: var(--#{$prefix}primary);
   background-color: transparent;
   border: var(--#{$prefix}border-width) solid var(--#{$prefix}primary);
-  border-radius: 1.25rem;
+  border-radius: var(--_border-radius);
 
   &-current {
     flex: 1 1 auto;
     display: flex;
     justify-content: center;
+    background-color: var(--_bg);
     margin-block: .25rem;
     padding-inline: .75rem;
     position: relative;
@@ -49,8 +53,12 @@
     --#{$prefix}btn-font-size: inherit;
     --#{$prefix}btn-line-height: 1;
     --#{$prefix}btn-border-width: 0;
-    --#{$prefix}btn-border-radius: inherit;
+    --#{$prefix}btn-border-radius: var(--_border-radius);
     --#{$prefix}btn-padding-x: 1rem;
+
+    --#{$prefix}btn-bg: var(--_bg);
+    --#{$prefix}btn-hover-bg: var(--_bg);
+    --#{$prefix}btn-active-bg: var(--_bg);
 
     &:first-child {
       border-top-right-radius: 0;
@@ -65,12 +73,16 @@
 }
 
 .counter--fill {
+  --_bg: var(--#{$prefix}gray-150);
+  --_border-radius: var(--#{$prefix}border-radius);
+
+  gap: .125rem;
   font-size: 2rem;
-  background-color: var(--#{$prefix}gray-150);
   border: none;
   border-radius: var(--#{$prefix}border-radius);
 
   .counter-current {
+    margin: 0;
 
     &::after,
     &::before {
@@ -85,5 +97,22 @@
 }
 
 .counter-lg {
-  height: 3.5rem;
+
+  .counter-current {
+
+    .form-control-plaintext {
+      min-height: #{$input-height-lg};
+      font-family: var(--#{$prefix}font-roboto);
+      font-weight: 700;
+      color: var(--#{$prefix}primary);
+      @include font-size($input-font-size-lg);
+
+      &::placeholder {
+        font-family: var(--#{$prefix}font-sans-serif);
+        font-size: .75rem;
+        font-weight: 400;
+      }
+    }
+
+  }
 }

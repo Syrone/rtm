@@ -168,6 +168,9 @@
 
 .form-control-lg {
   min-height: $input-height-lg;
+  font-family: var(--#{$prefix}font-roboto);
+  font-weight: 700;
+  color: var(--#{$prefix}primary);
   padding: $input-padding-y-lg $input-padding-x-lg;
   @include font-size($input-font-size-lg);
   @include border-radius($input-border-radius-lg);
@@ -176,6 +179,12 @@
     padding: $input-padding-y-lg $input-padding-x-lg;
     margin: (-$input-padding-y-lg) (-$input-padding-x-lg);
     margin-inline-end: $input-padding-x-lg;
+  }
+
+  &::placeholder {
+    font-family: var(--#{$prefix}font-sans-serif);
+    font-size: .75rem;
+    font-weight: 400;
   }
 }
 
