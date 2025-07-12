@@ -216,8 +216,10 @@ $utilities: map-merge(
       class: mw,
       values: (
         100: 100%,
+        '632px': 39.5rem,
         '520px': 32.5rem,
         '360px': 22.5rem,
+        '260px': 16.75rem,
       )
     ),
     "viewport-width": (
@@ -763,7 +765,10 @@ $utilities: map-merge(
     "gradient": (
       property: background-image,
       class: bg,
-      values: (gradient: var(--#{$prefix}gradient))
+      values: (
+        gradient: var(--#{$prefix}gradient),
+        gradient-hero: var(--#{$prefix}gradient-hero),
+      )
     ),
     // scss-docs-start utils-interaction
     "user-select": (

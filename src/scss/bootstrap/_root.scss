@@ -45,6 +45,7 @@
   --#{$prefix}font-monospace: #{inspect($font-family-monospace)};
   --#{$prefix}font-roboto: #{inspect($font-family-roboto)};
   --#{$prefix}gradient: #{$gradient};
+  --#{$prefix}gradient-hero: #{$gradient-hero};
 
   // Root and body
   // scss-docs-start root-body-variables
