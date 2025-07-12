@@ -226,6 +226,21 @@ $utilities: map-merge(
         )
       )
     ),
+    "min-width": (
+      property: min-width,
+      responsive: true,
+      class: min-w,
+      values: map-merge(
+        $sizes,
+        (
+          25: 25%,
+          50: 50%,
+          75: 75%,
+          100: 100%,
+          auto: auto
+        )
+      )
+    ),
     "viewport-width": (
       property: width,
       class: vw,
