@@ -65,3 +65,21 @@
     }
   }
 }
+
+
+.other-swiper {
+
+  .swiper {
+    margin-inline: calc(var(--#{$prefix}gutter-x) * -.5);
+    padding-inline: calc(var(--#{$prefix}gutter-x) * .5);
+
+    @include media-breakpoint-up(sm) {
+      margin-inline: unset;
+      padding-inline: unset;
+    }
+
+    &-slide {
+      width: 12.5rem;
+    }
+  }
+}

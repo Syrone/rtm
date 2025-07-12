@@ -37,6 +37,8 @@
     .form-control-plaintext {
       max-width: 5ch;
       width: 1em;
+      min-width: 0;
+      flex: 1 1;
       font-size: inherit;
       padding: 0;
       text-align: center;
@@ -45,6 +47,7 @@
 
   &-btn {
     --#{$prefix}btn-font-size: inherit;
+    --#{$prefix}btn-line-height: 1;
     --#{$prefix}btn-border-width: 0;
     --#{$prefix}btn-border-radius: inherit;
     --#{$prefix}btn-padding-x: 1rem;
@@ -59,4 +62,28 @@
       border-bottom-left-radius: 0;
     }
   }
+}
+
+.counter--fill {
+  font-size: 2rem;
+  background-color: var(--#{$prefix}gray-150);
+  border: none;
+  border-radius: var(--#{$prefix}border-radius);
+
+  .counter-current {
+
+    &::after,
+    &::before {
+      all: unset;
+    }
+
+    .form-control-plaintext {
+      max-width: 5rem;
+      font-size: .75rem;
+    }
+  }
+}
+
+.counter-lg {
+  height: 3.5rem;
 }

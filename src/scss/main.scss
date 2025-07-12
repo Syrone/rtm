@@ -10,7 +10,7 @@
 @import "../../node_modules/bootstrap/scss/mixins";
 @import "./bootstrap/utilities";
 @import "./bootstrap/root";
-@import "../../node_modules/bootstrap/scss/reboot";
+@import "./bootstrap/reboot";
 
 @import "../../node_modules/bootstrap/scss/type";
 @import "../../node_modules/bootstrap/scss/images";
@@ -28,7 +28,7 @@
 @import "./bootstrap/accordion";
 @import "./bootstrap/badge";
 @import "./bootstrap/alert";
-@import "../../node_modules/bootstrap/scss/list-group";
+@import "./bootstrap/list-group";
 @import "./bootstrap/close";
 @import "./bootstrap/offcanvas";
 

@@ -10,7 +10,7 @@
       content: '';
       display: block;
       height: .0625rem;
-      background-image: linear-gradient(90deg, rgba(var(--#{$prefix}primary-rgb), 0.00) 0%, rgba(var(--#{$prefix}primary-rgb), 0.50) 50.34%, rgba(var(--#{$prefix}primary-rgb), 0.00) 100%);
+      background-image: #{$gradient-border};
       position: absolute;
       top: 0;
       left: 0;

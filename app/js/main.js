@@ -32865,6 +32865,23 @@ jquery__WEBPACK_IMPORTED_MODULE_0__('.product-swiper').each(function () {
     });
   }
 });
+jquery__WEBPACK_IMPORTED_MODULE_0__('.other-swiper').each(function () {
+  const $wrapper = jquery__WEBPACK_IMPORTED_MODULE_0__(this);
+  const $swiper = $wrapper.find('.swiper')[0];
+  if (!$swiper) return;
+  new swiper__WEBPACK_IMPORTED_MODULE_1__["default"]($swiper, {
+    slidesPerView: 'auto',
+    spaceBetween: 12,
+    breakpoints: {
+      0: {
+        slidesPerView: 'auto'
+      },
+      992: {
+        slidesPerView: 4
+      }
+    }
+  });
+});
 
 /***/ }),
 

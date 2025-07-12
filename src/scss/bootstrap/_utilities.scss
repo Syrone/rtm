@@ -190,6 +190,7 @@ $utilities: map-merge(
       class: border-opacity,
       values: (
         10: .1,
+        15: .15,
         25: .25,
         50: .5,
         75: .75,
@@ -214,13 +215,15 @@ $utilities: map-merge(
       property: max-width,
       responsive: true,
       class: mw,
-      values: (
-        75: 75%,
-        100: 100%,
-        '632px': 39.5rem,
-        '520px': 32.5rem,
-        '360px': 22.5rem,
-        '260px': 16.75rem,
+      values: map-merge(
+        $sizes,
+        (
+          25: 25%,
+          50: 50%,
+          75: 75%,
+          100: 100%,
+          auto: auto
+        )
       )
     ),
     "viewport-width": (
@@ -235,6 +238,7 @@ $utilities: map-merge(
     ),
     "height": (
       property: height,
+      responsive: true,
       class: h,
       values: (
         25: 25%,
@@ -264,6 +268,8 @@ $utilities: map-merge(
       responsive: true,
       class: min-h,
       values: (
+        100: 100%,
+        auto: auto,
         '570px': 35.625rem,
         '308px': 19.25rem
       )
@@ -527,6 +533,8 @@ $utilities: map-merge(
         $font-families,
         (
           monospace: var(--#{$prefix}font-monospace),
+          roboto: var(--#{$prefix}font-roboto),
+          manrope: var(--#{$prefix}font-manrope),
           default: (system-ui, -apple-system),
         )
       ),
@@ -544,6 +552,7 @@ $utilities: map-merge(
     ),
     "font-weight": (
       property: font-weight,
+      responsive: true,
       class: fw,
       values: (
         lighter: $font-weight-lighter,
@@ -639,6 +648,7 @@ $utilities: map-merge(
         25: .25,
         50: .5,
         75: .75,
+        90: .9,
         100: 1
       )
     ),
@@ -750,6 +760,7 @@ $utilities: map-merge(
       css-var: true,
       class: bg-opacity,
       values: (
+        5: .05,
         10: .1,
         25: .25,
         50: .5,

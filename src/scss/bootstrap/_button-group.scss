@@ -165,7 +165,7 @@
 
 .btn-group--bordered {
   gap: unset;
-  border: var(--#{$prefix}border-width) solid #DDDFDF;
+  border: var(--#{$prefix}border-width) solid var(--#{$prefix}gray-450);
   border-radius: .5rem;
   padding: .125rem;
 

@@ -28,3 +28,22 @@ $('.product-swiper').each(function () {
     });
   }
 });
+
+$('.other-swiper').each(function () {
+  const $wrapper = $(this);
+  const $swiper = $wrapper.find('.swiper')[0];
+
+  if (!$swiper) return;
+  new Swiper($swiper, {
+    slidesPerView: 'auto',
+    spaceBetween: 12,
+    breakpoints: {
+      0: {
+        slidesPerView: 'auto',
+      },
+      992: {
+        slidesPerView: 4,
+      },
+    }
+  });
+});

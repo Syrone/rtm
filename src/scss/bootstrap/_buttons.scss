@@ -333,6 +333,36 @@
   text-align: start;
 }
 
+.btn-title {
+  --#{$prefix}btn-font-size: inherit;
+  --#{$prefix}btn-font-weight: inherit;
+  --#{$prefix}btn-line-height: inherit;
+  --#{$prefix}btn-border-width: 0;
+  --#{$prefix}btn-border-radius: 0;
+  --#{$prefix}btn-padding-x: 0;
+  --#{$prefix}btn-padding-y: 0;
+
+  --#{$prefix}btn-color: inherit;
+  --#{$prefix}btn-hover-color: var(--#{$prefix}teal-400);
+  --#{$prefix}btn-active-color: var(--#{$prefix}teal-400);
+  --#{$prefix}btn-disabled-color: var(--#{$prefix}btn-color);
+
+  --#{$prefix}btn-bg: transparent;
+  --#{$prefix}btn-border-color: transparent;
+
+  display: inline-flex;
+  align-items: center;
+  gap: .75rem;
+
+  @include media-breakpoint-up(lg) {
+    gap: 1.25rem;
+  }
+
+  .icon {
+    --_size: 1.25rem;
+  }
+}
+
 
 //
 // Link buttons

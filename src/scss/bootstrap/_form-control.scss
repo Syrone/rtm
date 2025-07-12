@@ -132,6 +132,13 @@
     outline: 0;
   }
 
+  // Placeholder
+  &::placeholder {
+    color: $input-placeholder-color;
+    // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
+    opacity: 1;
+  }
+
   &.form-control-sm,
   &.form-control-lg {
     padding-right: 0;
