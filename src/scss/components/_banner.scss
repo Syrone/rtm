@@ -1,20 +1,56 @@
 .banner {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   color: var(--#{$prefix}white);
   background-color: #1f1f1f;
   border-radius: 1rem;
   position: relative;
+  overflow: hidden;
 
   @include media-breakpoint-up(md) {
-    flex-direction: row;
     align-items: flex-end;
-    justify-content: space-between;
   }
 
-  img {
-    mix-blend-mode: plus-lighter;
+  @media (hover: hover) {
+
+    &:hover {
+
+      .banner-animate {
+        transform: translateX(0%);
+      }
+    }
+  }
+
+  &-animate {
+
+    img {
+
+      @include media-breakpoint-down(md) {
+        max-width: 8.75rem;
+      }
+    }
+
+    @media (hover: hover) {
+      transition-property: transform;
+      transition-duration: 750ms;
+      transition-timing-function: cubic-bezier(.35, 1.15, .35, 1.15);
+    }
+
+    &--start {
+
+      @media (hover: hover) {
+        transform: translateX(-50%);
+      }
+    }
+
+    &--end {
+
+      @media (hover: hover) {
+        transform: translateX(50%);
+      }
+    }
   }
 
   &-content {

@@ -130,10 +130,14 @@
 }
 
 .card-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .25rem;
-  margin-bottom: 1.25rem;
+  display: none;
+
+  @include media-breakpoint-up(sm) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .25rem;
+    margin-bottom: 1.25rem;
+  }
 
   @include media-breakpoint-up(lg) {
     margin-inline: calc(-1 * (var(--#{$prefix}card-spacer-x) * .5));
