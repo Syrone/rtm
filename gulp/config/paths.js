@@ -11,7 +11,7 @@ export const paths = {
   srcScss: `${srcFolder}/scss/**/*.scss`,
   buildCssFolder: `${buildFolder}/css`,
   srcFullJs: `${srcFolder}/js/**/*.js`,
-  srcMainJs: `${srcFolder}/js/main.js`,
+  srcMainJs: `${srcFolder}/js/*.js`,
   buildJsFolder: `${buildFolder}/js`,
   srcPartialsFolder: `${srcFolder}/partials`,
   resourcesFolder: `${srcFolder}/resources`,
