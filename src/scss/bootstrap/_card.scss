@@ -73,8 +73,9 @@
 }
 
 .card-picture {
+  flex: 1 1;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   margin-bottom: 1.25rem;
 
@@ -104,7 +105,7 @@
 .card-body {
   // Enable `flex-grow: 1` for decks and groups so that card blocks take up
   // as much space as possible, ensuring footers are aligned to the bottom.
-  flex: 1 1 auto;
+  // flex: 1 1 auto;
   color: var(--#{$prefix}card-color);
 }
 
@@ -451,6 +452,8 @@
   }
 
   .card-picture {
+    flex: initial;
+    align-items: center;
 
     img {
       max-width: 5.5rem;

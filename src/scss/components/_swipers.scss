@@ -80,6 +80,11 @@
 
     &-slide {
       width: 12.5rem;
+      height: auto;
+
+      .card {
+        height: 100%;
+      }
     }
   }
 }
