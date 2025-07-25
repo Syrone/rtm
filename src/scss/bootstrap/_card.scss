@@ -116,6 +116,13 @@
   color: var(--#{$prefix}card-title-color);
   margin-bottom: .75rem;
 
+  height: calc(2em * 1.25);
+  max-height: calc(2em * 1.25);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
   @include media-breakpoint-up(lg) {
     font-size: 1.25rem;
     font-weight: 500;
@@ -465,6 +472,7 @@
   }
 
   .card-title {
+    height: initial;
     font-weight: 700;
     margin-bottom: .5rem;
 
