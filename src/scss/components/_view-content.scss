@@ -34,7 +34,8 @@
     .card {
 
       @include media-breakpoint-up(lg) {
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: .625fr 1fr auto;
       }
 
       &-tags {
@@ -63,10 +64,15 @@
 
       &-picture {
 
+        @include media-breakpoint-up(lg) {
+          flex: initial;
+          align-items: center;
+        }
+
         img {
 
           @include media-breakpoint-up(lg) {
-            max-width: 14.5rem;
+            max-width: 100%;
           }
         }
       }
