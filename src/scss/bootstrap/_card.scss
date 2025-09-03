@@ -77,9 +77,9 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  margin-bottom: 1.25rem;
+  margin-bottom: .5rem;
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(lg) {
     margin-bottom: 1.75rem;
   }
 
@@ -110,11 +110,11 @@
 }
 
 .card-title {
-  font-size: #{$font-size-base};
+  font-size: .75rem;
   font-weight: 600;
   line-height: 1.25;
   color: var(--#{$prefix}card-title-color);
-  margin-bottom: .75rem;
+  margin-bottom: .5rem;
 
   height: calc(2em * 1.25);
   max-height: calc(2em * 1.25);
@@ -166,10 +166,14 @@
 
 .card-list {
   flex-direction: column;
-  font-size: .75rem;
+  font-size: .5rem;
   font-weight: 600;
   line-height: 1.8;
   list-style: none;
+
+  @include media-breakpoint-up(lg) {
+    font-size: .75rem;
+  }
 
   &,
   dl {
@@ -216,6 +220,8 @@
   }
 
   dd {
+    text-align: end;
+    white-space: nowrap;
     margin: 0;
   }
 }
@@ -240,7 +246,7 @@
 
 .card-price {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
 
   &-name {
     font-size: .625rem;
@@ -248,7 +254,6 @@
     line-height: 1.8;
 
     @include media-breakpoint-up(lg) {
-      display: none;
       font-size: .75rem;
     }
   }
@@ -285,6 +290,16 @@
   }
 }
 
+.card-body {
+  .card-price {
+    margin-bottom: .5rem;
+
+    @include media-breakpoint-up(lg) {
+      display: none;
+    }
+  }
+}
+
 .card-footer {
   display: flex;
   flex-direction: column;
@@ -293,6 +308,13 @@
   color: var(--#{$prefix}card-cap-color);
   background-color: var(--#{$prefix}card-cap-bg);
   border-top: var(--#{$prefix}card-border-width) solid var(--#{$prefix}card-border-color);
+
+  .card-price {
+
+    @include media-breakpoint-down(lg) {
+      display: none;
+    }
+  }
 }
 
 .card-actions {
@@ -300,7 +322,7 @@
   flex-direction: column;
   gap: .5rem;
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(lg) {
     flex-direction: row;
   }
 

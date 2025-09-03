@@ -46,7 +46,9 @@
   --#{$prefix}font-roboto: #{inspect($font-family-roboto)};
   --#{$prefix}font-manrope: #{inspect($font-family-manrope)};
   --#{$prefix}gradient: #{$gradient};
-  --#{$prefix}gradient-hero: #{$gradient-hero};
+  --#{$prefix}gradient-hero-top: #{$gradient-hero-top};
+  --#{$prefix}gradient-hero-bottom: #{$gradient-hero-bottom};
+  --#{$prefix}gradient-light: #{$gradient-light};
 
   // Root and body
   // scss-docs-start root-body-variables

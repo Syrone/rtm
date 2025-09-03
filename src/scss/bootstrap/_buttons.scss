@@ -164,11 +164,23 @@
 }
 // scss-docs-end btn-variant-loops
 
-.btn-gradient-warm {
-  --#{$prefix}btn-font-size: .75rem;
-  --#{$prefix}btn-font-weight: 500;
-  --#{$prefix}btn-border-width: .0625rem;
+.btn-gradient-teal {
+  --#{$prefix}btn-color: var(--#{$prefix}white);
+  --#{$prefix}btn-hover-color: var(--#{$prefix}white);
+  --#{$prefix}btn-active-color: var(--#{$prefix}white);
 
+  --#{$prefix}btn-bg: linear-gradient(90deg, var(--#{$prefix}teal) 0%, var(--#{$prefix}teal) 50%, var(--#{$prefix}teal-400) 100%);
+  --#{$prefix}btn-hover-bg: linear-gradient(90deg, var(--#{$prefix}teal) 0%, var(--#{$prefix}teal-400) 50%, var(--#{$prefix}teal) 100%);
+  --#{$prefix}btn-active-bg: linear-gradient(90deg, var(--#{$prefix}teal) 0%, var(--#{$prefix}teal) 50%, var(--#{$prefix}teal-400) 100%);
+
+  --#{$prefix}btn-border-color: linear-gradient(90deg, #ADADAD 0%, var(--#{$prefix}white) 50%, #ADADAD 100%);
+  --#{$prefix}btn-hover-border-color: linear-gradient(90deg, #ADADAD 0%, var(--#{$prefix}white) 50%, #ADADAD 100%);
+  --#{$prefix}btn-active-border-color: linear-gradient(90deg, #ADADAD 0%, var(--#{$prefix}white) 50%, #ADADAD 100%);
+
+  box-shadow: inset 0 0 .875rem 0 rgba(var(--#{$prefix}white-rgb), .70), 0 .25rem 2rem 0 rgba(var(--#{$prefix}teal-rgb), .50);
+}
+
+.btn-gradient-warm {
   --#{$prefix}btn-color: var(--#{$prefix}white);
   --#{$prefix}btn-hover-color: var(--#{$prefix}white);
   --#{$prefix}btn-active-color: var(--#{$prefix}white);
@@ -182,6 +194,57 @@
   --#{$prefix}btn-active-border-color: linear-gradient(90deg, rgba(var(--#{$prefix}white-rgb), .15) 0%, rgba(var(--#{$prefix}white-rgb), 1) 50%, rgba(var(--#{$prefix}white-rgb), .15) 100%);
 
   box-shadow: 0 0 .75rem 0 rgba(var(--#{$prefix}white-rgb), 0.70) inset;
+}
+
+.btn-gradient-outline-dark {
+  --#{$prefix}btn-color: var(--#{$prefix}black);
+  --#{$prefix}btn-hover-color: var(--#{$prefix}black);
+  --#{$prefix}btn-active-color: var(--#{$prefix}black);
+
+  --#{$prefix}btn-bg: transparent;
+  --#{$prefix}btn-hover-bg: var(--#{$prefix}gradient-light);
+  --#{$prefix}btn-active-bg: transparent;
+
+  --#{$prefix}btn-border-color: linear-gradient(90deg, rgba(var(--#{$prefix}black-rgb), 1) 0%, rgba(var(--#{$prefix}black-rgb), 1) 50%, rgba(var(--#{$prefix}black-rgb), 1) 100%);
+  --#{$prefix}btn-hover-border-color: linear-gradient(90deg, rgba(var(--#{$prefix}white-rgb), 1) 0%, rgba(var(--#{$prefix}white-rgb), .15) 50%, rgba(var(--#{$prefix}white-rgb), 1) 100%);
+  --#{$prefix}btn-active-border-color: linear-gradient(90deg, rgba(var(--#{$prefix}black-rgb), 1) 0%, rgba(var(--#{$prefix}black-rgb), 1) 50%, rgba(var(--#{$prefix}black-rgb), 1) 100%);
+
+  .icon {
+    border: .0625rem solid var(--#{$prefix}black);
+    border-radius: 50rem;
+  }
+
+  &.btn-has-icon {
+    padding-right: .25rem;
+    justify-content: space-between;
+
+    @include media-breakpoint-up(lg) {
+      padding-right: .375rem;
+    }
+  }
+
+  @media (hover: hover) {
+
+    &:is(:hover, :focus-visible) {
+      box-shadow: 0 .75rem 1rem 0 rgba(var(--#{$prefix}black-rgb), .05), 0 .375rem 1rem 0 rgba(var(--#{$prefix}black-rgb), .20);
+    }
+  }
+
+  &.btn-40px {
+
+    .icon {
+      --_size: 1.5rem;
+
+      margin-block: -.25rem;
+      padding: .375rem;
+
+      @include media-breakpoint-up(lg) {
+        --_size: 1.75rem;
+
+        padding: .5rem;
+      }
+    }
+  }
 }
 
 .btn-teal-400 {
@@ -249,6 +312,12 @@
 
   --#{$prefix}btn-bg: transparent;
   --#{$prefix}btn-border-color: transparent;
+}
+
+.btn-plaintext-teal-400 {
+  --#{$prefix}btn-color: var(--#{$prefix}teal-400);
+  --#{$prefix}btn-hover-color: var(--#{$prefix}primary);
+  --#{$prefix}btn-active-color: var(--#{$prefix}teal-400);
 }
 
 .btn-lg-transparent {
@@ -322,6 +391,10 @@
       background: var(--#{$prefix}btn-active-border-color);
     }
   }
+}
+
+.btn-has-icon {
+  gap: .625rem;
 }
 
 .btn-filter {
@@ -519,16 +592,30 @@
 // Button Sizes
 //
 
-.btn-40px {
-  --bs-btn-border-radius: 5rem;
-  --bs-btn-padding-x: 1.375rem;
-  --bs-btn-padding-y: .5rem;
-
-  height: 2.5rem;
+.btn-40px,
+.btn-sm,
+.btn-lg {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+.btn-40px {
+  --#{$prefix}btn-font-size: .625rem;
+  --#{$prefix}btn-font-weight: 500;
+  --#{$prefix}btn-border-width: .0625rem;
+  --#{$prefix}btn-border-radius: 5rem;
+  --#{$prefix}btn-padding-x: 1.375rem;
+  --#{$prefix}btn-padding-y: .5rem;
+
+  height: 2rem;
+
+  @include media-breakpoint-up(lg) {
+    --#{$prefix}btn-font-size: .75rem;
+
+    height: 2.5rem;
+  }
 }
 
 .btn-lg {
@@ -538,6 +625,8 @@
 }
 
 .btn-sm {
-  --bs-btn-font-weight: 500;
+  --#{$prefix}btn-font-weight: 500;
+
+  height: 2rem;
   @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm);
 }

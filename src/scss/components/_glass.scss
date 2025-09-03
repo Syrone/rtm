@@ -1,0 +1,24 @@
+.glass {
+  --#{$prefix}glass-border-color: linear-gradient(4deg, rgba(var(--#{$prefix}white-rgb), .6) 0%, rgba(var(--#{$prefix}white-rgb), 0) 45%, rgba(var(--#{$prefix}white-rgb), 0) 55%, rgba(var(--#{$prefix}white-rgb), .6) 100%);
+  --#{$prefix}glass-border-width: .125rem;
+
+  backdrop-filter: blur(.75rem);
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    user-select: none;
+    pointer-events: none;
+    background: var(--#{$prefix}glass-border-color);
+    padding: var(--#{$prefix}glass-border-width);
+    background: var(--#{$prefix}glass-border-color);
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    border-radius: inherit;
+    position: absolute;
+    inset: 0;
+  }
+}

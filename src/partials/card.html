@@ -1,68 +1,83 @@
 @if (type === "default") {
   <div class="card">
-    @if (tags === true) {
+    @if (tags) {
       <div class="card-tags">
-        <div class="badge badge--instock">
-          В наличии
-        </div>
-        <div class="badge badge--popular">
-          Популярные
-        </div>
+        @if (tags.indexOf('instock') > -1) {
+          <div class="badge badge--instock">В наличии</div>
+        }
+        @if (tags.indexOf('new') > -1) {
+          <div class="badge badge--new">Новинки</div>
+        }
+        @if (tags.indexOf('popular') > -1) {
+          <div class="badge badge--popular">Популярные</div>
+        }
+        @if (tags.indexOf('dearer') > -1) {
+          <div class="badge badge--dearer">Дороже</div>
+        }
+        @if (tags.indexOf('cheaper') > -1) {
+          <div class="badge badge--cheaper">Дешевле</div>
+        }
+        @if (tags.indexOf('order') > -1) {
+          <div class="badge">Под заказ</div>
+        }
       </div>
     }
     <div class="card-picture">
       <picture>
-        <source srcset="./img/card/image-1.webp" type="image/webp">
-        <img loading="lazy" src="./img/card/image-1.png" class="img-fluid" width="205" height="153" alt="Картинка">
+        <source srcset="./img/card/@img.src.webp" type="image/webp">
+        <img loading="lazy" src="./img/card/@img.src.png" class="img-fluid" width="204" height="155" alt="Картинка">
       </picture>
     </div>
     <div class="card-body">
       <div class="card-content">
+        <div class="card-price">
+          <div class="card-price-value">
+            <p>
+              6 560 ₽
+            </p>
+          </div>
+        </div>
         <h5 class="card-title">
           Whatsminer M60S+, 186TH/s
         </h5>
-        @if (tags === true) {
+        @if (tags) {
           <div class="card-tags">
-            <div class="badge badge--instock">
-              В наличии
-            </div>
-            <div class="badge badge--popular">
-              Популярные
-            </div>
+            @if (tags.indexOf('instock') > -1) {
+              <div class="badge badge--instock">В наличии</div>
+            }
+            @if (tags.indexOf('new') > -1) {
+              <div class="badge badge--new">Новинки</div>
+            }
+            @if (tags.indexOf('popular') > -1) {
+              <div class="badge badge--popular">Популярные</div>
+            }
+            @if (tags.indexOf('dearer') > -1) {
+              <div class="badge badge--dearer">Дороже</div>
+            }
+            @if (tags.indexOf('cheaper') > -1) {
+              <div class="badge badge--cheaper">Дешевле</div>
+            }
+            @if (tags.indexOf('order') > -1) {
+              <div class="badge">Под заказ</div>
+            }
           </div>
         }
-        <ul class="card-list">
-          <li>
-            <dl>
-              <dt>
-                Монета
-              </dt>
-              <dd>
-                BTC
-              </dd>
-            </dl>
-          </li>
-          <li>
-            <dl>
-              <dt>
-                Окупаемость
-              </dt>
-              <dd>
-                20.6 мес.
-              </dd>
-            </dl>
-          </li>
-          <li>
-            <dl>
-              <dt>
-                Доход
-              </dt>
-              <dd>
-                163 216 ₽ / мес.
-              </dd>
-            </dl>
-          </li>
-        </ul>
+        @if (list) {
+          <ul class="card-list">
+            @for (var i = 0; i < list.length; i++) {
+              <li>
+                <dl>
+                  <dt>
+                    `+list[i].name+`
+                  </dt>
+                  <dd>
+                    `+list[i].value+`
+                  </dd>
+                </dl>
+              </li>
+            }
+          </ul>
+        }
       </div>
     </div>
     <div class="card-footer">
@@ -96,8 +111,8 @@
   <div class="card card--calc">
     <div class="card-picture">
       <picture>
-        <source srcset="./img/card/image-1.webp" type="image/webp">
-        <img loading="lazy" src="./img/card/image-1.png" class="img-fluid" width="205" height="153" alt="Картинка">
+        <source srcset="./img/card/@img.src.webp" type="image/webp">
+        <img loading="lazy" src="./img/card/@img.src.png" class="img-fluid" width="205" height="153" alt="Картинка">
       </picture>
     </div>
     <div class="card-body">
@@ -105,28 +120,22 @@
         <h5 class="card-title">
           Whatsminer M60S+, 186TH/s
         </h5>
-        <ul class="card-list">
-          <li>
-            <dl>
-              <dt>
-                Потребление
-              </dt>
-              <dd>
-                5 500 W
-              </dd>
-            </dl>
-          </li>
-          <li>
-            <dl>
-              <dt>
-                Цена за 1 шт.
-              </dt>
-              <dd>
-                125 692 ₽
-              </dd>
-            </dl>
-          </li>
-        </ul>
+        @if (list) {
+          <ul class="card-list">
+            @for (var i = 0; i < list.length; i++) {
+              <li>
+                <dl>
+                  <dt>
+                    `+list[i].name+`
+                  </dt>
+                  <dd>
+                    `+list[i].value+`
+                  </dd>
+                </dl>
+              </li>
+            }
+          </ul>
+        }
       </div>
     </div>
   </div>

@@ -1,0 +1,397 @@
+<div class="d-lg-none d-flex flex-column">
+  <button class="btn navbar-toggler navbar-toggler--filter" type="button"
+    data-bs-toggle="offcanvas"
+    data-bs-target="#offcanvas-filter"
+    aria-controls="offcanvas-filter"
+    aria-label="Toggle navigation">
+    <span>
+      Фильтр
+    </span>
+    <span class="icon">
+      <svg>
+        <use xlink:href="img/icons/filter.svg#svg-filter"></use>
+      </svg>
+    </span>
+  </button>
+</div>
+<nav class="navbar navbar-dark navbar-expand-lg">
+  <div id="offcanvas-filter" class="offcanvas offcanvas--filter offcanvas-end" tabindex="-1">
+    <div class="offcanvas-header">
+      <h4 class="offcanvas-title">
+        Фильтры
+      </h4>
+      <button type="button" class="btn btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+        <span class="icon">
+          <svg>
+            <use xlink:href="img/icons/close.svg#svg-close"></use>
+          </svg>
+        </span>
+      </button>
+    </div>
+    <div class="offcanvas-body flex-column align-items-stretch gap-0px">
+      <form class="bg-lg-gray-200 bg-opacity-lg-50 rounded-lg-12px p-lg-12px shadow-lg">
+        <div class="separator">
+          <div class="accordion accordion--separator accordion--plaintext">
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <button class="accordion-button" type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#accordion-filter-0"
+                  aria-controls="accordion-filter-0"
+                  aria-expanded="true">
+                  <span>
+                    Бренд
+                  </span>
+                  <span class="icon accordion-button-icon">
+                    <svg>
+                      <use xlink:href="img/icons/angle-down-bold.svg#svg-angle-down-bold"></use>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+              <div id="accordion-filter-0" class="accordion-collapse collapse show">
+                <div class="accordion-body">
+                  <div class="d-flex flex-column gap-12px">
+                    <div class="d-flex d-lg-none justify-content-between gap-12px">
+                      <h5 class="fs-16px fw-500 m-0px">
+                        Бренд
+                      </h5>
+
+                      <button type="button" class="btn btn-plaintext btn-plaintext-teal-400">
+                        Все
+                      </button>
+                    </div>
+
+                    <div class="d-flex flex-lg-column flex-wrap gap-4px gap-lg-10px">
+                      <label class="form-check">
+                        <input class="form-check-input" type="checkbox" name="brand">
+                        <div class="form-check-label">
+                          CUMMINS
+                        </div>
+                      </label>
+                      <label class="form-check">
+                        <input class="form-check-input" type="checkbox" name="brand">
+                        <div class="form-check-label">
+                          JICHAI
+                        </div>
+                      </label>
+                      <label class="form-check">
+                        <input class="form-check-input" type="checkbox" name="brand">
+                        <div class="form-check-label">
+                          WEICHAI
+                        </div>
+                      </label>
+                      <label class="form-check">
+                        <input class="form-check-input" type="checkbox" name="brand">
+                        <div class="form-check-label">
+                          HUACHAI DEUTZ
+                        </div>
+                      </label>
+                      <label class="form-check">
+                        <input class="form-check-input" type="checkbox" name="brand">
+                        <div class="form-check-label">
+                          YUCHAI
+                        </div>
+                      </label>
+                      <label class="form-check">
+                        <input class="form-check-input" type="checkbox" name="brand">
+                        <div class="form-check-label">
+                          LIYU POWER
+                        </div>
+                      </label>
+                      <label class="form-check">
+                        <input class="form-check-input" type="checkbox" name="brand">
+                        <div class="form-check-label">
+                          EPIOR
+                        </div>
+                      </label>
+                      <label class="form-check">
+                        <input class="form-check-input" type="checkbox" name="brand">
+                        <div class="form-check-label">
+                          VMAN
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <button class="accordion-button collapsed" type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#accordion-filter-1"
+                  aria-controls="accordion-filter-1"
+                  aria-expanded="false">
+                  <span>
+                    Номинальная мощность, кВт
+                  </span>
+                  <span class="icon accordion-button-icon">
+                    <svg>
+                      <use xlink:href="img/icons/angle-down-bold.svg#svg-angle-down-bold"></use>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+              <div id="accordion-filter-1" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <div class="d-flex flex-column gap-12px">
+                    <div class="d-flex d-lg-none justify-content-between gap-12px">
+                      <h5 class="fs-16px fw-500 m-0px">
+                        Номинальная мощность, кВт
+                      </h5>
+                    </div>
+
+                    <div class="d-flex flex-column gap-4px">
+                      <div class="row gy-14px gx-lg-8px gx-20px" data-nouislider="">
+                        <div class="col-6">
+                          <label class="form-control">
+                            <span class="form-control-prefix">
+                              от
+                            </span>
+                            <input type="text" class="form-control form-control-plaintext" placeholder="1000" name="price-min" min="1000" max="9000">
+                          </label>
+                        </div>
+                        <div class="col-6">
+                          <label class="form-control">
+                            <span class="form-control-prefix">
+                              до
+                            </span>
+                            <input type="text" class="form-control form-control-plaintext" placeholder="9000" name="price-max" min="1000" max="9000">
+                          </label>
+                        </div>
+                        <div class="col-12">
+                          <div data-nouislider-element=""></div>
+                        </div>
+                      </div>
+
+                      <div class="invalid-feedback d-block">
+                        Укажите значения от 1000 до 9000
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <button class="accordion-button collapsed" type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#accordion-filter-2"
+                  aria-controls="accordion-filter-2"
+                  aria-expanded="false">
+                  <span>
+                    Расход топлива 1ч, м³
+                  </span>
+                  <span class="icon accordion-button-icon">
+                    <svg>
+                      <use xlink:href="img/icons/angle-down-bold.svg#svg-angle-down-bold"></use>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+              <div id="accordion-filter-2" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <div class="d-flex flex-column gap-12px">
+                    <div class="d-flex d-lg-none justify-content-between gap-12px">
+                      <h5 class="fs-16px fw-500 m-0px">
+                        Расход топлива 1ч, м³
+                      </h5>
+                    </div>
+                    <div class="d-flex flex-column gap-4px">
+                      <div class="row gy-14px gx-lg-8px gx-20px" data-nouislider="">
+                        <div class="col-6">
+                          <label class="form-control">
+                            <span class="form-control-prefix">
+                              от
+                            </span>
+                            <input type="text" class="form-control form-control-plaintext" placeholder="150" name="price-min" min="150" max="600">
+                          </label>
+                        </div>
+                        <div class="col-6">
+                          <label class="form-control">
+                            <span class="form-control-prefix">
+                              до
+                            </span>
+                            <input type="text" class="form-control form-control-plaintext" placeholder="600" name="price-max" min="150" max="600">
+                          </label>
+                        </div>
+                        <div class="col-12">
+                          <div data-nouislider-element=""></div>
+                        </div>
+                      </div>
+
+                      <div class="invalid-feedback d-block">
+                        Укажите значения от 150 до 600
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <button class="accordion-button collapsed" type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#accordion-filter-3"
+                  aria-controls="accordion-filter-3"
+                  aria-expanded="false">
+                  <span>
+                    Электрический КПД, %
+                  </span>
+                  <span class="icon accordion-button-icon">
+                    <svg>
+                      <use xlink:href="img/icons/angle-down-bold.svg#svg-angle-down-bold"></use>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+              <div id="accordion-filter-3" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <div class="d-flex flex-column gap-12px">
+                    <div class="d-flex d-lg-none justify-content-between gap-12px">
+                      <h5 class="fs-16px fw-500 m-0px">
+                        Электрический КПД, %
+                      </h5>
+
+                      <button type="button" class="btn btn-plaintext btn-plaintext-teal-400">
+                        Все
+                      </button>
+                    </div>
+
+                    <div class="d-flex flex-lg-column flex-wrap gap-4px gap-lg-10px">
+                      <label class="form-check">
+                        <input class="form-check-input" type="checkbox" name="electric">
+                        <div class="form-check-label">
+                          35.3
+                        </div>
+                      </label>
+                      <label class="form-check">
+                        <input class="form-check-input" type="checkbox" name="electric">
+                        <div class="form-check-label">
+                          36
+                        </div>
+                      </label>
+                      <label class="form-check">
+                        <input class="form-check-input" type="checkbox" name="electric">
+                        <div class="form-check-label">
+                          37
+                        </div>
+                      </label>
+                      <label class="form-check">
+                        <input class="form-check-input" type="checkbox" name="electric">
+                        <div class="form-check-label">
+                          38
+                        </div>
+                      </label>
+                      <label class="form-check">
+                        <input class="form-check-input" type="checkbox" name="electric">
+                        <div class="form-check-label">
+                          38,4
+                        </div>
+                      </label>
+                      <label class="form-check">
+                        <input class="form-check-input" type="checkbox" name="electric">
+                        <div class="form-check-label">
+                          39
+                        </div>
+                      </label>
+                      <label class="form-check">
+                        <input class="form-check-input" type="checkbox" name="electric">
+                        <div class="form-check-label">
+                          40
+                        </div>
+                      </label>
+                      <label class="form-check">
+                        <input class="form-check-input" type="checkbox" name="electric">
+                        <div class="form-check-label">
+                          41,08
+                        </div>
+                      </label>
+                      <label class="form-check">
+                        <input class="form-check-input" type="checkbox" name="electric">
+                        <div class="form-check-label">
+                          41,3
+                        </div>
+                      </label>
+                      <label class="form-check">
+                        <input class="form-check-input" type="checkbox" name="electric">
+                        <div class="form-check-label">
+                          41,41
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <button class="accordion-button collapsed" type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#accordion-filter-4"
+                  aria-controls="accordion-filter-4"
+                  aria-expanded="false">
+                  <span>
+                    Кол-во установок в контейнере
+                  </span>
+                  <span class="icon accordion-button-icon">
+                    <svg>
+                      <use xlink:href="img/icons/angle-down-bold.svg#svg-angle-down-bold"></use>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+              <div id="accordion-filter-4" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <div class="d-flex flex-column gap-12px">
+                    <div class="d-flex d-lg-none justify-content-between gap-12px">
+                      <h5 class="fs-16px fw-500 m-0px">
+                        Кол-во установок в контейнере
+                      </h5>
+
+                      <button type="button" class="btn btn-plaintext btn-plaintext-teal-400">
+                        Все
+                      </button>
+                    </div>
+
+                    <div class="d-flex flex-lg-column flex-wrap gap-4px gap-lg-10px">
+                      <label class="form-check">
+                        <input class="form-check-input" type="checkbox" name="counter-container">
+                        <div class="form-check-label">
+                          1
+                        </div>
+                      </label>
+                      <label class="form-check">
+                        <input class="form-check-input" type="checkbox" name="counter-container">
+                        <div class="form-check-label">
+                          2
+                        </div>
+                      </label>
+                      <label class="form-check">
+                        <input class="form-check-input" type="checkbox" name="counter-container">
+                        <div class="form-check-label">
+                          3
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="separator">
+          <div class="d-flex flex-column gap-lg-12px gap-8px">
+            <button type="submit" class="btn btn-sm btn-teal-400">
+              Применить фильтры
+            </button>
+            <button type="reset" class="btn btn-sm btn-outline-primary btn-lg-transparent">
+              Сбросить
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>

@@ -35,7 +35,7 @@
 
       @include media-breakpoint-up(lg) {
         display: grid;
-        grid-template-columns: .625fr 1fr auto;
+        grid-template-columns: .5325fr 1fr auto;
       }
 
       &-tags {

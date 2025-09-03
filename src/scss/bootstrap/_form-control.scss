@@ -112,6 +112,32 @@
   }
 }
 
+.form-control-prefix {
+  color: rgba(var(--#{$prefix}black-rgb), .2);
+}
+
+label.form-control {
+  display: flex;
+  align-items: center;
+  gap: .25rem;
+  padding-left: .5rem;
+
+  .form-control-plaintext {
+    max-width: 100%;
+    min-width: 0;
+    flex: 1 1 auto;
+    color: inherit;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+
 // Readonly controls as plain text
 //
 // Apply class to a readonly input to make it appear like regular plain

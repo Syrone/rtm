@@ -422,22 +422,32 @@ $prefix:                      $variable-prefix !default;
 // This gradient is also added to elements with `.bg-gradient`
 // scss-docs-start variable-gradient
 $gradient: linear-gradient(180deg, rgba($white, .15), rgba($white, 0)) !default;
-$gradient-hero: linear-gradient(to bottom, #e9edf0 0%, #f3f5f7 60%, #c4d3dc 100%) !default;
+$gradient-hero-bottom: linear-gradient(to bottom, #e9edf0 0%, #f3f5f7 60%, #c4d3dc 100%) !default;
+$gradient-hero-top: linear-gradient(to top, #e9edf0 0%, #f3f5f7 60%, #c4d3dc 100%) !default;
 $gradient-warm: linear-gradient(90deg, #{$orange-600} 0%, #{$orange-300} 50%, #{$orange-600} 100%) !default;
+$gradient-light: linear-gradient(90deg, #{$white} 0%, #{$white} 50%, #{$gray-200} 100%) !default;
 $gradient-border: linear-gradient(90deg, rgba(var(--#{$prefix}primary-rgb), 0) 0%, rgba(var(--#{$prefix}primary-rgb), 0.50) 50%, rgba(var(--#{$prefix}primary-rgb), 0) 100%) !default;
 // scss-docs-end variable-gradient
 
 
 
 $sizes: (
+  '12px': .75rem,
+  '14px': .875rem,
+  '16px': 1rem,
+  '18px': 1.125rem,
+  '20px': 1.25rem,
+  '24px': 1.5rem,
   '60px': 3.75rem,
   '96px': 6rem,
   '120px': 7.5rem,
   '212px': 13.25rem,
+  '240px': 15rem,
   '260px': 16.75rem,
   '360px': 22.5rem,
   '520px': 32.5rem,
   '632px': 39.5rem,
+  '1000px': 62.5rem,
 );
 
 
@@ -477,7 +487,9 @@ $spacers: (
   '72px': $spacer * 4.5,
   '76px': $spacer * 4.75,
   '80px': $spacer * 5,
+  '100px': $spacer * 6.25,
   '120px': $spacer * 7.5,
+  'header': var(--header-height),
 ) !default;
 // scss-docs-end spacer-variables-maps
 
@@ -488,8 +500,10 @@ $spacers: (
 // scss-docs-start position-map
 $position-values: (
   0: 0,
+  25: 25%,
   50: 50%,
-  100: 100%
+  75: 75%,
+  100: 100%,
 ) !default;
 // scss-docs-end position-map
 
@@ -733,6 +747,8 @@ $font-sizes: (
   5: $h5-font-size,
   6: $h6-font-size,
 
+  '6px': $font-size-base * .375,
+  '8px': $font-size-base * .5,
   '10px': $font-size-base * .625,
   '12px': $font-size-base * .75,
   '13px': $font-size-base * .8125,
@@ -927,7 +943,7 @@ $btn-font-size:               $input-btn-font-size !default;
 $btn-line-height:             $input-btn-line-height !default;
 $btn-white-space:             null !default; // Set to `nowrap` to prevent text wrapping
 
-$btn-padding-y-sm:            $input-btn-padding-y-sm !default;
+$btn-padding-y-sm:            .25rem !default;
 $btn-padding-x-sm:            $input-btn-padding-x-sm !default;
 $btn-font-size-sm:            $input-btn-font-size-sm !default;
 
