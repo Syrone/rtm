@@ -28,6 +28,7 @@
   @include media-breakpoint-up(lg) {
     --#{$prefix}alert-padding-x: #{$alert-padding-x};
     --#{$prefix}alert-padding-y: #{$alert-padding-y};
+
     padding-left: 1.25rem;
   }
 }
@@ -35,10 +36,15 @@
 // Headings for larger alerts
 .alert-heading {
   // Specified to prevent conflicts of changing $headings-color
+  max-width: 9rem;
   font-size: .75rem;
   font-weight: 600;
   color: inherit;
   margin: 0;
+
+  @include media-breakpoint-up(lg) {
+    max-width: 100%;
+  }
 }
 
 // Provide class for links that match alerts
@@ -62,15 +68,14 @@
 
 .alert-content {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: .375rem;
+  justify-content: space-between;
+  gap: 1rem;
   font-size: .625rem;
   color: var(--#{$prefix}white);
 
   @include media-breakpoint-up(lg) {
-    flex-direction: row;
-    justify-content: space-between;
+    gap: .375rem;
     text-align: center;
   }
 
@@ -80,7 +85,7 @@
 }
 
 .alert-btn {
-  --#{$prefix}btn-font-size: .625rem;
+  --#{$prefix}btn-font-size: .5rem;
   --#{$prefix}btn-font-weight: 600;
   --#{$prefix}btn-border-radius: 1.25rem;
 
@@ -100,9 +105,16 @@
   align-items: center;
   justify-content: center;
   gap: .375rem;
-  white-space: nowrap;
+  text-align: end;
   padding-right: .375rem;
   backdrop-filter: blur(.125rem);
+
+  @include media-breakpoint-up(lg) {
+    --#{$prefix}btn-font-size: .625rem;
+
+    white-space: nowrap;
+    text-align: inherit;
+  }
 }
 
 
