@@ -1,15 +1,567 @@
 <!DOCTYPE html>
 <html lang="ru" class="page">
 
-@include('partials/head.html', {title: 'Каталог'})
+@include('partials/head.html', {title: 'Главная'})
 
 <body class="page-body">
-  @include('partials/h1.html', {title: 'Каталог'})
+  @include('partials/h1.html', {title: 'Главная'})
 
   <div class="site-container">
     @include('partials/header.html')
 
     <main class="main">
+      <section class="section mb-48px mb-lg-64px pt-header">
+        <div class="container">
+          <div class="d-flex flex-column gap-16px"
+            data-transfer-target="hero">
+            <div class="row g-4px">
+              <div class="col-md-5">
+                <div class="h-100 rounded-16px rounded-sm-32px p-16px p-sm-20px p-lg-28px position-relative z-1">
+                  <span
+                    class="d-none d-md-block rounded-inherit position-absolute inset-0 z-n1 pe-none bg-size-cover bg-repeat-norepeat bg-position-center"
+                    style="background-image: url(./img/bg/callback.webp);"></span>
+                  <span
+                    class="d-block d-md-none rounded-inherit position-absolute inset-0 z-n1 pe-none bg-size-cover bg-repeat-norepeat bg-position-center"
+                    style="background-image: url(./img/bg/callback--mobile.webp);"></span>
+
+                  <div class="d-flex flex-column gap-12px gap-md-32px gap-xl-64px">
+                    <div class="d-flex flex-column gap-12px gap-md-32px gap-xl-64px">
+                      <h2 class="fs-xl-50px fs-lg-36px fs-md-28px fs-20px m-0px">
+                        Инновационные решения для&nbsp;майнинга и&nbsp;дата-центров
+                      </h2>
+
+                      <div class="d-flex flex-md-wrap gap-16px"
+                        data-transfer-origin="hero"
+                        data-transfer-breakpoint="767.98"
+                        data-transfer-placement="last">
+                        <a href="#" target="_blank" class="btn btn-40px btn-bg-gradient btn-border-gradient btn-has-icon btn-gradient-warm flex-grow-1 flex-lg-grow-0">
+                          <span>Скачать прайс&#8209;лист</span>
+                          <span class="icon">
+                            <svg>
+                              <use xlink:href="img/icons/download.svg#svg-download"></use>
+                            </svg>
+                          </span>
+                        </a>
+                        <a href="#" target="_blank" class="btn btn-40px btn-gradient-outline-dark btn-bg-gradient btn-border-gradient btn-has-icon flex-grow-1 flex-lg-grow-0">
+                          <span>Презентация по&nbsp;лизингу</span>
+                          <span class="icon">
+                            <svg>
+                              <use xlink:href="img/icons/download.svg#svg-download"></use>
+                            </svg>
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="d-flex flex-column gap-10px gap-md-16px gap-lg-20px">
+                      <h4 class="fs-16px fs-md-18px fs-lg-24px fw-medium lh-sm m-0px">
+                        О Рустехмаш в цифрах
+                      </h4>
+
+                      <div class="glass flex-fill bg-white bg-opacity-10 rounded-pill py-8px py-md-12px py-lg-20px px-20px px-lg-32px">
+                        <div class="d-flex justify-content-between gap-16px">
+                          <div class="d-flex flex-column fs-6px fs-lg-8px lh-normal">
+                            <h5 class="d-flex align-items-baseline gap-4px fs-20px fs-md-16px fs-lg-24px fs-xl-32px fw-semibold fw-semibold fw-semibold lh-reset m-0px">
+                              10 <span class="fw-10px fs-lg-14px">лет</span>
+                            </h5>
+                            <p class="m-0px">
+                              Работы в индустрии
+                            </p>
+                          </div>
+                          <div class="d-flex flex-column fs-6px fs-lg-8px lh-normal">
+                            <h5 class="d-flex align-items-center gap-4px fs-20px fs-md-16px fs-lg-24px fs-xl-32px fw-semibold fw-semibold fw-semibold lh-reset m-0px">
+                              5000 <span class="fs-14px fs-lg-20px">+</span>
+                            </h5>
+                            <p class="m-0px">
+                              Клиентов
+                            </p>
+                          </div>
+                          <div class="d-flex flex-column fs-6px fs-lg-8px lh-normal">
+                            <h5 class="d-flex align-items-center gap-4px fs-20px fs-md-16px fs-lg-24px fs-xl-32px fw-semibold fw-semibold fw-semibold lh-reset m-0px">
+                              160МВт
+                            </h5>
+                            <p class="m-0px">
+                              Реализованных проектов
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-7">
+                <div class="h-100 bg-dark rounded-16px rounded-sm-32px position-relative overflow-hidden">
+                  <video autoplay loop muted playsinline class="w-100 h-100 d-block object-fit-cover">
+                    <source src="./video/hero.mp4" type="video/mp4">
+                    <source src="./video/hero.avi" type="video/avi">
+                    Ваш браузер не поддерживает воспроизведение видео.
+                  </video>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="d-flex flex-column gap-16px gap-md-32px gap-lg-40px">
+            <div>
+              <h2 class="fs-20px fs-md-28px fs-lg-36px m-0px">
+                Мы предлагаем
+              </h2>
+            </div>
+            <div class="row g-4px g-md-8px">
+              <div class="col-6 col-lg-4 order-md-1 order-lg-0">
+                @include('partials/offer.html', {
+                  "title": "Оборудование для майнинга ",
+                  "text": "официальный партнер производителей: Bitmain, MicroBT и Canaan",
+                  "img": { "src": "image-1", "width": "777", "height": "715", "background": false },
+                  "imgMob": { "src": "image--mob-1", "width": "324", "height": "216", "background": false },
+                  "button": { "text": "Каталог устройств" }
+                })
+              </div>
+              <div class="col-6 col-lg-4 d-contents d-lg-block">
+                <div class="row g-8px d-contents d-lg-flex">
+                  <div class="col-6 col-lg-12 order-md-3 order-lg-0">
+                    @include('partials/offer.html', {
+                      "title": "Контейнеры для майнинга",
+                      "text": "С использованием воздушного, водяного и иммерсионного охлаждения",
+                      "img": { "src": "image-2", "width": "772", "height": "204", "background": false },
+                      "imgMob": { "src": "image-2", "width": "772", "height": "204", "background": false },
+                      "button": { "text": "Каталог контейнеров" }
+                    })
+                  </div>
+                  <div class="col-6 col-lg-12 order-md-3 order-lg-0">
+                    @include('partials/offer.html', {
+                      "title": "Газопоршневые установки",
+                      "text": "От ведущих китайских производителей",
+                      "img": { "src": "image-3", "width": "776", "height": "366", "background": false },
+                      "imgMob": { "src": "image-3", "width": "776", "height": "366", "background": false },
+                      "button": { "text": "Каталог ГПУ" }
+                    })
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-lg-4 order-md-2 order-lg-0">
+                @include('partials/offer.html', {
+                  "title": "Размещение в дата-центрах",
+                  "text": "В России и Эфиопии",
+                  "img": { "src": "image-4", "width": "777", "height": "1179", "background": true },
+                  "imgMob": { "src": "image-4", "width": "777", "height": "1179", "background": true },
+                  "button": { "text": "Подробнее" }
+                })
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="d-flex flex-column gap-32px">
+            <div class="d-flex">
+              <h2 class="d-flex mb-0px fs-24px fs-lg-36px fw-medium lh-1">
+                <a href="./" class="btn btn-plaintext btn-title">
+                  <span>Каталог устройств</span>
+
+                  <span class="icon">
+                    <svg>
+                      <use xlink:href="img/icons/arrow-right-bordered.svg#svg-arrow-right-bordered"></use>
+                    </svg>
+                  </span>
+                </a>
+              </h2>
+            </div>
+
+            <div class="other-swiper">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    @include('partials/card.html', {
+                      "type": "default",
+                      "img": { "src": "image-1" },
+                      "tags": [ 'instock', 'popular' ],
+                      "list": [ { "name": "Монета", "value": "BTC" }, { "name": "Окупаемость", "value": "11 мес." }, { "name": "Чистая прибыль", "value": "163 216 ₽ / мес." } ],
+                    })
+                  </div>
+                  <div class="swiper-slide">
+                    @include('partials/card.html', {
+                      "type": "default",
+                      "img": { "src": "image-1" },
+                      "tags": false,
+                      "list": [ { "name": "Монета", "value": "BTC" }, { "name": "Окупаемость", "value": "11 мес." }, { "name": "Чистая прибыль", "value": "163 216 ₽ / мес." } ],
+                    })
+                  </div>
+                  <div class="swiper-slide">
+                    @include('partials/card.html', {
+                      "type": "default",
+                      "img": { "src": "image-1" },
+                      "tags": [ 'instock', 'popular' ],
+                      "list": [ { "name": "Монета", "value": "BTC" }, { "name": "Окупаемость", "value": "11 мес." }, { "name": "Чистая прибыль", "value": "163 216 ₽ / мес." } ],
+                    })
+                  </div>
+                  <div class="swiper-slide">
+                    @include('partials/card.html', {
+                      "type": "default",
+                      "img": { "src": "image-1" },
+                      "tags": false,
+                      "list": [ { "name": "Монета", "value": "BTC" }, { "name": "Окупаемость", "value": "11 мес." }, { "name": "Чистая прибыль", "value": "163 216 ₽ / мес." } ],
+                    })
+                  </div>
+                  <div class="swiper-slide">
+                    @include('partials/card.html', {
+                      "type": "default",
+                      "img": { "src": "image-1" },
+                      "tags": false,
+                      "list": [ { "name": "Монета", "value": "BTC" }, { "name": "Окупаемость", "value": "11 мес." }, { "name": "Чистая прибыль", "value": "163 216 ₽ / мес." } ],
+                    })
+                  </div>
+                  <div class="swiper-slide">
+                    @include('partials/card.html', {
+                      "type": "default",
+                      "img": { "src": "image-1" },
+                      "tags": false,
+                      "list": [ { "name": "Монета", "value": "BTC" }, { "name": "Окупаемость", "value": "11 мес." }, { "name": "Чистая прибыль", "value": "163 216 ₽ / мес." } ],
+                    })
+                  </div>
+                  <div class="swiper-slide">
+                    @include('partials/card.html', {
+                      "type": "default",
+                      "img": { "src": "image-1" },
+                      "tags": false,
+                      "list": [ { "name": "Монета", "value": "BTC" }, { "name": "Окупаемость", "value": "11 мес." }, { "name": "Чистая прибыль", "value": "163 216 ₽ / мес." } ],
+                    })
+                  </div>
+                  <div class="swiper-slide">
+                    @include('partials/card.html', {
+                      "type": "default",
+                      "img": { "src": "image-1" },
+                      "tags": false,
+                      "list": [ { "name": "Монета", "value": "BTC" }, { "name": "Окупаемость", "value": "11 мес." }, { "name": "Чистая прибыль", "value": "163 216 ₽ / мес." } ],
+                    })
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="d-flex flex-column gap-32px">
+            <div class="d-flex">
+              <h2 class="d-flex mb-0px fs-24px fs-lg-36px fw-medium lh-1">
+                <a href="./" class="btn btn-plaintext btn-title">
+                  <span>Каталог контейнеров</span>
+
+                  <span class="icon">
+                    <svg>
+                      <use xlink:href="img/icons/arrow-right-bordered.svg#svg-arrow-right-bordered"></use>
+                    </svg>
+                  </span>
+                </a>
+              </h2>
+            </div>
+
+            <div class="other-swiper">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    @include('partials/card.html', {
+                      "type": "default",
+                      "img": { "src": "image-3" },
+                      "tags": [ 'instock', 'popular' ],
+                      "list": [ { "name": "Мощность", "value": "1000" }, { "name": "Рабочая темп.", "value": "-35°C до +45°C" }, { "name": "Тип устройств", "value": "Antminer, Whatsminer" }, { "name": "Охлаждение", "value": "водяное" } ],
+                    })
+                  </div>
+                  <div class="swiper-slide">
+                    @include('partials/card.html', {
+                      "type": "default",
+                      "img": { "src": "image-4" },
+                      "tags": false,
+                      "list": [ { "name": "Мощность", "value": "1000" }, { "name": "Рабочая темп.", "value": "-35°C до +45°C" }, { "name": "Тип устройств", "value": "Antminer, Whatsminer" }, { "name": "Охлаждение", "value": "водяное" } ],
+                    })
+                  </div>
+                  <div class="swiper-slide">
+                    @include('partials/card.html', {
+                      "type": "default",
+                      "img": { "src": "image-5" },
+                      "tags": [ 'instock', 'popular' ],
+                      "list": [ { "name": "Мощность", "value": "1000" }, { "name": "Рабочая темп.", "value": "-35°C до +45°C" }, { "name": "Тип устройств", "value": "Antminer, Whatsminer" }, { "name": "Охлаждение", "value": "водяное" } ],
+                    })
+                  </div>
+                  <div class="swiper-slide">
+                    @include('partials/card.html', {
+                      "type": "default",
+                      "img": { "src": "image-6" },
+                      "tags": false,
+                      "list": [ { "name": "Мощность", "value": "1000" }, { "name": "Рабочая темп.", "value": "-35°C до +45°C" }, { "name": "Тип устройств", "value": "Antminer, Whatsminer" }, { "name": "Охлаждение", "value": "водяное" } ],
+                    })
+                  </div>
+                  <div class="swiper-slide">
+                    @include('partials/card.html', {
+                      "type": "default",
+                      "img": { "src": "image-3" },
+                      "tags": [ 'instock', 'popular' ],
+                      "list": [ { "name": "Мощность", "value": "1000" }, { "name": "Рабочая темп.", "value": "-35°C до +45°C" }, { "name": "Тип устройств", "value": "Antminer, Whatsminer" }, { "name": "Охлаждение", "value": "водяное" } ],
+                    })
+                  </div>
+                  <div class="swiper-slide">
+                    @include('partials/card.html', {
+                      "type": "default",
+                      "img": { "src": "image-4" },
+                      "tags": false,
+                      "list": [ { "name": "Мощность", "value": "1000" }, { "name": "Рабочая темп.", "value": "-35°C до +45°C" }, { "name": "Тип устройств", "value": "Antminer, Whatsminer" }, { "name": "Охлаждение", "value": "водяное" } ],
+                    })
+                  </div>
+                  <div class="swiper-slide">
+                    @include('partials/card.html', {
+                      "type": "default",
+                      "img": { "src": "image-5" },
+                      "tags": [ 'instock', 'popular' ],
+                      "list": [ { "name": "Мощность", "value": "1000" }, { "name": "Рабочая темп.", "value": "-35°C до +45°C" }, { "name": "Тип устройств", "value": "Antminer, Whatsminer" }, { "name": "Охлаждение", "value": "водяное" } ],
+                    })
+                  </div>
+                  <div class="swiper-slide">
+                    @include('partials/card.html', {
+                      "type": "default",
+                      "img": { "src": "image-6" },
+                      "tags": false,
+                      "list": [ { "name": "Мощность", "value": "1000" }, { "name": "Рабочая темп.", "value": "-35°C до +45°C" }, { "name": "Тип устройств", "value": "Antminer, Whatsminer" }, { "name": "Охлаждение", "value": "водяное" } ],
+                    })
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="d-flex flex-column gap-32px">
+            <div class="d-flex">
+              <h2 class="d-flex mb-0px fs-24px fs-lg-36px fw-medium lh-1">
+                <a href="./" class="btn btn-plaintext btn-title">
+                  <span>Газопоршневые установки</span>
+
+                  <span class="icon">
+                    <svg>
+                      <use xlink:href="img/icons/arrow-right-bordered.svg#svg-arrow-right-bordered"></use>
+                    </svg>
+                  </span>
+                </a>
+              </h2>
+            </div>
+
+            <div class="other-swiper">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    @include('partials/card.html', {
+                      "type": "default",
+                      "img": { "src": "image-8" },
+                      "tags": [ 'instock', 'popular' ],
+                      "list": [ { "name": "Номинальная мощность", "value": "1600 кВт" }, { "name": "Электрический КПД", "value": "39%" }, { "name": "Расход топлива 1ч", "value": "381 м<sup>3</sup>" }, { "name": "Рабочее напряжение", "value": "400" }, { "name": "Ресурс до Кап. Ремонта", "value": "40 000 М/Ч" } ],
+                    })
+                  </div>
+                  <div class="swiper-slide">
+                    @include('partials/card.html', {
+                      "type": "default",
+                      "img": { "src": "image-9" },
+                      "tags": false,
+                      "list": [ { "name": "Номинальная мощность", "value": "1600 кВт" }, { "name": "Электрический КПД", "value": "39%" }, { "name": "Расход топлива 1ч", "value": "381 м<sup>3</sup>" }, { "name": "Рабочее напряжение", "value": "400" }, { "name": "Ресурс до Кап. Ремонта", "value": "40 000 М/Ч" } ],
+                    })
+                  </div>
+                  <div class="swiper-slide">
+                    @include('partials/card.html', {
+                      "type": "default",
+                      "img": { "src": "image-10" },
+                      "tags": [ 'instock', 'popular' ],
+                      "list": [ { "name": "Номинальная мощность", "value": "1600 кВт" }, { "name": "Электрический КПД", "value": "39%" }, { "name": "Расход топлива 1ч", "value": "381 м<sup>3</sup>" }, { "name": "Рабочее напряжение", "value": "400" }, { "name": "Ресурс до Кап. Ремонта", "value": "40 000 М/Ч" } ],
+                    })
+                  </div>
+                  <div class="swiper-slide">
+                    @include('partials/card.html', {
+                      "type": "default",
+                      "img": { "src": "image-11" },
+                      "tags": false,
+                      "list": [ { "name": "Номинальная мощность", "value": "1600 кВт" }, { "name": "Электрический КПД", "value": "39%" }, { "name": "Расход топлива 1ч", "value": "381 м<sup>3</sup>" }, { "name": "Рабочее напряжение", "value": "400" }, { "name": "Ресурс до Кап. Ремонта", "value": "40 000 М/Ч" } ],
+                    })
+                  </div>
+                  <div class="swiper-slide">
+                    @include('partials/card.html', {
+                      "type": "default",
+                      "img": { "src": "image-8" },
+                      "tags": [ 'instock', 'popular' ],
+                      "list": [ { "name": "Номинальная мощность", "value": "1600 кВт" }, { "name": "Электрический КПД", "value": "39%" }, { "name": "Расход топлива 1ч", "value": "381 м<sup>3</sup>" }, { "name": "Рабочее напряжение", "value": "400" }, { "name": "Ресурс до Кап. Ремонта", "value": "40 000 М/Ч" } ],
+                    })
+                  </div>
+                  <div class="swiper-slide">
+                    @include('partials/card.html', {
+                      "type": "default",
+                      "img": { "src": "image-9" },
+                      "tags": false,
+                      "list": [ { "name": "Номинальная мощность", "value": "1600 кВт" }, { "name": "Электрический КПД", "value": "39%" }, { "name": "Расход топлива 1ч", "value": "381 м<sup>3</sup>" }, { "name": "Рабочее напряжение", "value": "400" }, { "name": "Ресурс до Кап. Ремонта", "value": "40 000 М/Ч" } ],
+                    })
+                  </div>
+                  <div class="swiper-slide">
+                    @include('partials/card.html', {
+                      "type": "default",
+                      "img": { "src": "image-10" },
+                      "tags": [ 'instock', 'popular' ],
+                      "list": [ { "name": "Номинальная мощность", "value": "1600 кВт" }, { "name": "Электрический КПД", "value": "39%" }, { "name": "Расход топлива 1ч", "value": "381 м<sup>3</sup>" }, { "name": "Рабочее напряжение", "value": "400" }, { "name": "Ресурс до Кап. Ремонта", "value": "40 000 М/Ч" } ],
+                    })
+                  </div>
+                  <div class="swiper-slide">
+                    @include('partials/card.html', {
+                      "type": "default",
+                      "img": { "src": "image-11" },
+                      "tags": false,
+                      "list": [ { "name": "Номинальная мощность", "value": "1600 кВт" }, { "name": "Электрический КПД", "value": "39%" }, { "name": "Расход топлива 1ч", "value": "381 м<sup>3</sup>" }, { "name": "Рабочее напряжение", "value": "400" }, { "name": "Ресурс до Кап. Ремонта", "value": "40 000 М/Ч" } ],
+                    })
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="text-white bg-black rounded-16px overflow-hidden position-relative">
+            <div class="d-flex flex-column pt-16px pt-md-32px pt-lg-48px px-16px px-md-32px px-lg-40px position-relative z-1">
+              <span class="d-none d-md-block rounded-inherit position-absolute inset-0 z-n1 pe-none bg-size-cover bg-repeat-norepeat bg-position-center"
+                style="background-image: url(./img/bg/data-bg.webp);"></span>
+              <span class="d-block d-md-none rounded-inherit position-absolute inset-0 z-n1 pe-none bg-size-cover bg-repeat-norepeat bg-position-center"
+                style="background-image: url(./img/bg/data-bg--mob.webp);"></span>
+              <div class="row">
+                <div class="col-md-6 col-lg-7">
+                  <div class="h-100 d-flex flex-column gap-16px gap-md-32px gap-lg-40px pb-8px pb-md-32px pb-lg-48px"
+                    data-transfer-target="data">
+                    <div class="d-flex flex-column gap-20px gap-md-24px gap-lg-32px fs-10px fs-lg-14px">
+                      <h2 class="fs-20px fs-md-28px fs-lg-36px m-0px">
+                        Дата центр UMINERS в Эфиопии
+                      </h2>
+                      <p>
+                        UMINERS предлагает поставку ASIC-оборудования и услуги хостинга в современном дата-центре в Эфиопии. Возможность размещения самых передовых устройств на воздушном и гидроохлаждении.
+                      </p>
+                    </div>
+
+                    <div class="d-flex flex-column-reverse flex-md-row align-items-start align-items-md-stretch gap-12px gap-md-16px gap-lg-20px"
+                      data-transfer-origin="data-buttons"
+                      data-transfer-breakpoint="767.98">
+                      <button type="button" class="btn btn-40px btn-bg-gradient btn-border-gradient btn-gradient-warm">
+                        <span>Оставить заявку</span>
+                      </button>
+                      <a href="#" class="btn btn-40px btn-bg-gradient btn-border-gradient btn-gradient-outline-teal">
+                        <span>Подробнее</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-5">
+                  <div class="h-100 d-flex flex-column align-items-center justify-content-between">
+                    <div class="glass d-inline-flex align-self-start align-self-md-center align-items-center fs-10px fs-md-14px fs-lg-20px text-teal bg-black bg-opacity-10 rounded-pill py-8px py-md-10px py-lg-12px px-14px px-md-20px px-lg-32px"
+                      data-transfer-origin="data"
+                      data-transfer-breakpoint="767.98"
+                      data-transfer-placement="first">
+                      При поддержке РусТехМаш
+                    </div>
+                    <picture class="d-block mt-md-n8px mx-md-n24px"
+                      data-transfer-origin="data-picture"
+                      data-transfer-breakpoint="767.98">
+                      <source srcset="./img/bg/data.webp" type="image/webp">
+                      <img loading="lazy" src="./img/bg/data.png" class="img-fluid" width="412" height="292" alt="Картинка">
+                    </picture>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="d-md-none pt-16px">
+              <div class="row">
+                <div class="col-6">
+                  <div class="h-100 d-flex align-items-center ps-16px pb-16px" data-transfer-target="data-buttons"></div>
+                </div>
+                <div class="col-6">
+                  <div class="h-100 d-flex align-items-end" data-transfer-target="data-picture"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="row g-8px g-md-16px">
+            <div class="col-md-6">
+              @include('partials/tool.html', {
+                "title": "Лизинг оборудования",
+                "text": "Предлагаю разместить подзаголовок",
+                "img": { "src": "image-1", "width": "190", "height": "121" },
+              })
+            </div>
+            <div class="col-md-6">
+              @include('partials/tool.html', {
+                "title": "Факторинг",
+                "text": "Предлагаю разместить подзаголовок",
+                "img": { "src": "image-2", "width": "190", "height": "121" },
+              })
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="d-flex flex-column gap-32px">
+            <div class="d-flex">
+              <h2 class="d-flex mb-0px fs-24px fs-lg-36px fw-medium lh-1">
+                <a href="./" class="btn btn-plaintext btn-title">
+                  <span>Новости </span>
+
+                  <span class="icon">
+                    <svg>
+                      <use xlink:href="img/icons/arrow-right-bordered.svg#svg-arrow-right-bordered"></use>
+                    </svg>
+                  </span>
+                </a>
+              </h2>
+            </div>
+            <div class="news-swiper">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    @include('partials/new.html', {
+                      "img": { "src": "image-1", "width": "372", "height": "240" },
+                      "time": "January 24, 2023",
+                      "title": "Поздравляем вас с 80-й годовщиной Великой Победы!",
+                    })
+                  </div>
+                  <div class="swiper-slide">
+                    @include('partials/new.html', {
+                      "img": { "src": "image-2", "width": "372", "height": "240" },
+                      "time": "January 24, 2023",
+                      "title": "Blockchain Forum завершён!",
+                    })
+                  </div>
+                  <div class="swiper-slide">
+                    @include('partials/new.html', {
+                      "img": { "src": "image-3", "width": "372", "height": "240" },
+                      "time": "January 24, 2023",
+                      "title": "РусТехМаш — победа в двух номинациях!",
+                    })
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       @include('partials/sections/telegram.html')
       @include('partials/sections/callback.html')

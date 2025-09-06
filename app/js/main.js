@@ -35441,6 +35441,29 @@ jquery__WEBPACK_IMPORTED_MODULE_0__('.other-swiper').each(function () {
     }
   });
 });
+jquery__WEBPACK_IMPORTED_MODULE_0__('.news-swiper').each(function () {
+  const $wrapper = jquery__WEBPACK_IMPORTED_MODULE_0__(this);
+  const $swiper = $wrapper.find('.swiper')[0];
+  if (!$swiper) return;
+  new swiper__WEBPACK_IMPORTED_MODULE_1__["default"]($swiper, {
+    slidesPerView: 3,
+    spaceBetween: 32,
+    breakpoints: {
+      0: {
+        slidesPerView: 1.375,
+        spaceBetween: 4
+      },
+      576: {
+        slidesPerView: 2.5,
+        spaceBetween: 16
+      },
+      992: {
+        slidesPerView: 3,
+        spaceBetween: 32
+      }
+    }
+  });
+});
 
 /***/ }),
 

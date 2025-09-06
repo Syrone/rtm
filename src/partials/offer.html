@@ -1,0 +1,27 @@
+<div class="offer @if (img.background) {offer--bg}">
+  <div class="offer-content">
+    <h3 class="offer-title">
+      @title
+    </h3>
+    <p class="offer-text">
+      @text
+    </p>
+    <a href="#" class="btn btn-40px btn-outline-primary stretched-link">
+      @button.text
+    </a>
+  </div>
+
+  <picture class="offer-picture">
+    <source
+      srcset="./img/offer/@imgMob.src.webp"
+      type="image/webp"
+      media="(max-width: 767.98px)">
+    <source
+      srcset="./img/offer/@imgMob.src.png"
+      type="image/png"
+      media="(max-width: 767.98px)">
+
+    <source srcset="./img/offer/@img.src.webp" type="image/webp">
+    <img loading="lazy" src="./img/offer/@img.src.png" width="@img.width" height="@img.height" alt="Картинка">
+  </picture>
+</div>

@@ -110,6 +110,7 @@
   --bs-gradient-hero-top: linear-gradient(to top, #e9edf0 0%, #f3f5f7 60%, #c4d3dc 100%);
   --bs-gradient-hero-bottom: linear-gradient(to bottom, #e9edf0 0%, #f3f5f7 60%, #c4d3dc 100%);
   --bs-gradient-light: linear-gradient(90deg, #fff 0%, #fff 50%, #e0e0e0 100%);
+  --bs-gradient-light-60: linear-gradient(90deg, rgba(var(--bs-white-rgb), 0.6) 0%, rgba(var(--bs-white-rgb), 0.6) 50%, rgba(var(--bs-gray-200-rgb), 0.6) 100%);
   --bs-body-font-family: var(--bs-font-sans-serif);
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
@@ -5564,6 +5565,24 @@ textarea.form-control-lg {
   box-shadow: inset 0 0 0.875rem 0 rgba(var(--bs-white-rgb), 0.7), 0 0.25rem 2rem 0 rgba(var(--bs-teal-rgb), 0.5);
 }
 
+.btn-gradient-outline-teal {
+  --bs-btn-color: var(--bs-white);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-active-color: var(--bs-white);
+  --bs-btn-bg: linear-gradient(90deg, transparent 0%, transparent 50%, transparent 100%);
+  --bs-btn-hover-bg: linear-gradient(90deg, var(--bs-teal) 0%, var(--bs-teal-400) 50%, var(--bs-teal) 100%);
+  --bs-btn-active-bg: linear-gradient(90deg, transparent 0%, transparent 50%, transparent 100%);
+  --bs-btn-border-color: linear-gradient(90deg, var(--bs-white) 0%, var(--bs-white) 50%, var(--bs-white) 100%);
+  --bs-btn-hover-border-color: linear-gradient(90deg, #ADADAD 0%, var(--bs-white) 50%, #ADADAD 100%);
+  --bs-btn-active-border-color: linear-gradient(90deg, #ADADAD 0%, var(--bs-white) 50%, #ADADAD 100%);
+}
+@media (hover: hover) {
+  .btn-gradient-outline-teal:is(:hover, :focus-visible) {
+    -webkit-box-shadow: inset 0 0 0.875rem 0 rgba(var(--bs-white-rgb), 0.7), 0 0.25rem 2rem 0 rgba(var(--bs-teal-rgb), 0.5);
+    box-shadow: inset 0 0 0.875rem 0 rgba(var(--bs-white-rgb), 0.7), 0 0.25rem 2rem 0 rgba(var(--bs-teal-rgb), 0.5);
+  }
+}
+
 .btn-gradient-warm {
   --bs-btn-color: var(--bs-white);
   --bs-btn-hover-color: var(--bs-white);
@@ -5583,7 +5602,7 @@ textarea.form-control-lg {
   --bs-btn-hover-color: var(--bs-black);
   --bs-btn-active-color: var(--bs-black);
   --bs-btn-bg: transparent;
-  --bs-btn-hover-bg: var(--bs-gradient-light);
+  --bs-btn-hover-bg: var(--bs-gradient-light-60);
   --bs-btn-active-bg: transparent;
   --bs-btn-border-color: linear-gradient(90deg, rgba(var(--bs-black-rgb), 1) 0%, rgba(var(--bs-black-rgb), 1) 50%, rgba(var(--bs-black-rgb), 1) 100%);
   --bs-btn-hover-border-color: linear-gradient(90deg, rgba(var(--bs-white-rgb), 1) 0%, rgba(var(--bs-white-rgb), .15) 50%, rgba(var(--bs-white-rgb), 1) 100%);
@@ -5593,32 +5612,14 @@ textarea.form-control-lg {
   border: 0.0625rem solid var(--bs-black);
   border-radius: 50rem;
 }
-.btn-gradient-outline-dark.btn-has-icon {
-  padding-right: 0.25rem;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-@media (min-width: 992px) {
-  .btn-gradient-outline-dark.btn-has-icon {
-    padding-right: 0.375rem;
-  }
-}
 @media (hover: hover) {
   .btn-gradient-outline-dark:is(:hover, :focus-visible) {
     -webkit-box-shadow: 0 0.75rem 1rem 0 rgba(var(--bs-black-rgb), 0.05), 0 0.375rem 1rem 0 rgba(var(--bs-black-rgb), 0.2);
     box-shadow: 0 0.75rem 1rem 0 rgba(var(--bs-black-rgb), 0.05), 0 0.375rem 1rem 0 rgba(var(--bs-black-rgb), 0.2);
   }
-}
-.btn-gradient-outline-dark.btn-40px .icon {
-  --_size: 1.5rem;
-  margin-block: -0.25rem;
-  padding: 0.375rem;
-}
-@media (min-width: 992px) {
-  .btn-gradient-outline-dark.btn-40px .icon {
-    --_size: 1.75rem;
-    padding: 0.5rem;
+  .btn-gradient-outline-dark:is(:hover, :focus-visible) .icon {
+    --_color: var(--bs-white);
+    background-image: radial-gradient(140% 140% at 55% 50%, var(--bs-black) 0%, rgba(var(--bs-gray-550-rgb), 0.15) 100%);
   }
 }
 
@@ -5960,19 +5961,26 @@ textarea.form-control-lg {
 }
 
 .btn-40px {
-  --bs-btn-font-size: .625rem;
+  --bs-btn-font-size: .75rem;
   --bs-btn-font-weight: 500;
+  --bs-btn-line-height: normal;
   --bs-btn-border-width: .0625rem;
   --bs-btn-border-radius: 5rem;
   --bs-btn-padding-x: 1.375rem;
-  --bs-btn-padding-y: .5rem;
-  height: 2rem;
+  --bs-btn-padding-y: .25rem;
+  height: 2.5rem;
 }
-@media (min-width: 992px) {
-  .btn-40px {
-    --bs-btn-font-size: .75rem;
-    height: 2.5rem;
-  }
+.btn-40px.btn-has-icon {
+  text-align: start;
+  padding-right: 0.375rem;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.btn-40px .icon {
+  --_size: 1.75rem;
+  margin-block: -0.25rem;
+  padding: 0.4375rem;
 }
 
 .btn-lg, .btn-group-lg > .btn {
@@ -15579,6 +15587,10 @@ textarea.form-control-lg {
   line-height: 1 !important;
 }
 
+.lh-reset {
+  line-height: inherit !important;
+}
+
 .lh-normal {
   line-height: normal !important;
 }
@@ -16415,6 +16427,10 @@ textarea.form-control-lg {
 
 .bg-gradient-light {
   background-image: var(--bs-gradient-light) !important;
+}
+
+.bg-gradient-light-60 {
+  background-image: var(--bs-gradient-light-60) !important;
 }
 
 .user-select-all {
@@ -20072,6 +20088,9 @@ textarea.form-control-lg {
   .bg-sm-gradient-light {
     background-image: var(--bs-gradient-light) !important;
   }
+  .bg-sm-gradient-light-60 {
+    background-image: var(--bs-gradient-light-60) !important;
+  }
   .rounded-sm-4px {
     border-radius: 0.25rem !important;
   }
@@ -23591,6 +23610,9 @@ textarea.form-control-lg {
   }
   .bg-md-gradient-light {
     background-image: var(--bs-gradient-light) !important;
+  }
+  .bg-md-gradient-light-60 {
+    background-image: var(--bs-gradient-light-60) !important;
   }
   .rounded-md-4px {
     border-radius: 0.25rem !important;
@@ -27112,6 +27134,9 @@ textarea.form-control-lg {
   .bg-lg-gradient-light {
     background-image: var(--bs-gradient-light) !important;
   }
+  .bg-lg-gradient-light-60 {
+    background-image: var(--bs-gradient-light-60) !important;
+  }
   .rounded-lg-4px {
     border-radius: 0.25rem !important;
   }
@@ -30632,6 +30657,9 @@ textarea.form-control-lg {
   .bg-xl-gradient-light {
     background-image: var(--bs-gradient-light) !important;
   }
+  .bg-xl-gradient-light-60 {
+    background-image: var(--bs-gradient-light-60) !important;
+  }
   .rounded-xl-4px {
     border-radius: 0.25rem !important;
   }
@@ -34151,6 +34179,9 @@ textarea.form-control-lg {
   }
   .bg-xxl-gradient-light {
     background-image: var(--bs-gradient-light) !important;
+  }
+  .bg-xxl-gradient-light-60 {
+    background-image: var(--bs-gradient-light-60) !important;
   }
   .rounded-xxl-4px {
     border-radius: 0.25rem !important;

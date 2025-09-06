@@ -47,3 +47,28 @@ $('.other-swiper').each(function () {
     }
   });
 });
+
+$('.news-swiper').each(function () {
+  const $wrapper = $(this);
+  const $swiper = $wrapper.find('.swiper')[0];
+
+  if (!$swiper) return;
+  new Swiper($swiper, {
+    slidesPerView: 3,
+    spaceBetween: 32,
+    breakpoints: {
+      0: {
+        slidesPerView: 1.375,
+        spaceBetween: 4,
+      },
+      576: {
+        slidesPerView: 2.5,
+        spaceBetween: 16,
+      },
+      992: {
+        slidesPerView: 3,
+        spaceBetween: 32,
+      },
+    }
+  });
+});

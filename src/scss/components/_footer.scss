@@ -19,18 +19,28 @@
       --#{$prefix}btn-padding-x: #{map-get($spacers, '14px')};
 
       --#{$prefix}btn-color: var(--#{$prefix}black);
+      --#{$prefix}btn-hover-color: var(--#{$prefix}white);
+      --#{$prefix}btn-active-color: var(--#{$prefix}black);
+
+      --#{$prefix}btn-bg: linear-gradient(90deg, transparent 0%, transparent 50%, transparent 100%);
+      --#{$prefix}btn-hover-bg: linear-gradient(90deg, var(--#{$prefix}teal) 0%, var(--#{$prefix}teal-400) 50%, var(--#{$prefix}teal) 100%);
+      --#{$prefix}btn-active-bg: linear-gradient(90deg, transparent 0%, transparent 50%, transparent 100%);
 
       --#{$prefix}btn-border-color: rgba(var(--#{$prefix}gray-850-rgb), .50);
-      --#{$prefix}btn-hover-border-color: currentColor;
-      --#{$prefix}btn-active-border-color: currentColor;
-
-      display: inline-flex;
-      align-items: center;
-      gap: .25rem;
-      padding-right: #{map-get($spacers, '6px')};
+      --#{$prefix}btn-hover-border-color: linear-gradient(90deg, #ADADAD 0%, var(--#{$prefix}white) 50%, #ADADAD 100%);
+      --#{$prefix}btn-active-border-color: rgba(var(--#{$prefix}gray-850-rgb), .50);
 
       .icon {
         --_size: 1.75rem;
+
+        padding: 0;
+      }
+
+      @media (hover: hover) {
+
+        &:is(:hover, :focus-visible) {
+          box-shadow: inset 0 0 .875rem 0 rgba(var(--#{$prefix}white-rgb), .70), 0 .25rem 2rem 0 rgba(var(--#{$prefix}teal-rgb), .50);
+        }
       }
     }
   }
