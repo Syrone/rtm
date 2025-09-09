@@ -365,7 +365,6 @@
     display: block;
     user-select: none;
     pointer-events: none;
-    background: var(--#{$prefix}btn-border-color);
     padding: var(--#{$prefix}btn-border-width);
     background: var(--#{$prefix}btn-border-color);
     mask:
@@ -444,6 +443,8 @@
 
   display: inline-flex;
   align-items: center;
+  justify-content: start;
+  text-align: start;
   gap: .75rem;
 
   @include media-breakpoint-up(lg) {

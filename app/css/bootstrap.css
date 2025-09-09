@@ -5728,7 +5728,6 @@ textarea.form-control-lg {
   -ms-user-select: none;
   user-select: none;
   pointer-events: none;
-  background: var(--bs-btn-border-color);
   padding: var(--bs-btn-border-width);
   background: var(--bs-btn-border-color);
   -webkit-mask: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff)) content-box, -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff));
@@ -5807,6 +5806,10 @@ textarea.form-control-lg {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+  text-align: start;
   gap: 0.75rem;
 }
 @media (min-width: 992px) {
@@ -7627,6 +7630,10 @@ textarea.form-control-lg {
   --bs-btn-color: rgba(var(--bs-primary-rgb), .50);
   --bs-btn-hover-color: rgba(var(--bs-primary-rgb), 1);
   --bs-btn-active-color: rgba(var(--bs-primary-rgb), 1);
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+  text-align: start;
 }
 .navbar-contacts .navbar-nav .nav-link .icon {
   --_size: .75rem;

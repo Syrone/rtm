@@ -671,6 +671,9 @@
       --#{$prefix}btn-hover-color: rgba(var(--#{$prefix}primary-rgb), 1);
       --#{$prefix}btn-active-color: rgba(var(--#{$prefix}primary-rgb), 1);
 
+      justify-content: start;
+      text-align: start;
+
       .icon {
         --_size: .75rem;
       }

@@ -3,13 +3,25 @@
   &-contacts {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: .5rem;
+
+    @include media-breakpoint-up(md) {
+      gap: .75rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      gap: 1rem;
+    }
 
     .btn-phone {
-      --#{$prefix}btn-font-size: #{map-get($font-sizes, '32px')};
+      --#{$prefix}btn-font-size: #{map-get($font-sizes, '28px')};
 
       justify-content: start;
       text-align: start;
+
+      @include media-breakpoint-up(lg) {
+        --#{$prefix}btn-font-size: #{map-get($font-sizes, '32px')};
+      }
     }
 
     &-callback {
@@ -55,17 +67,43 @@
   }
 
   .navbar-socials {
-    gap: 1rem;
+    gap: .5rem;
 
     .nav-link {
-      --#{$prefix}btn-color: rgba(var(--#{$prefix}primary-rgb), .50);
-      --#{$prefix}btn-hover-color: rgba(var(--#{$prefix}primary-rgb), 1);
+      --#{$prefix}btn-color: rgba(var(--#{$prefix}primary-rgb), 1);
+      --#{$prefix}btn-hover-color: rgba(var(--#{$prefix}teal-400-rgb), 1);
       --#{$prefix}btn-active-color: rgba(var(--#{$prefix}primary-rgb), 1);
 
       box-shadow: unset;
 
       .icon {
-        --_size: 2rem;
+        --_size: 1.5rem;
+
+        @include media-breakpoint-up(lg) {
+          --_size: 2rem;
+        }
+      }
+    }
+  }
+
+  .navbar-contacts {
+
+    .nav-item {
+
+      &-title {
+        font-size: .875rem;
+      }
+    }
+
+    .navbar-socials {
+      .nav-link {
+        --#{$prefix}btn-color: rgba(var(--#{$prefix}primary-rgb), .5);
+        --#{$prefix}btn-hover-color: rgba(var(--#{$prefix}primary-rgb), 1);
+        --#{$prefix}btn-active-color: rgba(var(--#{$prefix}primary-rgb), .5);
+
+        .icon {
+          --_size: 1.25rem;
+        }
       }
     }
   }
