@@ -439,6 +439,9 @@ $sizes: (
   '18px': 1.125rem,
   '20px': 1.25rem,
   '24px': 1.5rem,
+  '32px': 2rem,
+  '40px': 2.5rem,
+  '48px': 3rem,
   '60px': 3.75rem,
   '96px': 6rem,
   '120px': 7.5rem,
@@ -633,7 +636,9 @@ $border-radiuses: (
   '24px': 1.5rem,
   '28px': 1.75rem,
   '32px': 2rem,
+  '48px': 3rem,
   '60px': 3.75rem,
+  '80px': 5rem,
   'pill': 50rem
 );
 
@@ -762,7 +767,9 @@ $font-sizes: (
   '32px': $font-size-base * 2,
   '36px': $font-size-base * 2.25,
   '38px': $font-size-base * 2.375,
+  '40px': $font-size-base * 2.5,
   '50px': $font-size-base * 3.125,
+  '60px': $font-size-base * 3.75,
 ) !default;
 // scss-docs-end font-sizes
 

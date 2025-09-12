@@ -621,6 +621,14 @@
     display: block;
   }
 }
+.offer-picture {
+  margin-top: -3rem;
+}
+@media (min-width: 768px) {
+  .offer-picture {
+    margin-top: 0;
+  }
+}
 .offer-picture img {
   max-width: 100%;
   height: auto;
@@ -655,6 +663,13 @@
     -ms-transform: scale(1.2);
     transform: scale(1.2);
   }
+  .offer:is(:hover, :focus-visible) .btn-gradient-outline-primary-to-teal-400 {
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-bg: linear-gradient(90deg, var(--bs-teal) 0%, var(--bs-teal-400) 50%, var(--bs-teal) 100%);
+    --bs-btn-border-color: linear-gradient(90deg, #ADADAD 0%, var(--bs-white) 50%, #ADADAD 100%);
+    -webkit-box-shadow: inset 0 0 0.875rem 0 rgba(var(--bs-white-rgb), 0.7), 0 0.25rem 2rem 0 rgba(var(--bs-teal-rgb), 0.5);
+    box-shadow: inset 0 0 0.875rem 0 rgba(var(--bs-white-rgb), 0.7), 0 0.25rem 2rem 0 rgba(var(--bs-teal-rgb), 0.5);
+  }
 }
 @media (min-width: 768px) {
   .offer--bg .offer-content::after {
@@ -674,6 +689,9 @@
   .offer--bg .offer-title {
     color: var(--bs-white);
   }
+}
+.offer--bg .offer-picture {
+  margin-top: 0;
 }
 .offer--bg .offer-picture img {
   width: 100%;
@@ -798,6 +816,13 @@
     -webkit-transform: translateX(0%);
     -ms-transform: translateX(0%);
     transform: translateX(0%);
+  }
+  .tool:is(:hover, :focus-visible) .btn-gradient-outline-primary-to-teal-400 {
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-bg: linear-gradient(90deg, var(--bs-teal) 0%, var(--bs-teal-400) 50%, var(--bs-teal) 100%);
+    --bs-btn-border-color: linear-gradient(90deg, #ADADAD 0%, var(--bs-white) 50%, #ADADAD 100%);
+    -webkit-box-shadow: inset 0 0 0.875rem 0 rgba(var(--bs-white-rgb), 0.7), 0 0.25rem 2rem 0 rgba(var(--bs-teal-rgb), 0.5);
+    box-shadow: inset 0 0 0.875rem 0 rgba(var(--bs-white-rgb), 0.7), 0 0.25rem 2rem 0 rgba(var(--bs-teal-rgb), 0.5);
   }
 }
 
@@ -1120,7 +1145,7 @@
   border-radius: 50rem;
   -webkit-box-shadow: none;
   box-shadow: none;
-  top: 50%;
+  top: calc(50% + 0.0625rem);
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
@@ -1136,6 +1161,95 @@
 }
 .noUi-connect {
   background-color: var(--bs-teal-400);
+}
+.noUi-pips {
+  height: initial;
+  color: var(--bs-gray-600);
+  padding: 0;
+  top: -0.0625rem;
+}
+@media (min-width: 768px) {
+  .noUi-pips {
+    top: -0.1875rem;
+  }
+}
+.noUi-marker {
+  background-color: var(--bs-gray-400);
+}
+.noUi-marker.is-active {
+  background-color: var(--bs-teal-400);
+}
+.noUi-marker-horizontal.noUi-marker-large {
+  width: 0.25rem;
+  height: 0.25rem;
+  border-radius: 50%;
+}
+@media (min-width: 768px) {
+  .noUi-marker-horizontal.noUi-marker-large {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+}
+.noUi-value {
+  font-size: 0.5rem;
+}
+@media (min-width: 768px) {
+  .noUi-value {
+    font-size: 0.75rem;
+  }
+}
+.noUi-value-horizontal {
+  padding-top: 0.125rem;
+}
+@media (min-width: 768px) {
+  .noUi-value-horizontal {
+    padding-top: 0.25rem;
+  }
+}
+.noUi-value-horizontal:nth-child(2) {
+  -webkit-transform: translate(0%, 50%);
+  -ms-transform: translate(0%, 50%);
+  transform: translate(0%, 50%);
+}
+.noUi-value-horizontal:last-child {
+  -webkit-transform: translate(calc(-100% + 0.125rem), 50%);
+  -ms-transform: translate(calc(-100% + 0.125rem), 50%);
+  transform: translate(calc(-100% + 0.125rem), 50%);
+}
+@media (min-width: 768px) {
+  .noUi-value-horizontal:last-child {
+    -webkit-transform: translate(calc(-100% + 0.25rem), 50%);
+    -ms-transform: translate(calc(-100% + 0.25rem), 50%);
+    transform: translate(calc(-100% + 0.25rem), 50%);
+  }
+}
+.noUi-value-horizontal:nth-last-child(2), .noUi-value-horizontal:last-child, .noUi-marker-horizontal:nth-last-child(2), .noUi-marker-horizontal:last-child {
+  left: calc(100% - 0.125rem) !important;
+}
+@media (min-width: 768px) {
+  .noUi-value-horizontal:nth-last-child(2), .noUi-value-horizontal:last-child, .noUi-marker-horizontal:nth-last-child(2), .noUi-marker-horizontal:last-child {
+    left: calc(100% - 0.25rem) !important;
+  }
+}
+
+.noUi--large .noUi-horizontal .noUi-handle {
+  width: 0.75rem;
+  height: 0.75rem;
+  top: calc(50% + 0.0625rem);
+}
+@media (min-width: 768px) {
+  .noUi--large .noUi-horizontal .noUi-handle {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+.noUi--large .noUi-horizontal .noUi-handle-lower {
+  right: -0.4375rem;
+}
+@media (min-width: 768px) {
+  .noUi--large .noUi-horizontal .noUi-handle-lower {
+    right: -0.625rem;
+  }
 }
 
 /* ===============================

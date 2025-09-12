@@ -148,62 +148,84 @@
 
 
     <main class="main">
-      <section class="section bg-sm-gradient-hero-bottom mt-header mt-sm-0px mb-sm-n12px mb-lg-n80px pt-sm-header pb-sm-12px pb-lg-80px overflow-hidden">
-  <div class="container">
-    <div class="d-flex flex-column gap-20px gap-sm-0px">
-      <div class="d-flex flex-column flex-sm-row justify-content-between gap-16px bg-gradient-hero-top bg-sm-reset rounded-16px p-16px p-sm-0px pb-8px pb-sm-0px rounded-sm-0px position-relative overflow-hidden overflow-sm-visible">
-        <div class="pt-lg-64px pt-4px pb-sm-32px">
-          <div class="d-flex flex-column align-items-start gap-lg-40px gap-md-32px gap-20px">
-            <div class="d-none d-sm-flex flex-sm-column gap-sm-16px fs-12px">
-              <h2 class="fs-lg-50px fs-md-32px fs-20px m-0px">
-                Газопоршневые <br> установки
-              </h2>
-              
-            </div>
-            <div class="d-flex d-sm-none flex-column gap-16px fs-12px">
-              <h2 class="fs-lg-50px fs-md-32px fs-20px m-0px">
-                Калькулятор доходности
-              </h2>
-              
-                <p>
-                  Оцените потенциальный доход от майнинга, используя калькулятор от Рустехмаш
-                </p>
-              
-            </div>
+      <section class="section">
+  <div class="bg-sm-gradient-hero-top mt-header mt-sm-0px mb-sm-n12px mb-lg-n80px pt-sm-header pb-sm-12px pb-lg-80px overflow-hidden">
+    <div class="container">
+      <div class="d-flex flex-column gap-20px gap-sm-0px">
+        <nav aria-label="breadcrumb" class="d-none d-lg-block">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <span class="icon">
+                <svg>
+                  <use xlink:href="img/icons/angle-right.svg#svg-angle-right"></use>
+                </svg>
+              </span>
+              <a href="#" class="btn">Главная </a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+              <span class="icon">
+                <svg>
+                  <use xlink:href="img/icons/angle-right.svg#svg-angle-right"></use>
+                </svg>
+              </span>
+              Каталог ASIC-майнеров
+            </li>
+          </ol>
+        </nav>
+        <div class="d-flex flex-column flex-sm-row justify-content-between gap-16px bg-gradient-hero-top bg-sm-reset rounded-16px p-16px p-sm-0px pb-8px pb-sm-0px rounded-sm-0px position-relative overflow-hidden overflow-sm-visible">
+          <div class="pt-lg-64px pt-4px pb-sm-32px">
+            <div class="d-flex flex-column align-items-start gap-lg-40px gap-md-32px gap-20px">
+              <div class="d-none d-sm-flex flex-sm-column gap-sm-16px fs-12px">
+                <h2 class="fs-lg-50px fs-md-32px fs-20px m-0px">
+                  Газопоршневые <br> установки
+                </h2>
+                
+              </div>
+              <div class="d-flex d-sm-none flex-column gap-16px fs-12px">
+                <h2 class="fs-lg-50px fs-md-32px fs-20px m-0px">
+                  Калькулятор доходности
+                </h2>
+                
+                  <p>
+                    Оцените потенциальный доход от майнинга, используя калькулятор от Рустехмаш
+                  </p>
+                
+              </div>
 
-            <button type="button" class="btn btn-40px btn-gradient-warm btn-bg-gradient btn-border-gradient flex-grow-1 flex-sm-grow-0"
-              data-bs-toggle="modal"
-              data-bs-target="#modal-order"
-              data-transfer-origin="hero-button"
-              data-transfer-breakpoint="575.98"
-              data-transfer-placement="first">
-              Оставить заявку
-            </button>
+              <button type="button" class="btn btn-40px btn-gradient-warm btn-bg-gradient btn-border-gradient flex-grow-1 flex-sm-grow-0"
+                data-bs-toggle="modal"
+                data-bs-target="#modal-order"
+                data-transfer-origin="hero-button"
+                data-transfer-breakpoint="575.98"
+                data-transfer-placement="first">
+                Оставить заявку
+              </button>
+            </div>
+          </div>
+
+          <div class="mx-n100px mx-sm-0px align-self-center align-self-sm-stretch">
+            <picture>
+              <source srcset="./img/bg/hero-3.webp" type="image/webp">
+              <img loading="lazy" src="./img/bg/hero-3.png" class="img-fluid d-none d-sm-block" width="518" height="400" alt="Картинка">
+            </picture>
+            <picture>
+              <source srcset="./img/bg/hero-3--mob.webp" type="image/webp">
+              <img loading="lazy" src="./img/bg/hero-3--mob.png" class="img-fluid d-block d-sm-none" width="512" height="208" alt="Картинка">
+            </picture>
           </div>
         </div>
 
-        <div class="mx-n100px mx-sm-0px align-self-center align-self-sm-stretch">
-          <picture>
-            <source srcset="./img/bg/hero-3.webp" type="image/webp">
-            <img loading="lazy" src="./img/bg/hero-3.png" class="img-fluid d-none d-sm-block" width="518" height="400" alt="Картинка">
-          </picture>
-          <picture>
-            <source srcset="./img/bg/hero-3--mob.webp" type="image/webp">
-            <img loading="lazy" src="./img/bg/hero-3--mob.png" class="img-fluid d-block d-sm-none" width="512" height="208" alt="Картинка">
-          </picture>
+        <div class="d-flex d-sm-none gap-12px"
+          data-transfer-target="hero-button">
+          <a href="#" target="_blank" class="btn btn-40px btn-gradient-outline-dark btn-bg-gradient btn-border-gradient btn-has-icon flex-grow-1">
+            <span>Презентация по&nbsp;лизингу</span>
+            <span class="icon">
+              <svg>
+                <use xlink:href="img/icons/download.svg#svg-download"></use>
+              </svg>
+            </span>
+          </a>
         </div>
-      </div>
-
-      <div class="d-flex d-sm-none gap-12px"
-        data-transfer-target="hero-button">
-        <a href="#" target="_blank" class="btn btn-40px btn-gradient-outline-dark btn-bg-gradient btn-border-gradient btn-has-icon flex-grow-1">
-          <span>Презентация по&nbsp;лизингу</span>
-          <span class="icon">
-            <svg>
-              <use xlink:href="img/icons/download.svg#svg-download"></use>
-            </svg>
-          </span>
-        </a>
       </div>
     </div>
   </div>
@@ -359,7 +381,7 @@
                     </div>
 
                     <div class="d-flex flex-column gap-4px">
-                      <div class="row gy-14px gx-lg-8px gx-20px" data-nouislider="">
+                      <div class="row gy-14px gx-lg-8px gx-20px" data-nouislider="multiple">
                         <div class="col-6">
                           <label class="form-control">
                             <span class="form-control-prefix">
@@ -415,7 +437,7 @@
                       </h5>
                     </div>
                     <div class="d-flex flex-column gap-4px">
-                      <div class="row gy-14px gx-lg-8px gx-20px" data-nouislider="">
+                      <div class="row gy-14px gx-lg-8px gx-20px" data-nouislider="multiple">
                         <div class="col-6">
                           <label class="form-control">
                             <span class="form-control-prefix">
@@ -2283,6 +2305,24 @@
                   <span class="icon">
                     <svg>
                       <use xlink:href="img/icons/vk.svg#svg-vk"></use>
+                    </svg>
+                  </span>
+                </a>
+              </li>
+              <li class="navbar-item">
+                <a href="#" class="btn nav-link">
+                  <span class="icon">
+                    <svg>
+                      <use xlink:href="img/icons/vedomosti.svg#svg-vedomosti"></use>
+                    </svg>
+                  </span>
+                </a>
+              </li>
+              <li class="navbar-item">
+                <a href="#" class="btn nav-link">
+                  <span class="icon">
+                    <svg>
+                      <use xlink:href="img/icons/vc.svg#svg-vc"></use>
                     </svg>
                   </span>
                 </a>
