@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html', {title: 'Факторинг для бизнеса'})
+
+<body class="page-body">
+  @include('partials/h1.html', {title: 'Факторинг для бизнеса'})
+
+  <div class="site-container">
+    @include('partials/header.html')
+
+    <main class="main">
+      <section class="section mb-40px mb-lg-80px">
+        <div class="bg-sm-gradient-hero-top mt-header mt-sm-0px pt-sm-header overflow-hidden">
+          <div class="container">
+            <div class="d-flex flex-column gap-20px gap-sm-0px">
+              <nav aria-label="breadcrumb" class="d-none d-lg-block">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <span class="icon">
+                      <svg>
+                        <use xlink:href="img/icons/angle-right.svg#svg-angle-right"></use>
+                      </svg>
+                    </span>
+                    <a href="#" class="btn">Главная </a>
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    <span class="icon">
+                      <svg>
+                        <use xlink:href="img/icons/angle-right.svg#svg-angle-right"></use>
+                      </svg>
+                    </span>
+                    Лизинг
+                  </li>
+                </ol>
+              </nav>
+              <div class="d-flex flex-column flex-sm-row justify-content-between gap-16px bg-gradient-hero-top bg-sm-reset rounded-16px p-16px p-sm-0px pb-8px pb-sm-0px rounded-sm-0px position-relative overflow-hidden overflow-sm-visible">
+                <div class="mw-sm-240px mw-md-360px mw-lg-520px mw-xl-632px pt-lg-64px pt-4px pb-sm-48px pb-md-80px pb-lg-100px">
+                  <div class="d-flex flex-column align-items-start gap-lg-40px gap-md-32px gap-20px">
+                    <div class="d-none d-sm-flex flex-sm-column gap-sm-16px fs-12px fs-xl-16px">
+                      <h2 class="fs-xl-50px fs-md-32px fs-20px m-0px">
+                        Факторинг для&nbsp;бизнеса
+                      </h2>
+                      <p>
+                        Факторинг – это финансовая услуга для пополнения оборотного капитала поставщиков, подрядчиков и производителей, которые продают свои товары и услуги на условиях отсрочки платежа. Поставщик получает деньги сразу после поставки товаров или выполнения услуг.
+                      </p>
+                    </div>
+                    <div class="d-flex d-sm-none flex-column gap-16px fs-12px fs-xl-16px">
+                      <h2 class="fs-xl-50px fs-md-32px fs-20px m-0px">
+                        Факторинг для&nbsp;бизнеса
+                      </h2>
+                    </div>
+
+                    <button type="button" class="btn btn-40px btn-gradient-warm btn-bg-gradient btn-border-gradient flex-grow-1 flex-sm-grow-0"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modal-order"
+                      data-transfer-origin="hero-button"
+                      data-transfer-breakpoint="575.98"
+                      data-transfer-placement="first">
+                      Оставить заявку
+                    </button>
+                  </div>
+                </div>
+
+                <div class="mx-n100px mx-sm-0px align-self-center align-self-sm-stretch">
+                  <picture>
+                    <source srcset="./img/bg/hero-6.webp" type="image/webp">
+                    <img loading="lazy" src="./img/bg/hero-6.png" class="img-fluid d-none d-sm-block" width="468" height="400" alt="Картинка">
+                  </picture>
+                  <picture>
+                    <source srcset="./img/bg/hero-6--mob.webp" type="image/webp">
+                    <img loading="lazy" src="./img/bg/hero-6--mob.png" class="img-fluid d-block d-sm-none" width="512" height="208" alt="Картинка">
+                  </picture>
+                </div>
+              </div>
+
+              <div class="d-sm-none mt-n52px" data-transfer-target="hero-features"></div>
+
+              <div class="d-flex d-sm-none gap-12px"
+                data-transfer-target="hero-button">
+                <a href="#" target="_blank" class="btn btn-40px btn-gradient-outline-dark btn-bg-gradient btn-border-gradient btn-has-icon flex-grow-1">
+                  <span>Презентация по&nbsp;лизингу</span>
+                  <span class="icon">
+                    <svg>
+                      <use xlink:href="img/icons/download.svg#svg-download"></use>
+                    </svg>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container d-none d-sm-block">
+          <div class="glass bg-light bg-opacity-10 mt-sm-n32px mt-md-n64px mt-lg-n80px rounded-pill pt-8px pt-sm-16px pt-md-24px pt-lg-32px pb-12px pb-sm-16px pb-lg-24px px-12px px-sm-24px px-md-32px px-lg-64px"
+            data-transfer-origin="hero-features"
+            data-transfer-breakpoint="576"
+            data-transfer-placement="last">
+            <div class="d-flex flex-column gap-4px gap-md-8px gap-lg-12px">
+              <div class="ms-12px ms-sm-0px">
+                <h3 class="fs-8px fs-md-14px fs-lg-16px fs-xl-20px m-0px">
+                  Преиущества
+                </h3>
+              </div>
+              <div class="row g-md-0px g-8px justify-content-between">
+                <div class="col-6 d-md-contents">
+                  <div class="fs-10px fs-md-12px fs-xl-16px lh-1">
+                    <span class="fs-24px fs-md-32px fs-lg-40px fs-xl-60px fw-semibold">60</span>
+                    <span class="h-md-100 d-inline-flex flex-column justify-content-center align-top">
+                      <p class="m-0px">
+                        Отсрочка
+                        <br>
+                        платежа
+                      </p>
+                    </span>
+                  </div>
+                </div>
+                <div class="col-6 d-md-contents">
+                  <div class="fs-10px fs-md-12px fs-xl-16px lh-1">
+                    <span class="fs-24px fs-md-32px fs-lg-40px fs-xl-60px fw-semibold">300 млн</span>
+                    <span class="h-md-100 d-inline-flex flex-column justify-content-center align-top">
+                      <p class="m-0px">
+                        в месяц
+                        <br>
+                        лимит
+                      </p>
+                    </span>
+                  </div>
+                </div>
+                <div class="col-6 d-md-contents">
+                  <div class="fs-10px fs-md-12px fs-xl-16px lh-1">
+                    <span class="fs-24px fs-md-32px fs-lg-40px fs-xl-60px fw-semibold">2.9%</span>
+                    <span class="h-md-100 d-inline-flex flex-column justify-content-center align-top">
+                      <p class="m-0px">
+                        комиссия
+                        <br>
+                        комплексная
+                      </p>
+                    </span>
+                  </div>
+                </div>
+                <div class="col-6 d-md-contents">
+                  <div class="fs-10px fs-md-12px fs-xl-16px lh-1">
+                    <span class="fs-24px fs-md-32px fs-lg-40px fs-xl-60px fw-semibold">4.7%</span>
+                    <span class="h-md-100 d-inline-flex flex-column justify-content-center align-top">
+                      <p class="m-0px">
+                        Итого общая
+                        <br>
+                        комиссия
+                        <br>
+                        за период
+                      </p>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section position-relative z-1">
+        <span class="d-none d-sm-block rounded-inherit position-absolute inset-0 z-n1 pe-none bg-size-cover bg-repeat-norepeat bg-position-center" style="background-image: url(./img/bg/line.svg);"></span>
+        <span class="d-block d-sm-none rounded-inherit position-absolute inset-0 z-n1 pe-none bg-size-cover bg-repeat-norepeat bg-position-center" style="background-image: url(./img/bg/line--mob.svg);"></span>
+        <div class="container">
+          <div class="d-flex flex-column gap-16px gap-lg-32px">
+            <div class="d-flex">
+              <h2 class="d-flex mb-0px fs-24px fs-lg-36px fw-medium lh-1">
+                Как работает Факторинг: 4 шага
+              </h2>
+            </div>
+
+            <div class="d-flex flex-column gap-lg-40px gap-20px">
+              <div class="row g-8px g-xl-0px flex-xl-nowrap justify-content-between">
+                <div class="col-6 col-md-3 d-xl-contents">
+                  <div class="glass mw-240px w-100 h-100 h-xl-auto bg-white bg-opacity-10 rounded-12px p-12px p-md-16px py-lg-32px px-lg-18px">
+                    <div class="d-flex flex-column gap-16px gap-lg-24px">
+                      <div class="w-48px w-md-60px w-lg-68px h-48px h-md-60px h-lg-68px d-inline-flex align-items-center justify-content-center fs-18px fs-md-16px fs-lg-24px fw-medium lh-normal position-relative z-1">
+                        <span class="rounded-pill border-2 border-md-3 border-top border-top-orange-600 border-start-dashed border-end-dashed border-bottom-dashed rotate-45 position-absolute inset-0"></span>
+                        1
+                      </div>
+                      <h3 class="fs-14px fs-lg-16px fw-bold lh-normal m-0px">
+                        Поставщик отгружает покупателю товары
+                        <br>
+                        на условиях отсрочки платежа
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-3 d-xl-contents">
+                  <div class="glass mw-240px w-100 h-100 h-xl-auto bg-white bg-opacity-10 rounded-12px p-12px p-md-16px py-lg-32px px-lg-18px">
+                    <div class="d-flex flex-column gap-16px gap-lg-24px">
+                      <div class="w-48px w-md-60px w-lg-68px h-48px h-md-60px h-lg-68px d-inline-flex align-items-center justify-content-center fs-18px fs-md-16px fs-lg-24px fw-medium lh-normal position-relative z-1">
+                        <span class="rounded-pill border-2 border-md-3 border-top border-top-orange-600 border-start-dashed border-end border-end-orange-600 border-bottom-dashed rotate-45 position-absolute inset-0"></span>
+                        2
+                      </div>
+                      <h3 class="fs-14px fs-lg-16px fw-bold lh-normal m-0px">
+                        Потом передаёт документы,
+                        <br>
+                        подтверждающие отгрузку, в банк
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-3 d-xl-contents">
+                  <div class="glass mw-240px w-100 h-100 h-xl-auto bg-white bg-opacity-10 rounded-12px p-12px p-md-16px py-lg-32px px-lg-18px">
+                    <div class="d-flex flex-column gap-16px gap-lg-24px">
+                      <div class="w-48px w-md-60px w-lg-68px h-48px h-md-60px h-lg-68px d-inline-flex align-items-center justify-content-center fs-18px fs-md-16px fs-lg-24px fw-medium lh-normal position-relative z-1">
+                        <span class="rounded-pill border-2 border-md-3 border-top border-top-orange-600 border-start-dashed border-end border-end-orange-600 border-bottom border-bottom-orange-600 rotate-45 position-absolute inset-0"></span>
+                        3
+                      </div>
+                      <h3 class="fs-14px fs-lg-16px fw-bold lh-normal m-0px">
+                        Получает деньги
+                        <br>
+                        за товар от банка
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-3 d-xl-contents">
+                  <div class="glass mw-240px w-100 h-100 h-xl-auto bg-white bg-opacity-10 rounded-12px p-12px p-md-16px py-lg-32px px-lg-18px">
+                    <div class="d-flex flex-column gap-16px gap-lg-24px">
+                      <div class="w-48px w-md-60px w-lg-68px h-48px h-md-60px h-lg-68px d-inline-flex align-items-center justify-content-center fs-18px fs-md-16px fs-lg-24px fw-medium lh-normal position-relative z-1">
+                        <span class="rounded-pill border-2 border-md-3 border border-orange-600 rotate-45 position-absolute inset-0"></span>
+                        4
+                      </div>
+                      <h3 class="fs-14px fs-lg-16px fw-bold lh-normal m-0px">
+                        Покупатель перечисляет в банк сумму, когда отсрочка подойдет к&nbsp;концу
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-none d-md-flex justify-content-center">
+                <button type="button" class="btn btn-40px btn-gradient-warm btn-bg-gradient btn-border-gradient"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modal-order">
+                  Связаться
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="row g-8px">
+            <div class="col-md-6">
+              <div class="h-100 d-flex flex-column fs-12px fs-lg-18px text-white rounded-16px position-relative overflow-hidden">
+                <div class="p-16px py-md-32px px-md-12px px-lg-40px position-absolute start-0 end-0 top-lg-0 bottom-lg-auto bottom-0 z-1">
+                  <div class="glass rounded-48px rounded-xl-80px py-12px py-lg-20px px-16px px-lg-24px">
+                    <div class="d-flex flex-column align-items-center text-center gap-12px gap-lg-16px">
+                      <div>
+                        <h3 class="fs-16px fs-md-24px fw-bold lh-normal m-0px">
+                          Возможности для покупателей
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <picture class="d-block flex-fill">
+                  <source srcset="./img/leasing/buyer.webp" type="image/webp">
+                  <img loading="lazy" src="./img/leasing/buyer.jpg" class="d-block w-100 h-100 object-fit-cover" width="580" height="580" alt="Картинка">
+                </picture>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="h-100 d-flex flex-column gap-10px gap-lg-8px">
+                <div class="min-h-96px d-flex align-items-center fs-12px fs-md-14px lh-normal bg-white rounded-16px p-14px py-md-12px py-lg-28px px-md-20px px-lg-24px">
+                  <div class="d-flex flex-column gap-4px gap-md-8px">
+                    <h3 class="fs-16px fs-md-20px lh-reset m-0px">
+                      Управляйте отсрочкой платежа
+                    </h3>
+                    <p class="fw-medium text-primary text-opacity-50 m-0px">
+                      Увеличивается по мере необходимости. По мере необходимости
+                    </p>
+                  </div>
+                </div>
+                <div class="min-h-96px d-flex align-items-center fs-12px fs-md-14px lh-normal bg-white rounded-16px p-14px py-md-12px py-lg-28px px-md-20px px-lg-24px">
+                  <div class="d-flex flex-column gap-4px gap-md-8px">
+                    <h3 class="fs-16px fs-md-20px lh-reset m-0px">
+                      Улучшайте отношения с поставщиками
+                    </h3>
+                    <p class="fw-medium text-primary text-opacity-50 m-0px">
+                      Увеличивается по мере необходимости. По мере необходимости
+                    </p>
+                  </div>
+                </div>
+                <div class="min-h-96px d-flex align-items-center fs-12px fs-md-14px lh-normal bg-white rounded-16px p-14px py-md-12px py-lg-28px px-md-20px px-lg-24px">
+                  <div class="d-flex flex-column gap-4px gap-md-8px">
+                    <h3 class="fs-16px fs-md-20px lh-reset m-0px">
+                      Снижайте издержки по управлению кредиторкой
+                    </h3>
+                    <p class="fw-medium text-primary text-opacity-50 m-0px">
+                      Увеличивается по мере необходимости. По мере необходимости
+                    </p>
+                  </div>
+                </div>
+                <div class="min-h-96px d-flex align-items-center fs-12px fs-md-14px lh-normal bg-gradient-teal-400 bg-opacity-50 rounded-16px p-14px py-md-12px py-lg-28px px-md-20px px-lg-24px">
+                  <div class="d-flex flex-column gap-4px gap-md-8px">
+                    <h3 class="fs-16px fs-md-20px lh-reset m-0px">
+                      100% финансирование ваших закупок
+                    </h3>
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-center justify-content-lg-start mt-lg-12px">
+                  <button type="button" class="btn btn-40px btn-gradient-warm btn-bg-gradient btn-border-gradient"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modal-order">
+                    Оставить заявку
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="d-flex flex-column gap-16px gap-lg-32px">
+            <div class="d-flex">
+              <h2 class="d-flex mb-0px fs-24px fs-lg-36px fw-medium lh-1">
+                Как получить финансирование
+              </h2>
+            </div>
+
+            <div class="row g-4px g-md-8px">
+              <div class="col-6 col-md-3">
+                <div class="h-100 bg-white rounded-8px rounded-md-12px p-12px py-md-28px px-md-20px">
+                  <div class="h-100 d-flex flex-column gap-8px gap-md-16px gap-lg-24px">
+                    <span class="icon w-20px w-md-32px h-20px h-lg-32px">
+                      <svg>
+                        <use xlink:href="img/icons/link.svg#svg-link"></use>
+                      </svg>
+                    </span>
+                    <div class="flex-fill d-flex flex-column justify-content-between gap-8px">
+                      <div class="d-flex flex-column gap-12px gap-md-24px">
+                        <p class="fs-12px fs-md-14px text-gray-500 m-0px">
+                          Шаг 1
+                        </p>
+                        <h3 class="fs-14px fs-md-18px fw-bold lh-normal m-0px">
+                          Отправьте
+                          <br>
+                          заявку
+                        </h3>
+                      </div>
+                      <div class="fs-12px fs-md-14px lh-normal text-gray-500">
+                        <p>
+                          <a href="#" class="btn btn-plaintext btn-link btn-link--orange-600 fs-reset fw-reset lh-reset"
+                            data-bs-toggle="modal"
+                            data-bs-target="#modal-order">
+                            Оставьте заявку
+                          </a>
+                          <br>
+                          или позвоните нам по номеру
+                          <br>
+                          8 (495) 125 15 15
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="h-100 bg-white rounded-8px rounded-md-12px p-12px py-md-28px px-md-20px">
+                  <div class="h-100 d-flex flex-column gap-8px gap-md-16px gap-lg-24px">
+                    <span class="icon w-20px w-md-32px h-20px h-lg-32px">
+                      <svg>
+                        <use xlink:href="img/icons/checkbox.svg#svg-checkbox"></use>
+                      </svg>
+                    </span>
+                    <div class="flex-fill d-flex flex-column justify-content-between gap-8px">
+                      <div class="d-flex flex-column gap-12px gap-md-24px">
+                        <p class="fs-12px fs-md-14px text-gray-500 m-0px">
+                          Шаг 2
+                        </p>
+                        <h3 class="fs-14px fs-md-18px fw-bold lh-normal m-0px">
+                          Получите одобрение
+                        </h3>
+                      </div>
+                      <div class="fs-12px fs-md-14px lh-normal text-gray-500">
+                        <p>
+                          <a href="#" class="btn btn-plaintext btn-link btn-link--orange-600 fs-reset fw-reset lh-reset"
+                            data-bs-toggle="modal"
+                            data-bs-target="#modal-order">
+                            Оставьте заявку
+                          </a>
+                          <br>
+                          или позвоните нам по номеру
+                          <br>
+                          8 (495) 125 15 15
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="h-100 bg-white rounded-8px rounded-md-12px p-12px py-md-28px px-md-20px">
+                  <div class="h-100 d-flex flex-column gap-8px gap-md-16px gap-lg-24px">
+                    <span class="icon w-20px w-md-32px h-20px h-lg-32px">
+                      <svg>
+                        <use xlink:href="img/icons/edit.svg#svg-edit"></use>
+                      </svg>
+                    </span>
+                    <div class="flex-fill d-flex flex-column justify-content-between gap-8px">
+                      <div class="d-flex flex-column gap-12px gap-md-24px">
+                        <p class="fs-12px fs-md-14px text-gray-500 m-0px">
+                          Шаг 3
+                        </p>
+                        <h3 class="fs-14px fs-md-18px fw-bold lh-normal m-0px">
+                          Подпишите документы онлайн
+                        </h3>
+                      </div>
+                      <div class="fs-12px fs-md-14px lh-normal text-gray-500">
+                        <p>
+                          <a href="#" class="btn btn-plaintext btn-link btn-link--orange-600 fs-reset fw-reset lh-reset"
+                            data-bs-toggle="modal"
+                            data-bs-target="#modal-order">
+                            Оставьте заявку
+                          </a>
+                          <br>
+                          или позвоните нам по номеру
+                          <br>
+                          8 (495) 125 15 15
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="h-100 bg-white rounded-8px rounded-md-12px p-12px py-md-28px px-md-20px">
+                  <div class="h-100 d-flex flex-column gap-8px gap-md-16px gap-lg-24px">
+                    <span class="icon w-20px w-md-32px h-20px h-lg-32px">
+                      <svg>
+                        <use xlink:href="img/icons/cubein.svg#svg-cubein"></use>
+                      </svg>
+                    </span>
+                    <div class="flex-fill d-flex flex-column justify-content-between gap-8px">
+                      <div class="d-flex flex-column gap-12px gap-md-24px">
+                        <p class="fs-12px fs-md-14px text-gray-500 m-0px">
+                          Шаг 4
+                        </p>
+                        <h3 class="fs-14px fs-md-18px fw-bold lh-normal m-0px">
+                          Получите оборудование
+                        </h3>
+                      </div>
+                      <div class="fs-12px fs-md-14px lh-normal text-gray-500">
+                        <p>
+                          <a href="#" class="btn btn-plaintext btn-link btn-link--orange-600 fs-reset fw-reset lh-reset"
+                            data-bs-toggle="modal"
+                            data-bs-target="#modal-order">
+                            Оставьте заявку
+                          </a>
+                          <br>
+                          или позвоните нам по номеру
+                          <br>
+                          8 (495) 125 15 15
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      @include('partials/sections/telegram.html')
+      @include('partials/sections/callback.html')
+    </main>
+
+    @include('partials/footer.html')
+  </div>
+
+  @include('partials/modals.html')
+</body>
+
+</html>

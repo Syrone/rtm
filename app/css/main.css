@@ -539,6 +539,7 @@
 @media (max-width: 767.98px) {
   .banner .btn-40px .icon {
     --_size: .75rem;
+    padding: 0rem;
   }
 }
 
@@ -1195,7 +1196,7 @@
   }
 }
 .noUi-value {
-  font-size: 0.5rem;
+  font-size: 0.625rem;
 }
 @media (min-width: 768px) {
   .noUi-value {
@@ -1820,7 +1821,7 @@
   }
 }
 .other-swiper .swiper-slide {
-  width: 12.5rem;
+  width: 13.5rem;
   height: auto;
 }
 .other-swiper .swiper-slide .card {

@@ -101,23 +101,28 @@ $utilities: map-merge(
     ),
     "inset": (
       property: inset,
+      responsive: true,
       values: $position-values
     ),
     "top": (
       property: top,
+      responsive: true,
       values: $position-values
     ),
     "bottom": (
       property: bottom,
+      responsive: true,
       values: $position-values
     ),
     "start": (
       property: left,
+      responsive: true,
       class: start,
       values: $position-values
     ),
     "end": (
       property: right,
+      responsive: true,
       class: end,
       values: $position-values
     ),
@@ -346,11 +351,12 @@ $utilities: map-merge(
       property: min-height,
       responsive: true,
       class: min-h,
-      values: (
-        100: 100%,
-        auto: auto,
-        '570px': 35.625rem,
-        '308px': 19.25rem
+      values: map-merge(
+        $sizes,
+        (
+          100: 100%,
+          auto: auto
+        )
       )
     ),
     // scss-docs-end utils-sizing
@@ -622,7 +628,12 @@ $utilities: map-merge(
       responsive: true,
       property: font-size,
       class: fs,
-      values: $font-sizes
+      values: map-merge(
+        $font-sizes,
+        (
+          reset: inherit
+        )
+      )
     ),
     "font-style": (
       property: font-style,
@@ -634,6 +645,7 @@ $utilities: map-merge(
       responsive: true,
       class: fw,
       values: (
+        reset: inherit,
         lighter: $font-weight-lighter,
         light: $font-weight-light,
         normal: $font-weight-normal,
@@ -867,6 +879,7 @@ $utilities: map-merge(
         gradient-hero-bottom: var(--#{$prefix}gradient-hero-bottom),
         gradient-light: var(--#{$prefix}gradient-light),
         gradient-light-60: var(--#{$prefix}gradient-light-60),
+        gradient-teal-400: var(--#{$prefix}gradient-teal-400),
       )
     ),
     // scss-docs-start utils-interaction

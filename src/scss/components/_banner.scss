@@ -115,6 +115,8 @@
 
       @include media-breakpoint-down(md) {
         --_size: .75rem;
+
+        padding: 0rem;
       }
     }
   }
