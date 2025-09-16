@@ -35577,6 +35577,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 jquery__WEBPACK_IMPORTED_MODULE_0__('[data-choices]').each(function () {
+  const extraClasses = jquery__WEBPACK_IMPORTED_MODULE_0__(this).attr('data-choices-classes') || '';
   const choice = new choices_js__WEBPACK_IMPORTED_MODULE_1__["default"](this, {
     allowHTML: true,
     searchEnabled: false,
@@ -35586,6 +35587,11 @@ jquery__WEBPACK_IMPORTED_MODULE_0__('[data-choices]').each(function () {
     noResultsText: "Результаты не найдены",
     noChoicesText: "Нет вариантов для выбора"
   });
+  if (extraClasses.trim()) {
+    extraClasses.split(/\s+/).forEach(cls => {
+      choice.containerOuter.element.classList.add(cls);
+    });
+  }
   const $inner = jquery__WEBPACK_IMPORTED_MODULE_0__(choice.containerInner.element);
   if ($inner.find('.icon').length === 0) {
     $inner.append(`
@@ -35668,12 +35674,13 @@ jquery__WEBPACK_IMPORTED_MODULE_0__(document).on('click', '[data-button-view]', 
 });
 
 // Логика переключения блоков по data-radio-view
-jquery__WEBPACK_IMPORTED_MODULE_0__(document).on('change', '[data-radio-view]', function () {
-  const view = jquery__WEBPACK_IMPORTED_MODULE_0__(this).data('radio-view');
-  jquery__WEBPACK_IMPORTED_MODULE_0__('[data-form-view]').each(function () {
+jquery__WEBPACK_IMPORTED_MODULE_0__(document).on('change', '[data-radio-group] [data-radio-view]', function () {
+  const $group = jquery__WEBPACK_IMPORTED_MODULE_0__(this).closest('[data-radio-group]');
+  const view = jquery__WEBPACK_IMPORTED_MODULE_0__(this).attr('data-radio-view');
+  $group.find('[data-form-view]').each(function () {
     const $el = jquery__WEBPACK_IMPORTED_MODULE_0__(this);
-    const formView = $el.data('form-view');
-    if (formView == view) {
+    const formView = $el.attr('data-form-view');
+    if (formView === view) {
       $el.removeClass('d-none');
     } else {
       $el.addClass('d-none');
@@ -35681,7 +35688,9 @@ jquery__WEBPACK_IMPORTED_MODULE_0__(document).on('change', '[data-radio-view]', 
   });
 });
 jquery__WEBPACK_IMPORTED_MODULE_0__(document).ready(function () {
-  jquery__WEBPACK_IMPORTED_MODULE_0__('[data-radio-view]:checked').trigger('change');
+  jquery__WEBPACK_IMPORTED_MODULE_0__('[data-radio-group]').each(function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0__(this).find('[data-radio-view]:checked').trigger('change');
+  });
 });
 
 /***/ }),

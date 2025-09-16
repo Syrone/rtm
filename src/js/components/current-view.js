@@ -14,14 +14,15 @@ $(document).on('click', '[data-button-view]', function () {
 });
 
 // Логика переключения блоков по data-radio-view
-$(document).on('change', '[data-radio-view]', function () {
-  const view = $(this).data('radio-view');
+$(document).on('change', '[data-radio-group] [data-radio-view]', function () {
+  const $group = $(this).closest('[data-radio-group]');
+  const view = $(this).attr('data-radio-view');
 
-  $('[data-form-view]').each(function () {
+  $group.find('[data-form-view]').each(function () {
     const $el = $(this);
-    const formView = $el.data('form-view');
+    const formView = $el.attr('data-form-view');
 
-    if (formView == view) {
+    if (formView === view) {
       $el.removeClass('d-none');
     } else {
       $el.addClass('d-none');
@@ -30,5 +31,7 @@ $(document).on('change', '[data-radio-view]', function () {
 });
 
 $(document).ready(function () {
-  $('[data-radio-view]:checked').trigger('change');
+  $('[data-radio-group]').each(function () {
+    $(this).find('[data-radio-view]:checked').trigger('change');
+  });
 });

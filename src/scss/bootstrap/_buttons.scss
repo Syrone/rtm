@@ -529,6 +529,8 @@
   --#{$prefix}btn-box-shadow: 0 0 0 #000; // Can't use `none` as keyword negates all values when used with multiple shadows
   --#{$prefix}btn-focus-shadow-rgb: #{$btn-link-focus-shadow-rgb};
 
+  justify-content: start;
+  text-align: start;
   text-decoration: $link-decoration;
   @if $enable-gradients {
     background-image: none;
@@ -551,6 +553,10 @@
     color: var(--#{$prefix}btn-color);
   }
   // No need for an active state here
+}
+
+.btn-link--teal-050 {
+  --#{$prefix}btn-color: var(--#{$prefix}teal-050);
 }
 
 

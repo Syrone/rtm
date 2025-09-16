@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html', {title: 'Лизинг'})
+
+<body class="page-body">
+  @include('partials/h1.html', {title: 'Лизинг'})
+
+  <div class="site-container">
+    @include('partials/header.html')
+
+    <main class="main">
+      @include('partials/sections/hero.html', {
+        "desktop": {
+          "title": "Калькулятор доходности",
+          "subtitle": "Оцените потенциальный доход от майнинга, используя калькулятор&nbsp;от&nbsp;Рустехмаш",
+          "img": "hero-5",
+        },
+        "mobile": {
+          "title": "Калькулятор доходности",
+          "subtitle": "Оцените потенциальный доход от майнинга, используя калькулятор&nbsp;от&nbsp;Рустехмаш",
+          "img": "hero-5--mob",
+        },
+      })
+
+      <section class="section bg-body pt-40px pt-lg-80px">
+        <div class="container">
+          <form class="row gy-16px gx-12px">
+            <div class="col-lg-7">
+              <div class="h-100 d-flex flex-column gap-8px rounded-8px border border-gray-300 p-10px p-lg-20px" data-radio-group="">
+                <div class="d-flex justify-content-between gap-8px">
+                  <div class="flex-grow-1 flex-lg-grow-0 d-flex gap-4px">
+                    <label class="flex-fill form-check form-check-lg form-check--fill form-check--light">
+                      <input type="radio" class="form-check-input" name="radioCalc" checked
+                        data-radio-view="calc-0">
+                      <div class="form-check-label">
+                        Выбрать аппарат
+                      </div>
+                    </label>
+                    <label class="flex-fill form-check form-check-lg form-check--fill form-check--light">
+                      <input type="radio" class="form-check-input" name="radioCalc"
+                        data-radio-view="calc-1">
+                      <div class="form-check-label">
+                        Ввести данные
+                      </div>
+                    </label>
+                  </div>
+                  <div class="d-none d-lg-flex align-items-lg-end">
+                    <a href="#" class="btn btn-plaintext btn-link btn-link--teal-050 fs-12px fs-md-14px">
+                      Как пользоваться калькулятором?
+                    </a>
+                  </div>
+                </div>
+                <div class="flex-fill d-flex flex-column gap-16px" data-form-view="calc-0">
+                  <div class="row g-8px">
+                    <div class="col-12">
+                      <select data-choices="" data-choices-classes="choices-lg choices--light" data-placeholder="Выберите аппарат">
+                        <option value="0" selected>Sealminer A2, 226 TH/s</option>
+                        <option value="1">Sealminer A3, 326 TH/s</option>
+                        <option value="2">Sealminer A4, 426 TH/s</option>
+                        <option value="3">Sealminer A5, 526 TH/s</option>
+                        <option value="4">Sealminer A6, 626 TH/s</option>
+                        <option value="5">Sealminer A7, 726 TH/s</option>
+                      </select>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="h-100 d-flex">
+                        <div class="input-group input-group--light flex-fill">
+                          <input type="text" class="form-control form-control-lg" placeholder="Тариф электроэнергии" aria-label="Тариф электроэнергии">
+                          <span class="input-group-text">
+                            руб./ кВт*ч
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="h-100 d-flex">
+                        <div class="counter counter-lg counter--fill counter--light flex-fill" data-counter="">
+                          <button type="button" class="btn counter-btn" data-counter-decrement="">
+                            -
+                          </button>
+                          <label class="counter-current">
+                            <input type="text" class="form-control-plaintext" name="counter" placeholder="Количество" data-counter-current="">
+                          </label>
+                          <button type="button" class="btn counter-btn" data-counter-increment="">
+                            +
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex-fill d-flex flex-column justify-content-between gap-12px">
+                    @include('partials/card.html', {
+                      "type": "calc",
+                      "img": { "src": "image-1" },
+                      "tags": false,
+                      "list": [ { "name": "Потребление", "value": "5 500 W" }, { "name": "Цена за 1 шт.", "value": "125 692 ₽" } ],
+                    })
+                    <div class="d-none d-lg-flex flex-lg-column gap-lg-4px">
+                      <ul class="list-group list-group--plaintext gap-4px font-manrope fs-14px fs-lg-16px fw-medium lh-normal text-gray-500">
+                        <li class="list-group-item">
+                          <div class="d-flex justify-content-between">
+                            <span>Общее потребление</span>
+                            <span class="fw-bold text-black">61 729 Вт</span>
+                          </div>
+                        </li>
+                        <li class="list-group-item">
+                          <div class="d-flex justify-content-between">
+                            <span>Общий хэшрейт</span>
+                            <span class="fw-bold text-black">215 126 Th/s</span>
+                          </div>
+                        </li>
+                      </ul>
+                      <ul class="list-group list-group--plaintext gap-4px font-manrope fs-18px fs-lg-20px fw-bold lh-normal">
+                        <li class="list-group-item">
+                          <div class="d-flex justify-content-between">
+                            <span>Итоговая стоимость:</span>
+                            <span class="text-orange-600">125 692 ₽</span>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex-fill d-flex flex-column gap-16px" data-form-view="calc-1">
+                  <div class="row g-8px">
+                    <div class="col-12">
+                      <select data-choices="" data-choices-classes="choices-lg choices--light" data-placeholder="Монета">
+                        <option value="0">Bitcoin</option>
+                        <option value="1">Kaspa</option>
+                        <option value="2">Ethereum</option>
+                        <option value="3">Dogecoin</option>
+                        <option value="4">Luna</option>
+                        <option value="5">Buzcoin</option>
+                      </select>
+                    </div>
+                    <div class="col-lg-12 col-md-6">
+                      <div class="h-100 d-flex">
+                        <div class="input-group input-group-lg input-group--light flex-fill">
+                          <input type="text" class="form-control form-control-lg" placeholder="Хэшрейт" aria-label="Хэшрейт">
+                          <select data-choices="" data-choices-classes="choices-lg choices--light" data-placeholder="Хэшрейт">
+                            <option value="0" selected>Th/s</option>
+                            <option value="1">Th/s</option>
+                            <option value="2">Th/s</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-12 col-md-6">
+                      <div class="h-100 d-flex">
+                        <div class="input-group input-group-lg input-group--light flex-fill">
+                          <input type="text" class="form-control form-control-lg" placeholder="Потребление" aria-label="Потребление">
+                          <span class="input-group-text">
+                            W
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="h-100 d-flex">
+                        <div class="input-group input-group-lg input-group--light flex-fill">
+                          <input type="text" class="form-control form-control-lg" placeholder="Тариф электроэнергии" aria-label="Тариф электроэнергии">
+                          <span class="input-group-text">
+                            руб./ кВт*ч
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="d-lg-none">
+                  <a href="#" class="btn btn-plaintext btn-link btn-link--teal-050 fs-12px fs-md-14px">
+                    Как пользоваться калькулятором?
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="h-100 d-flex flex-column gap-20px gap-lg-8px justify-content-between rounded-8px border border-gray-300 p-10px p-lg-20px">
+                <div class="d-flex flex-column flex-xl-row flex-lg-column flex-sm-row justify-content-xl-between justify-content-lg-start justify-content-sm-between gap-12px">
+                  <h4 class="m-0px fs-18px fw-semibold lh-normal text-black">
+                    Результат расчетов
+                  </h4>
+
+                  <ul class="list-group list-group--plaintext gap-4px fs-14px fs-lg-12px lh-normal text-gray-600">
+                    <li class="list-group-item">
+                      <div class="d-flex align-items-baseline justify-content-xl-end justify-content-lg-start justify-content-sm-end gap-4px text-xl-end text-lg-start text-sm-end">
+                        <span>BTC:</span>
+                        <span class="font-manrope fs-14px fs-lg-16px fw-bold text-black">103 251 $ / 8 152 156 ₽</span>
+                      </div>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="d-flex align-items-baseline justify-content-xl-end justify-content-lg-start justify-content-sm-end gap-4px text-xl-end text-lg-start text-sm-end">
+                        <span>USD:</span>
+                        <span class="font-manrope fs-14px fs-lg-16px fw-bold text-black">78.3 ₽</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="flex-fill d-flex flex-column justify-content-end gap-20px">
+                  <div class="btn-group btn-group-sm btn-group--gap align-self-lg-start" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" name="calc-currency" id="calc-currency-0" autocomplete="off" checked>
+                    <label class="btn btn-outline-teal-50 min-w-lg-60px rounded-8px" for="calc-currency-0">
+                      $
+                    </label>
+
+                    <input type="radio" class="btn-check" name="calc-currency" id="calc-currency-1" autocomplete="off">
+                    <label class="btn btn-outline-teal-50 min-w-lg-60px rounded-8px" for="calc-currency-1">
+                      ₽
+                    </label>
+
+                    <input type="radio" class="btn-check" name="calc-currency" id="calc-currency-2" autocomplete="off">
+                    <label class="btn btn-outline-teal-50 min-w-lg-60px rounded-8px" for="calc-currency-2">
+                      LTC
+                    </label>
+                  </div>
+
+                  <div class="d-flex flex-column gap-14px gap-lg-16px">
+                    <ul class="list-group list-group--plaintext gap-12px font-manrope fw-bold lh-normal text-black">
+                      <li class="list-group-item">
+                        <div class="d-flex justify-content-between">
+                          <span>Чистая прибыль</span>
+                          <span class="text-orange-600">689 126 ₽</span>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="d-flex justify-content-between">
+                          <span>Окупаемость</span>
+                          <span class="text-orange-600">24 мес.</span>
+                        </div>
+                      </li>
+                    </ul>
+
+                    <div class="br-top"></div>
+
+                    <ul class="list-group list-group--plaintext gap-12px font-manrope fs-16px fw-medium lh-normal text-gray-500">
+                      <li class="list-group-item">
+                        <div class="d-flex justify-content-between">
+                          <span>Доход в месяц</span>
+                          <span class="fw-bold text-orange-600">103 251 ₽</span>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="d-flex justify-content-between">
+                          <span>Доход в год</span>
+                          <span class="fw-bold text-orange-600">1 712 251 ₽</span>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="d-flex justify-content-between">
+                          <span>Годовая доходность</span>
+                          <span class="fw-bold text-orange-600">46.961%</span>
+                        </div>
+                      </li>
+                    </ul>
+
+                    <div class="br-top"></div>
+
+                    <div class="d-flex">
+                      <button type="button" class="btn btn-gradient-warm btn-bg-gradient btn-border-gradient h-32px h-md-48px flex-fill fs-10px fs-md-14px rounded-pill"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modal-order">
+                        Оставить заявку
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="section position-relative z-1">
+        <div class="container">
+          <div class="d-flex flex-column gap-16px gap-lg-32px">
+            <div class="d-flex">
+              <h2 class="d-flex mb-0px fs-24px fs-lg-36px fw-medium lh-1">
+                Топ по доходности
+              </h2>
+            </div>
+
+            <div class="row g-8px">
+              <div class="col-md-4">
+                <div class="h-100 d-flex flex-column">
+                  <div class="d-flex align-items-center">
+                    <div class="flex-fill d-flex flex-column py-4px ps-18px">
+                      <h3 class="fs-16px fs-md-14px fs-lg-16px fw-bold lh-normal text-primary m-0px">
+                        BTC
+                      </h3>
+                      <p class="fs-12px fw-medium lh-normal text-primary text-opacity-50 m-0px">
+                        Окупаемость
+                      </p>
+                    </div>
+
+                    <div>
+                      <picture>
+                        <source srcset="./img/profit/image-1.webp" type="image/webp">
+                        <img loading="lazy" src="./img/profit/image-1.png" class="img-fluid mw-md-112px mw-lg-100" width="150" height="116" alt="Картинка">
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="glass bg-white bg-opacity-10 mt-n32px mt-md-n24px mt-lg-n28px rounded-16px py-16px px-18px">
+                    <ul class="list-group list-group--plaintext gap-8px">
+                      <li class="list-group-item">
+                        <div class="d-flex">
+                          <div class="flex-fill">
+                            <h4 class="font-manrope fs-10px fs-md-12px fw-bold m-0px">
+                              Sealminer A2, 226 TH/s
+                            </h4>
+                          </div>
+                          <div class="d-flex flex-column lh-normal text-end text-nowrap">
+                            <p class="font-manrope fs-10px fs-md-12px fw-bold text-primary m-0px">
+                              20 мес
+                            </p>
+                            <p class="fs-8px fs-md-10px fw-medium text-primary text-opacity-50 m-0px">
+                              500 000 ₽/мес.
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="d-flex">
+                          <div class="flex-fill">
+                            <h4 class="font-manrope fs-10px fs-md-12px fw-bold m-0px">
+                              Sealminer A2, 226 TH/s
+                            </h4>
+                          </div>
+                          <div class="d-flex flex-column lh-normal text-end text-nowrap">
+                            <p class="font-manrope fs-10px fs-md-12px fw-bold text-primary m-0px">
+                              20 мес
+                            </p>
+                            <p class="fs-8px fs-md-10px fw-medium text-primary text-opacity-50 m-0px">
+                              500 000 ₽/мес.
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="d-flex">
+                          <div class="flex-fill">
+                            <h4 class="font-manrope fs-10px fs-md-12px fw-bold m-0px">
+                              Sealminer A2, 226 TH/s
+                            </h4>
+                          </div>
+                          <div class="d-flex flex-column lh-normal text-end text-nowrap">
+                            <p class="font-manrope fs-10px fs-md-12px fw-bold text-primary m-0px">
+                              20 мес
+                            </p>
+                            <p class="fs-8px fs-md-10px fw-medium text-primary text-opacity-50 m-0px">
+                              500 000 ₽/мес.
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="h-100 d-flex flex-column">
+                  <div class="d-flex align-items-center">
+                    <div class="flex-fill d-flex flex-column py-4px ps-18px">
+                      <h3 class="fs-16px fs-md-14px fs-lg-16px fw-bold lh-normal text-primary m-0px">
+                        LTC + DOGE
+                      </h3>
+                      <p class="fs-12px fw-medium lh-normal text-primary text-opacity-50 m-0px">
+                        Окупаемость
+                      </p>
+                    </div>
+
+                    <div>
+                      <picture>
+                        <source srcset="./img/profit/image-2.webp" type="image/webp">
+                        <img loading="lazy" src="./img/profit/image-2.png" class="img-fluid mw-md-112px mw-lg-100" width="150" height="116" alt="Картинка">
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="glass bg-white bg-opacity-10 mt-n32px mt-md-n24px mt-lg-n28px rounded-16px py-16px px-18px">
+                    <ul class="list-group list-group--plaintext gap-8px">
+                      <li class="list-group-item">
+                        <div class="d-flex">
+                          <div class="flex-fill">
+                            <h4 class="font-manrope fs-10px fs-md-12px fw-bold m-0px">
+                              Sealminer A2, 226 TH/s
+                            </h4>
+                          </div>
+                          <div class="d-flex flex-column lh-normal text-end text-nowrap">
+                            <p class="font-manrope fs-10px fs-md-12px fw-bold text-primary m-0px">
+                              20 мес
+                            </p>
+                            <p class="fs-8px fs-md-10px fw-medium text-primary text-opacity-50 m-0px">
+                              500 000 ₽/мес.
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="d-flex">
+                          <div class="flex-fill">
+                            <h4 class="font-manrope fs-10px fs-md-12px fw-bold m-0px">
+                              Sealminer A2, 226 TH/s
+                            </h4>
+                          </div>
+                          <div class="d-flex flex-column lh-normal text-end text-nowrap">
+                            <p class="font-manrope fs-10px fs-md-12px fw-bold text-primary m-0px">
+                              20 мес
+                            </p>
+                            <p class="fs-8px fs-md-10px fw-medium text-primary text-opacity-50 m-0px">
+                              500 000 ₽/мес.
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="d-flex">
+                          <div class="flex-fill">
+                            <h4 class="font-manrope fs-10px fs-md-12px fw-bold m-0px">
+                              Sealminer A2, 226 TH/s
+                            </h4>
+                          </div>
+                          <div class="d-flex flex-column lh-normal text-end text-nowrap">
+                            <p class="font-manrope fs-10px fs-md-12px fw-bold text-primary m-0px">
+                              20 мес
+                            </p>
+                            <p class="fs-8px fs-md-10px fw-medium text-primary text-opacity-50 m-0px">
+                              500 000 ₽/мес.
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="h-100 d-flex flex-column">
+                  <div class="d-flex align-items-center">
+                    <div class="flex-fill d-flex flex-column py-4px ps-18px">
+                      <h3 class="fs-16px fs-md-14px fs-lg-16px fw-bold lh-normal text-primary m-0px">
+                        KASPA
+                      </h3>
+                      <p class="fs-12px fw-medium lh-normal text-primary text-opacity-50 m-0px">
+                        Окупаемость
+                      </p>
+                    </div>
+
+                    <div>
+                      <picture>
+                        <source srcset="./img/profit/image-3.webp" type="image/webp">
+                        <img loading="lazy" src="./img/profit/image-3.png" class="img-fluid mw-md-112px mw-lg-100" width="150" height="116" alt="Картинка">
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="glass bg-white bg-opacity-10 mt-n32px mt-md-n24px mt-lg-n28px rounded-16px py-16px px-18px">
+                    <ul class="list-group list-group--plaintext gap-8px">
+                      <li class="list-group-item">
+                        <div class="d-flex">
+                          <div class="flex-fill">
+                            <h4 class="font-manrope fs-10px fs-md-12px fw-bold m-0px">
+                              Sealminer A2, 226 TH/s
+                            </h4>
+                          </div>
+                          <div class="d-flex flex-column lh-normal text-end text-nowrap">
+                            <p class="font-manrope fs-10px fs-md-12px fw-bold text-primary m-0px">
+                              20 мес
+                            </p>
+                            <p class="fs-8px fs-md-10px fw-medium text-primary text-opacity-50 m-0px">
+                              500 000 ₽/мес.
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="d-flex">
+                          <div class="flex-fill">
+                            <h4 class="font-manrope fs-10px fs-md-12px fw-bold m-0px">
+                              Sealminer A2, 226 TH/s
+                            </h4>
+                          </div>
+                          <div class="d-flex flex-column lh-normal text-end text-nowrap">
+                            <p class="font-manrope fs-10px fs-md-12px fw-bold text-primary m-0px">
+                              20 мес
+                            </p>
+                            <p class="fs-8px fs-md-10px fw-medium text-primary text-opacity-50 m-0px">
+                              500 000 ₽/мес.
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="d-flex">
+                          <div class="flex-fill">
+                            <h4 class="font-manrope fs-10px fs-md-12px fw-bold m-0px">
+                              Sealminer A2, 226 TH/s
+                            </h4>
+                          </div>
+                          <div class="d-flex flex-column lh-normal text-end text-nowrap">
+                            <p class="font-manrope fs-10px fs-md-12px fw-bold text-primary m-0px">
+                              20 мес
+                            </p>
+                            <p class="fs-8px fs-md-10px fw-medium text-primary text-opacity-50 m-0px">
+                              500 000 ₽/мес.
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section position-relative z-1">
+        <span class="d-none d-sm-block rounded-inherit position-absolute inset-0 z-n1 pe-none bg-size-cover bg-repeat-norepeat bg-position-center" style="background-image: url(./img/bg/line.svg);"></span>
+        <span class="d-block d-sm-none rounded-inherit position-absolute inset-0 z-n1 pe-none bg-size-cover bg-repeat-norepeat bg-position-center" style="background-image: url(./img/bg/line--mob.svg);"></span>
+        <div class="container">
+          <div class="d-flex flex-column gap-16px gap-lg-32px">
+            <div class="d-flex">
+              <h2 class="d-flex mb-0px fs-24px fs-lg-36px fw-medium lh-1">
+                5 шагов для получения оборудования в лизинг
+              </h2>
+            </div>
+
+            <div class="d-flex flex-column gap-lg-40px gap-20px">
+              <div class="row g-8px g-xl-0px flex-xl-nowrap justify-content-between">
+                <div class="col-6 col-md-3 d-xl-contents">
+                  <div class="glass mw-240px w-100 h-100 h-xl-auto bg-white bg-opacity-10 rounded-12px p-12px p-md-16px py-lg-32px px-lg-18px">
+                    <div class="d-flex flex-column gap-16px gap-lg-24px">
+                      <div class="w-48px w-md-60px w-lg-68px h-48px h-md-60px h-lg-68px d-inline-flex align-items-center justify-content-center fs-18px fs-md-16px fs-lg-24px fw-medium lh-normal position-relative z-1">
+                        <span class="rounded-pill border-2 border-md-3 border-top border-top-orange-600 border-start-dashed border-end-dashed border-bottom-dashed rotate-45 position-absolute inset-0"></span>
+                        1
+                      </div>
+                      <h3 class="fs-14px fs-lg-16px fw-bold lh-normal m-0px">
+                        Поставщик отгружает покупателю товары
+                        <br>
+                        на условиях отсрочки платежа
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-3 d-xl-contents">
+                  <div class="glass mw-240px w-100 h-100 h-xl-auto bg-white bg-opacity-10 rounded-12px p-12px p-md-16px py-lg-32px px-lg-18px">
+                    <div class="d-flex flex-column gap-16px gap-lg-24px">
+                      <div class="w-48px w-md-60px w-lg-68px h-48px h-md-60px h-lg-68px d-inline-flex align-items-center justify-content-center fs-18px fs-md-16px fs-lg-24px fw-medium lh-normal position-relative z-1">
+                        <span class="rounded-pill border-2 border-md-3 border-top border-top-orange-600 border-start-dashed border-end border-end-orange-600 border-bottom-dashed rotate-45 position-absolute inset-0"></span>
+                        2
+                      </div>
+                      <h3 class="fs-14px fs-lg-16px fw-bold lh-normal m-0px">
+                        Выберите подходящее оборудование
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-3 d-xl-contents">
+                  <div class="glass mw-240px w-100 h-100 h-xl-auto bg-white bg-opacity-10 rounded-12px p-12px p-md-16px py-lg-32px px-lg-18px">
+                    <div class="d-flex flex-column gap-16px gap-lg-24px">
+                      <div class="w-48px w-md-60px w-lg-68px h-48px h-md-60px h-lg-68px d-inline-flex align-items-center justify-content-center fs-18px fs-md-16px fs-lg-24px fw-medium lh-normal position-relative z-1">
+                        <span class="rounded-pill border-2 border-md-3 border-top border-top-orange-600 border-start-dashed border-end border-end-orange-600 border-bottom border-bottom-orange-600 rotate-45 position-absolute inset-0"></span>
+                        3
+                      </div>
+                      <h3 class="fs-14px fs-lg-16px fw-bold lh-normal m-0px">
+                        Подготовьте
+                        <br>
+                        документы
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-3 d-xl-contents">
+                  <div class="glass mw-240px w-100 h-100 h-xl-auto bg-white bg-opacity-10 rounded-12px p-12px p-md-16px py-lg-32px px-lg-18px">
+                    <div class="d-flex flex-column gap-16px gap-lg-24px">
+                      <div class="w-48px w-md-60px w-lg-68px h-48px h-md-60px h-lg-68px d-inline-flex align-items-center justify-content-center fs-18px fs-md-16px fs-lg-24px fw-medium lh-normal position-relative z-1">
+                        <span class="rounded-pill border-2 border-md-3 border border-orange-600 rotate-45 position-absolute inset-0"></span>
+                        4
+                      </div>
+                      <h3 class="fs-14px fs-lg-16px fw-bold lh-normal m-0px">
+                        Получите оборудование
+                        <br>
+                        и запустите процесс майнинга
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-none d-md-flex justify-content-center">
+                <button type="button" class="btn btn-40px btn-gradient-warm btn-bg-gradient btn-border-gradient"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modal-order">
+                  Связаться
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="d-flex flex-column gap-16px gap-lg-32px">
+            <div class="d-flex justify-content-between">
+              <h2 class="d-flex mb-0px fs-20px fs-md-28px fs-lg-36px fw-medium lh-1">
+                <a href="./" class="btn btn-plaintext btn-title">
+                  <span>Другие предложения</span>
+
+                  <span class="icon">
+                    <svg>
+                      <use xlink:href="img/icons/arrow-right-bordered.svg#svg-arrow-right-bordered"></use>
+                    </svg>
+                  </span>
+                </a>
+              </h2>
+            </div>
+
+            <div class="other-swiper">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    @include('partials/card.html', {
+                      "type": "default",
+                      "img": { "src": "image-1" },
+                      "tags": [ 'instock', 'popular' ],
+                      "list": [ { "name": "Монета", "value": "BTC" }, { "name": "Окупаемость", "value": "11 мес." }, { "name": "Чистая прибыль", "value": "163 216 ₽ / мес." } ],
+                    })
+                  </div>
+                  <div class="swiper-slide">
+                    @include('partials/card.html', {
+                      "type": "default",
+                      "img": { "src": "image-1" },
+                      "tags": false,
+                      "list": [ { "name": "Монета", "value": "BTC" }, { "name": "Окупаемость", "value": "11 мес." }, { "name": "Чистая прибыль", "value": "163 216 ₽ / мес." } ],
+                    })
+                  </div>
+                  <div class="swiper-slide">
+                    @include('partials/card.html', {
+                      "type": "default",
+                      "img": { "src": "image-1" },
+                      "tags": [ 'instock', 'popular' ],
+                      "list": [ { "name": "Монета", "value": "BTC" }, { "name": "Окупаемость", "value": "11 мес." }, { "name": "Чистая прибыль", "value": "163 216 ₽ / мес." } ],
+                    })
+                  </div>
+                  <div class="swiper-slide">
+                    @include('partials/card.html', {
+                      "type": "default",
+                      "img": { "src": "image-1" },
+                      "tags": false,
+                      "list": [ { "name": "Монета", "value": "BTC" }, { "name": "Окупаемость", "value": "11 мес." }, { "name": "Чистая прибыль", "value": "163 216 ₽ / мес." } ],
+                    })
+                  </div>
+                  <div class="swiper-slide">
+                    @include('partials/card.html', {
+                      "type": "default",
+                      "img": { "src": "image-1" },
+                      "tags": false,
+                      "list": [ { "name": "Монета", "value": "BTC" }, { "name": "Окупаемость", "value": "11 мес." }, { "name": "Чистая прибыль", "value": "163 216 ₽ / мес." } ],
+                    })
+                  </div>
+                  <div class="swiper-slide">
+                    @include('partials/card.html', {
+                      "type": "default",
+                      "img": { "src": "image-1" },
+                      "tags": false,
+                      "list": [ { "name": "Монета", "value": "BTC" }, { "name": "Окупаемость", "value": "11 мес." }, { "name": "Чистая прибыль", "value": "163 216 ₽ / мес." } ],
+                    })
+                  </div>
+                  <div class="swiper-slide">
+                    @include('partials/card.html', {
+                      "type": "default",
+                      "img": { "src": "image-1" },
+                      "tags": false,
+                      "list": [ { "name": "Монета", "value": "BTC" }, { "name": "Окупаемость", "value": "11 мес." }, { "name": "Чистая прибыль", "value": "163 216 ₽ / мес." } ],
+                    })
+                  </div>
+                  <div class="swiper-slide">
+                    @include('partials/card.html', {
+                      "type": "default",
+                      "img": { "src": "image-1" },
+                      "tags": false,
+                      "list": [ { "name": "Монета", "value": "BTC" }, { "name": "Окупаемость", "value": "11 мес." }, { "name": "Чистая прибыль", "value": "163 216 ₽ / мес." } ],
+                    })
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      @include('partials/sections/telegram.html')
+      @include('partials/sections/callback.html')
+    </main>
+
+    @include('partials/footer.html')
+  </div>
+
+  @include('partials/modals.html')
+</body>
+
+</html>

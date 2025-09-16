@@ -243,6 +243,47 @@
   }
 }
 
+.form-check--fill {
+
+  &.form-check-lg {
+    min-height: 3.5rem;
+    padding: .5rem 1.25rem;
+  }
+
+  &.form-check--light {
+    background-color: var(--#{$prefix}white);
+    border-radius: var(--#{$prefix}border-radius-lg);
+  }
+
+  .form-check-input {
+    width: 1rem;
+    height: 1rem;
+    border: $form-check-input-border;
+
+    @include media-breakpoint-up(lg) {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+
+    &:checked {
+      background-color: $form-check-input-checked-bg-color;
+      border-color: $form-check-input-checked-border-color;
+
+      &[type="radio"] {
+        --#{$prefix}form-check-bg-image: #{escape-svg($form-check-input-checked-bg-image)};
+      }
+    }
+  }
+
+  .form-check-label {
+    font-size: .75rem;
+
+    @include media-breakpoint-up(lg) {
+      font-size: .875rem;
+    }
+  }
+}
+
 .form-check--gradient-warm {
 
   .form-check-input {

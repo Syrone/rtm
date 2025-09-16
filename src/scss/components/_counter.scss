@@ -73,7 +73,7 @@
 }
 
 .counter--fill {
-  --_bg: var(--#{$prefix}gray-150);
+  --_bg: var(--#{$prefix}body-bg);
   --_border-radius: var(--#{$prefix}border-radius);
 
   gap: .125rem;
@@ -94,6 +94,10 @@
       font-size: .75rem;
     }
   }
+}
+
+.counter--light {
+  --_bg: var(--#{$prefix}white);
 }
 
 .counter-lg {

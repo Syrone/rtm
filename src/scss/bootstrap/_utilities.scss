@@ -121,6 +121,14 @@ $utilities: map-merge(
       class: end,
       values: $position-values
     ),
+    "rotate": (
+      property: transform,
+      class: rotate,
+      values: (
+        null: rotate(180deg),
+        45: rotate(45deg),
+      )
+    ),
     "translate-middle": (
       property: transform,
       class: translate-middle,
@@ -145,6 +153,7 @@ $utilities: map-merge(
       property: border,
       values: (
         null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color),
+        dashed: var(--#{$prefix}border-width) dashed var(--#{$prefix}border-color),
         0: 0,
       )
     ),
@@ -152,6 +161,7 @@ $utilities: map-merge(
       property: border-top,
       values: (
         null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color),
+        dashed: var(--#{$prefix}border-width) dashed var(--#{$prefix}border-color),
         0: 0,
       )
     ),
@@ -160,6 +170,7 @@ $utilities: map-merge(
       class: border-end,
       values: (
         null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color),
+        dashed: var(--#{$prefix}border-width) dashed var(--#{$prefix}border-color),
         0: 0,
       )
     ),
@@ -167,6 +178,7 @@ $utilities: map-merge(
       property: border-bottom,
       values: (
         null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color),
+        dashed: var(--#{$prefix}border-width) dashed var(--#{$prefix}border-color),
         0: 0,
       )
     ),
@@ -175,12 +187,45 @@ $utilities: map-merge(
       class: border-start,
       values: (
         null: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color),
+        dashed: var(--#{$prefix}border-width) dashed var(--#{$prefix}border-color),
         0: 0,
       )
     ),
     "border-color": (
       property: border-color,
       class: border,
+      local-vars: (
+        "border-opacity": 1
+      ),
+      values: $utilities-border-colors
+    ),
+    "border-color-top": (
+      property: border-top-color,
+      class: border-top,
+      local-vars: (
+        "border-opacity": 1
+      ),
+      values: $utilities-border-colors
+    ),
+    "border-color-end": (
+      property: border-right-color,
+      class: border-end,
+      local-vars: (
+        "border-opacity": 1
+      ),
+      values: $utilities-border-colors
+    ),
+    "border-color-bottom": (
+      property: border-bottom-color,
+      class: border-bottom,
+      local-vars: (
+        "border-opacity": 1
+      ),
+      values: $utilities-border-colors
+    ),
+    "border-color-start": (
+      property: border-left-color,
+      class: border-start,
       local-vars: (
         "border-opacity": 1
       ),
@@ -193,6 +238,7 @@ $utilities: map-merge(
     ),
     "border-width": (
       property: border-width,
+      responsive: true,
       class: border,
       values: $border-widths
     ),

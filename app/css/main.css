@@ -1070,7 +1070,7 @@
 }
 
 .counter--fill {
-  --_bg: var(--bs-gray-150);
+  --_bg: var(--bs-body-bg);
   --_border-radius: var(--bs-border-radius);
   gap: 0.125rem;
   font-size: 2rem;
@@ -1086,6 +1086,10 @@
 .counter--fill .counter-current .form-control-plaintext {
   max-width: 5rem;
   font-size: 0.75rem;
+}
+
+.counter--light {
+  --_bg: var(--bs-white);
 }
 
 .counter-lg .counter-current .form-control-plaintext {
@@ -1618,6 +1622,9 @@
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   border: none;
   padding: 0.4375rem 1rem;
 }
@@ -1682,7 +1689,7 @@
   border-radius: var(--bs-border-radius);
 }
 .choices__list[aria-expanded] .choices__list, .choices__list--dropdown .choices__list {
-  max-height: 20rem;
+  max-height: 10.5rem;
 }
 .choices__list[aria-expanded] .choices__item, .choices__list--dropdown .choices__item {
   padding: unset;
@@ -1701,6 +1708,45 @@
 
 .choices__placeholder {
   opacity: 1;
+}
+
+.choices-lg .choices__inner {
+  min-height: 3.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: var(--bs-border-radius-lg);
+  padding-inline: 1.25rem;
+}
+.choices-lg .choices__inner .choices__placeholder {
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+.choices-lg .choices__list[aria-expanded], .choices-lg .choices__list--dropdown {
+  padding: 1.25rem;
+}
+.choices-lg .choices__list[aria-expanded] .choices__list, .choices-lg .choices__list--dropdown .choices__list {
+  gap: 0.5rem;
+}
+.choices-lg .choices__list[aria-expanded] .choices__item, .choices-lg .choices__list--dropdown .choices__item {
+  font-weight: 700;
+}
+@media (min-width: 992px) {
+  .choices-lg .choices__list[aria-expanded] .choices__item, .choices-lg .choices__list--dropdown .choices__item {
+    font-size: 1rem;
+  }
+}
+
+.choices--light .choices__inner {
+  background-color: var(--bs-white);
+}
+.choices--light .choices__inner .choices__item--selectable {
+  color: var(--bs-primary);
+}
+.choices--light .choices__inner .choices__placeholder {
+  color: rgba(var(--bs-black-rgb), 0.2);
+}
+.choices--light .choices__list[aria-expanded] .choices__item--selectable.is-selected, .choices--light .choices__list--dropdown .choices__item--selectable.is-selected {
+  color: var(--bs-teal);
 }
 
 .product-swiper {

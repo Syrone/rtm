@@ -2,6 +2,8 @@ import $ from 'jquery';
 import Choices from 'choices.js';
 
 $('[data-choices]').each(function () {
+  const extraClasses = $(this).attr('data-choices-classes') || '';
+
   const choice = new Choices(this, {
     allowHTML: true,
     searchEnabled: false,
@@ -11,6 +13,12 @@ $('[data-choices]').each(function () {
     noResultsText: "Результаты не найдены",
     noChoicesText: "Нет вариантов для выбора",
   });
+
+  if (extraClasses.trim()) {
+    extraClasses.split(/\s+/).forEach(cls => {
+      choice.containerOuter.element.classList.add(cls);
+    });
+  }
 
   const $inner = $(choice.containerInner.element);
 

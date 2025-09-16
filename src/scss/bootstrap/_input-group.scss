@@ -15,7 +15,6 @@
     flex: 1 1 auto;
     width: 1%;
     min-width: 0; // https://stackoverflow.com/questions/36247140/why-dont-flex-items-shrink-past-content-size
-    background-color: var(--#{$prefix}gray-150);
     position: relative; // For focus state's z-index
   }
 
@@ -39,6 +38,16 @@
   }
 }
 
+.input-group--light {
+
+  > .form-control,
+  > .form-select,
+  > .form-floating,
+  > .input-group-text {
+    color: var(--#{$prefix}primary);
+    background-color: var(--#{$prefix}white);
+  }
+}
 
 // Textual addons
 //
@@ -46,7 +55,6 @@
 // to prepend or append to an input.
 
 .input-group-text {
-  font-family: var(--#{$prefix}font-manrope);
   display: flex;
   align-items: center;
   padding: $input-group-addon-padding-y $input-group-addon-padding-x;
@@ -70,7 +78,9 @@
 .input-group-lg > .form-control,
 .input-group-lg > .form-select,
 .input-group-lg > .input-group-text,
+.input-group-lg > .choices-lg .choices__inner,
 .input-group-lg > .btn {
+  min-width: 5rem;
   padding: $input-padding-y-lg $input-padding-x-lg;
   @include font-size($input-font-size-lg);
   @include border-radius($input-border-radius-lg);
@@ -90,6 +100,16 @@
   padding-right: $form-select-padding-x + $form-select-indicator-padding;
 }
 
+.input-group-lg > .choices-lg .choices__inner {
+  font-weight: 600;
+  gap: .5rem;
+  padding-left: .5rem;
+}
+
+.input-group-lg > .input-group-text {
+  justify-content: center;
+  text-align: center;
+}
 
 // Rounded corners
 //
