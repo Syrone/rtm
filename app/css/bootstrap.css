@@ -17511,6 +17511,10 @@ textarea.form-control-lg {
   background-repeat: repeat !important;
 }
 
+.bg-repeat-x-repeat {
+  background-repeat: repeat-x !important;
+}
+
 .bg-size-cover {
   background-size: cover !important;
 }
@@ -21586,6 +21590,9 @@ textarea.form-control-lg {
   .bg-repeat-sm-repeat {
     background-repeat: repeat !important;
   }
+  .bg-repeat-sm-x-repeat {
+    background-repeat: repeat-x !important;
+  }
   .bg-size-sm-cover {
     background-size: cover !important;
   }
@@ -25467,6 +25474,9 @@ textarea.form-control-lg {
   }
   .bg-repeat-md-repeat {
     background-repeat: repeat !important;
+  }
+  .bg-repeat-md-x-repeat {
+    background-repeat: repeat-x !important;
   }
   .bg-size-md-cover {
     background-size: cover !important;
@@ -29350,6 +29360,9 @@ textarea.form-control-lg {
   .bg-repeat-lg-repeat {
     background-repeat: repeat !important;
   }
+  .bg-repeat-lg-x-repeat {
+    background-repeat: repeat-x !important;
+  }
   .bg-size-lg-cover {
     background-size: cover !important;
   }
@@ -33232,6 +33245,9 @@ textarea.form-control-lg {
   .bg-repeat-xl-repeat {
     background-repeat: repeat !important;
   }
+  .bg-repeat-xl-x-repeat {
+    background-repeat: repeat-x !important;
+  }
   .bg-size-xl-cover {
     background-size: cover !important;
   }
@@ -37113,6 +37129,9 @@ textarea.form-control-lg {
   }
   .bg-repeat-xxl-repeat {
     background-repeat: repeat !important;
+  }
+  .bg-repeat-xxl-x-repeat {
+    background-repeat: repeat-x !important;
   }
   .bg-size-xxl-cover {
     background-size: cover !important;
